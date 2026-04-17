@@ -8,7 +8,7 @@
     {
       "name": "iOS",
       "min_version": "18.0",
-      "store_url": null
+      "store_url": "https://apps.apple.com/app/id6760860774"
     }
   ],
   "features": [
@@ -49,9 +49,9 @@
   "status": "beta",
   "version": "1.3.0",
   "links": {
-    "app_store": null,
+    "app_store": "https://apps.apple.com/app/id6760860774",
     "play_store": null,
-    "website": null,
+    "website": "https://jojogurt.github.io/memo-maze.html",
     "trailer": null
   },
   "monetization": "freemium"
