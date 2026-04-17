@@ -1,0 +1,58 @@
+{
+  "name": "Memo Maze",
+  "slug": "memo-maze",
+  "tagline": "Memorize the maze. Swipe the path. Don't lose your way.",
+  "description": "A mobile memory puzzle. Study a tile maze, watch it vanish, then navigate from memory with swipe gestures. Chain moves into sequences for scoring multipliers, dodge traps and ice, and earn crystals across 30 hand-crafted levels in a dark dungeon of torchlight and scarabs.",
+  "genre": "Memory Puzzle",
+  "platforms": [
+    {
+      "name": "iOS",
+      "min_version": "18.0",
+      "store_url": null
+    }
+  ],
+  "features": [
+    {
+      "title": "Memorize-then-navigate",
+      "description": "See the maze for a few seconds, then swipe through it blind. The whole game lives in this tight loop."
+    },
+    {
+      "title": "Move sequence queue",
+      "description": "Chain swipes into sequences for 1.5x, 2x, and 3x scoring multipliers — plan ahead, commit fast."
+    },
+    {
+      "title": "Traps, ice & jumps",
+      "description": "Push-back traps, slide-chain ice tiles, crumbling floors, and gap-jump mechanics raise the stakes."
+    },
+    {
+      "title": "Crystal economy & Glimpse",
+      "description": "Earn crystals from stars, spend 50 for a 1.5s Glimpse that reveals the maze again when you're lost."
+    },
+    {
+      "title": "30 hand-crafted levels",
+      "description": "Five chapters with a clear difficulty curve — First Steps, Twists & Turns, Against the Clock, and more."
+    },
+    {
+      "title": "In-game level designer",
+      "description": "Tap-to-cycle editor with BFS validation builds a My Levels chapter from your own mazes."
+    }
+  ],
+  "colors": {
+    "primary": "#4ea8ff",
+    "secondary": "#f7b74c",
+    "background": "#0f0f23",
+    "text": "#f5f5f5"
+  },
+  "icon": "assets/icon.png",
+  "logo": "assets/logo.png",
+  "screenshots": [],
+  "status": "beta",
+  "version": "1.3.0",
+  "links": {
+    "app_store": null,
+    "play_store": null,
+    "website": null,
+    "trailer": null
+  },
+  "monetization": "freemium"
+}

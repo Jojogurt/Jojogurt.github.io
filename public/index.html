@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games</title>
+  <meta name="description" content="A small collection of mobile puzzle games.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="index-body">
+
+  <section class="index-hero">
+    <h1 class="index-title">Games</h1>
+    <p class="index-subtitle">Small, hand-crafted memory puzzles for mobile.</p>
+  </section>
+
+  <!-- Cards are static HTML so cross-document View Transitions have a reliable DOM
+       to snapshot. Regenerated from games.json whenever the registry changes. -->
+  <main class="games-root">
+    <div class="games-grid">
+      <a class="game-card animate-on-scroll" href="cosmic-path.html">
+        <img class="game-card-icon vt-cosmic-path" src="images/cosmic-path/icon.png" alt="Cosmic Path icon" loading="eager" decoding="sync">
+        <div class="game-card-body">
+          <div class="game-card-name">Cosmic Path</div>
+          <div class="game-card-tagline">Remember the path. Trace the comet. Master the cosmic challenge.</div>
+          <span class="game-card-badge">In development</span>
+        </div>
+      </a>
+
+      <a class="game-card animate-on-scroll" href="memo-maze.html">
+        <img class="game-card-icon vt-memo-maze" src="images/memo-maze/icon.png" alt="Memo Maze icon" loading="eager" decoding="sync">
+        <div class="game-card-body">
+          <div class="game-card-name">Memo Maze</div>
+          <div class="game-card-tagline">Memorize the maze. Swipe the path. Don't lose your way.</div>
+          <span class="game-card-badge">Beta</span>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <span class="footer-year">&copy; 2026</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

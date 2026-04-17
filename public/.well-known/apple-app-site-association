@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["57V928Q27F.com.kked.games.memo-maze"],
+        "components": [
+          { "/": "/share*", "comment": "Shared level deep link" }
+        ]
+      }
+    ]
+  }
+}

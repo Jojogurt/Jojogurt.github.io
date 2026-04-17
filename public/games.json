@@ -1,0 +1,13 @@
+{
+  "games": [
+    {
+      "slug": "cosmic-path",
+      "path": "/Users/kked/Projects/follow-the-trail",
+      "featured": true
+    },
+    {
+      "slug": "memo-maze",
+      "path": "/Users/kked/Projects/memo-maze-godot"
+    }
+  ]
+}

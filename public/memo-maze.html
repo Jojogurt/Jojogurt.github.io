@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memo Maze — Memorize the maze. Swipe the path.</title>
+  <meta name="description" content="Memo Maze is a mobile memory puzzle. Study a tile maze, watch it vanish, then navigate from memory with swipe gestures across 30 hand-crafted levels.">
+  <link rel="icon" type="image/png" href="images/memo-maze/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="game-memo-maze">
+
+  <!-- Top Nav -->
+  <nav class="game-nav" aria-label="Game navigation">
+    <a class="game-nav-back" href="index.html" aria-label="Back to all games">&larr;</a>
+    <div class="game-nav-icons">
+      <a href="cosmic-path.html" aria-label="Cosmic Path">
+        <img class="game-nav-icon vt-cosmic-path" src="images/cosmic-path/icon.png" alt="Cosmic Path" loading="eager" decoding="sync">
+      </a>
+      <a href="memo-maze.html" aria-label="Memo Maze" aria-current="page">
+        <img class="game-nav-icon active vt-memo-maze" src="images/memo-maze/icon.png" alt="Memo Maze" loading="eager" decoding="sync">
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-content hero-content--centered">
+      <img src="images/memo-maze/logo.png" alt="Memo Maze logo" class="hero-logo">
+      <p class="hero-tagline">Memorize the maze. Swipe the path. Don't lose your way.</p>
+      <div class="hero-cta">
+        <a href="#download" class="btn btn-primary">Get the Game</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Carousel -->
+  <section class="screenshots" id="screenshots">
+    <h2 class="section-title">Gameplay</h2>
+    <div class="carousel-wrapper">
+      <button class="carousel-arrow carousel-arrow--left" aria-label="Scroll left">&#8249;</button>
+      <div class="carousel-track">
+        <div class="phone-mockup carousel-item">
+          <img src="images/memo-maze/02_title_screen.png" alt="Title screen" loading="lazy">
+        </div>
+        <div class="phone-mockup carousel-item">
+          <img src="images/memo-maze/04_chapter_select.png" alt="Chapter select" loading="lazy">
+        </div>
+        <div class="phone-mockup carousel-item">
+          <img src="images/memo-maze/06_level_select_gauntlet.png" alt="Level select — Gauntlet chapter" loading="lazy">
+        </div>
+        <div class="phone-mockup carousel-item">
+          <img src="images/memo-maze/01_gameplay_gauntlet.png" alt="Gauntlet gameplay" loading="lazy">
+        </div>
+        <div class="phone-mockup carousel-item">
+          <img src="images/memo-maze/03_gameplay_twists.png" alt="Twists &amp; Turns gameplay" loading="lazy">
+        </div>
+        <div class="phone-mockup carousel-item">
+          <img src="images/memo-maze/05_gameplay_time_pressure.png" alt="Against the Clock gameplay" loading="lazy">
+        </div>
+        <div class="phone-mockup carousel-item">
+          <img src="images/memo-maze/07_gameplay_shifting_ground.png" alt="Shifting Ground gameplay" loading="lazy">
+        </div>
+      </div>
+      <button class="carousel-arrow carousel-arrow--right" aria-label="Scroll right">&#8250;</button>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <h2 class="section-title">Features</h2>
+    <div class="features-grid">
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">&#129504;</div>
+        <h3>Memorize-then-navigate</h3>
+        <p>See the maze for a few seconds, then swipe through it blind. The whole game lives in this tight loop.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">&#9889;</div>
+        <h3>Move Sequence Queue</h3>
+        <p>Chain swipes into sequences for 1.5x, 2x, and 3x scoring multipliers — plan ahead, commit fast.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">&#10052;</div>
+        <h3>Traps, Ice &amp; Jumps</h3>
+        <p>Push-back traps, slide-chain ice tiles, crumbling floors, and gap-jump mechanics raise the stakes.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">&#128142;</div>
+        <h3>Crystal Economy &amp; Glimpse</h3>
+        <p>Earn crystals from stars, spend 50 for a 1.5s Glimpse that reveals the maze again when you're lost.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">&#127959;</div>
+        <h3>30 Hand-Crafted Levels</h3>
+        <p>Five chapters with a clear difficulty curve — First Steps, Twists &amp; Turns, Against the Clock, and more.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">&#128736;</div>
+        <h3>In-Game Level Designer</h3>
+        <p>Tap-to-cycle editor with BFS validation builds a My Levels chapter from your own mazes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CTA -->
+  <section class="download" id="download">
+    <h2 class="section-title">Get Memo Maze</h2>
+    <p class="download-description">A dungeon memory puzzle. Study. Vanish. Swipe. Survive.</p>
+    <div class="store-badges">
+      <div class="store-badge coming-soon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div>
+          <span class="store-badge-label">Coming Soon on</span>
+          <span class="store-badge-store">App Store</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <img src="images/memo-maze/icon.png" alt="Memo Maze icon" class="footer-icon">
+      <span class="footer-name">Memo Maze</span>
+      <span class="footer-year">&copy; 2026</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

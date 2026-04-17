@@ -1,0 +1,59 @@
+{
+  "name": "Cosmic Path",
+  "slug": "cosmic-path",
+  "tagline": "Remember the path. Trace the comet. Master the cosmic challenge.",
+  "description": "Cosmic Path is a neon memory puzzle game. Watch a glowing comet trace a path across a grid, memorize it, then recreate it from memory. Progress through endless levels of increasing difficulty, compete on leaderboards, and take on a new daily challenge every day.",
+  "genre": "Memory Puzzle",
+  "platforms": [
+    {
+      "name": "iOS",
+      "min_version": "18.0",
+      "store_url": null
+    },
+    {
+      "name": "Android",
+      "min_version": "SDK 34",
+      "store_url": null
+    }
+  ],
+  "features": [
+    {
+      "title": "Endless Mode",
+      "description": "100+ levels with growing grids, longer paths, and faster comets"
+    },
+    {
+      "title": "Daily Challenge",
+      "description": "Same puzzle for everyone, every day. Build your streak."
+    },
+    {
+      "title": "3 Skills",
+      "description": "Slow time, extend the trail, or reveal the path — use them wisely"
+    },
+    {
+      "title": "Leaderboards",
+      "description": "Compete on Game Center and Google Play Games rankings"
+    },
+    {
+      "title": "Fair Paths",
+      "description": "Procedurally generated with directional balance — no cheap randomness"
+    }
+  ],
+  "colors": {
+    "primary": "#00FFFF",
+    "secondary": "#00FF00",
+    "background": "#070A13",
+    "text": "#FFFFFF"
+  },
+  "icon": "assets/icon.png",
+  "logo": "assets/flat/logo/logo.png",
+  "screenshots": [],
+  "status": "in-development",
+  "version": "1.8.0",
+  "links": {
+    "app_store": null,
+    "play_store": null,
+    "website": null,
+    "trailer": null
+  },
+  "monetization": "freemium"
+}
