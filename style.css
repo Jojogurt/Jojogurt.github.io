@@ -275,10 +275,7 @@ a {
   box-shadow: 0 0 30px rgba(var(--color-glow), 0.5);
 }
 
-/* Coming-soon hero pill — doubles as a mailto so a visitor excited about
-   a not-yet-shipped game has a one-tap way to be notified. The pulsing
-   dot stays for the "this thing is alive" feel; hover lifts the pill so
-   it visibly invites a click. */
+/* Coming-soon hero pill (replaces hero CTA before launch) */
 .hero-coming-soon {
   display: inline-flex;
   align-items: center;
@@ -292,21 +289,6 @@ a {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-}
-
-a.hero-coming-soon:hover {
-  background: rgba(var(--color-glow), 0.12);
-  border-color: rgba(var(--color-glow), 0.85);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(var(--color-glow), 0.18);
-}
-
-a.hero-coming-soon:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 4px;
 }
 
 .hero-coming-soon::before {
