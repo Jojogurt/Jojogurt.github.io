@@ -210,11 +210,46 @@ a {
 }
 
 .hero-tagline {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.75);
-  max-width: 480px;
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 520px;
   margin: 0 auto 2rem;
-  line-height: 1.5;
+  line-height: 1.45;
+}
+
+/* === Per-game display faces ===
+   Audit ID'd "Space Grotesk doing every job on this site" as the single
+   highest-ROI generic-tell. Each game now gets a distinct display face
+   for big-type surfaces (hero tagline, section titles, feature card
+   headings, in-game-themed doc titles) while body copy keeps Space Grotesk
+   so read consistency survives.
+
+   - Cosmic Path → Orbitron (geometric sci-fi)
+   - Memo Maze   → Cinzel (Roman serif, fits dungeon torchlit theme)
+   - Memo Mini   → Fredoka (rounded, kid-friendly) */
+.game-cosmic-path .hero-tagline,
+.game-cosmic-path .section-title,
+.game-cosmic-path .feature-card h3,
+.game-cosmic-path .hero-coming-soon {
+  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.game-memo-maze .hero-tagline,
+.game-memo-maze .section-title,
+.game-memo-maze .feature-card h3,
+.game-memo-maze .hero-coming-soon {
+  font-family: 'Cinzel', 'Space Grotesk', serif;
+  letter-spacing: 0.02em;
+}
+
+.game-memo-mini .hero-tagline,
+.game-memo-mini .section-title,
+.game-memo-mini .feature-card h3,
+.game-memo-mini .doc-title,
+.game-memo-mini .hero-coming-soon {
+  font-family: 'Fredoka', 'Space Grotesk', sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .btn {
@@ -904,7 +939,7 @@ a {
   }
 
   .hero-tagline {
-    font-size: 1.3rem;
+    font-size: 1.55rem;
   }
 
   .features-grid {
@@ -922,6 +957,10 @@ a {
 
 /* === Responsive: 1024px+ === */
 @media (min-width: 1024px) {
+  .section-title {
+    font-size: 2.85rem;
+  }
+
   .hero-logo {
     max-width: 620px;
   }
