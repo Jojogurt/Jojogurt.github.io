@@ -49,7 +49,12 @@
   },
   "icon": "assets/icon.png",
   "logo": "assets/logo.png",
-  "screenshots": [],
+  "screenshots": [
+    "01_world_select.png",
+    "02_gameplay_memorize.png",
+    "03_gameplay_match.png",
+    "04_collection.png"
+  ],
   "status": "in-development",
   "version": "0.1.1",
   "links": {
