@@ -21,6 +21,71 @@
   --color-glow-secondary: 196, 69, 54;
 }
 
+.game-memo-mini {
+  --color-primary: #F5A623;
+  --color-secondary: #4BACF7;
+  /* --color-bg stays a readable dark navy because btn-primary uses it
+     as foreground text on the orange CTA — flipping it light breaks
+     readability. The actual page background is overridden below as a
+     bright sky gradient, matching the in-game sky_background. */
+  --color-bg: #0A1B2E;
+  --color-text: #F4F8FC;
+  --color-surface: #122A45;
+  --color-surface-hover: #183555;
+  --color-glow: 75, 172, 247;
+  --color-glow-secondary: 245, 166, 35;
+}
+
+/* Memo Mini's body background = the in-game sky gradient (#88D1FA top
+   → #4BACF7 bottom, from src/components/sky_background/sky_background.tscn).
+   Dark cards float on the bright sky for a kid-friendly daylight feel. */
+body.game-memo-mini {
+  background-image: linear-gradient(180deg, #88D1FA 0%, #4BACF7 100%);
+  background-attachment: fixed;
+  background-color: #88D1FA;
+}
+
+/* === Memo Mini: in-game outline / sticker styling ===
+   Mirrors the game's typography (white text + dark navy outline used on
+   every popup label — see e.g. world_start_popup.tscn HeadingLabel) and
+   wraps cards + phone mockups in a chunky white border so they read as
+   "stickers" floating on the bright sky bg. */
+
+.game-memo-mini .section-title,
+.game-memo-mini .hero-tagline,
+.game-memo-mini .download-description,
+.game-memo-mini .feature-card h3 {
+  color: #fff;
+  /* 8-direction text-shadow approximates Godot's font_outline_color +
+     outline_size, with a soft drop for extra lift. Navy matches the
+     game's outline color exactly: Color(0.157, 0.192, 0.275). */
+  text-shadow:
+    -2px -2px 0 #283146,
+     2px -2px 0 #283146,
+    -2px  2px 0 #283146,
+     2px  2px 0 #283146,
+    -2px  0   0 #283146,
+     2px  0   0 #283146,
+     0   -2px 0 #283146,
+     0    2px 0 #283146,
+     0    4px 6px rgba(40, 49, 70, 0.25);
+}
+
+.game-memo-mini .feature-card,
+.game-memo-mini .store-badge {
+  border: 3px solid #fff;
+  box-shadow:
+    0 4px 0 rgba(40, 49, 70, 0.18),
+    0 8px 24px rgba(40, 49, 70, 0.18);
+}
+
+.game-memo-mini .phone-mockup {
+  border: 4px solid #fff !important;
+  box-shadow:
+    0 6px 0 rgba(40, 49, 70, 0.18),
+    0 12px 32px rgba(40, 49, 70, 0.25) !important;
+}
+
 /* === Reset & Base === */
 *, *::before, *::after {
   margin: 0;
@@ -485,10 +550,12 @@ a {
 /* Assign unique transition names to matching elements on both pages */
 .vt-cosmic-path { view-transition-name: vt-icon-cosmic-path; }
 .vt-memo-maze   { view-transition-name: vt-icon-memo-maze; }
+.vt-memo-mini   { view-transition-name: vt-icon-memo-mini; }
 
 /* Slow the morph a touch so the shrink is visible */
 ::view-transition-group(vt-icon-cosmic-path),
-::view-transition-group(vt-icon-memo-maze) {
+::view-transition-group(vt-icon-memo-maze),
+::view-transition-group(vt-icon-memo-mini) {
   animation-duration: 0.55s;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }

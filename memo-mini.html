@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cosmic Path — Remember the path. Trace the comet.</title>
-  <meta name="description" content="Cosmic Path is a neon memory puzzle game. Watch a glowing comet trace a path across a grid, memorize it, then recreate it from memory.">
-  <link rel="icon" type="image/png" href="images/cosmic-path/icon.png">
+  <title>Memo Mini — Match the pairs. Grow your collection.</title>
+  <meta name="description" content="Memo Mini is a relaxing memory pairs game for kids 4+. Match pictures across 11 themed worlds, earn stars, and grow a collection — no ads, no timers, no harsh fail states.">
+  <link rel="icon" type="image/png" href="images/memo-mini/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="game-cosmic-path">
+<body class="game-memo-mini">
 
   <!-- Top Nav -->
   <nav class="game-nav" aria-label="Game navigation">
     <a class="game-nav-back" href="index.html" aria-label="Back to all games">&larr;</a>
     <div class="game-nav-icons">
-      <a href="cosmic-path.html" aria-label="Cosmic Path" aria-current="page">
-        <img class="game-nav-icon active vt-cosmic-path" src="images/cosmic-path/icon.png" alt="Cosmic Path" loading="eager" decoding="sync">
+      <a href="cosmic-path.html" aria-label="Cosmic Path">
+        <img class="game-nav-icon vt-cosmic-path" src="images/cosmic-path/icon.png" alt="Cosmic Path" loading="eager" decoding="sync">
       </a>
       <a href="memo-maze.html" aria-label="Memo Maze">
         <img class="game-nav-icon vt-memo-maze" src="images/memo-maze/icon.png" alt="Memo Maze" loading="eager" decoding="sync">
       </a>
-      <a href="memo-mini.html" aria-label="Memo Mini">
-        <img class="game-nav-icon vt-memo-mini" src="images/memo-mini/icon.png" alt="Memo Mini" loading="eager" decoding="sync">
+      <a href="memo-mini.html" aria-label="Memo Mini" aria-current="page">
+        <img class="game-nav-icon active vt-memo-mini" src="images/memo-mini/icon.png" alt="Memo Mini" loading="eager" decoding="sync">
       </a>
     </div>
   </nav>
@@ -32,37 +32,22 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero-content hero-content--centered">
-      <img src="images/cosmic-path/logo.png" alt="Cosmic Path logo" class="hero-logo">
-      <p class="hero-tagline">Remember the path. Trace the comet. Master the cosmic challenge.</p>
+      <img src="images/memo-mini/logo.png" alt="Memo Mini logo" class="hero-logo">
+      <p class="hero-tagline">Match the pairs. Grow your collection. A relaxing memory game for kids 4+.</p>
       <div class="hero-cta">
         <a href="#download" class="btn btn-primary">Get the Game</a>
       </div>
     </div>
   </section>
 
-  <!-- Screenshots Carousel -->
+  <!-- Screenshots Carousel (placeholder — real screenshots dropped into images/memo-mini/ later, then refresh) -->
   <section class="screenshots" id="screenshots">
     <h2 class="section-title">Gameplay</h2>
     <div class="carousel-wrapper">
       <button class="carousel-arrow carousel-arrow--left" aria-label="Scroll left">&#8249;</button>
       <div class="carousel-track">
         <div class="phone-mockup carousel-item">
-          <img src="images/cosmic-path/menu_fresh.png" alt="Main menu — fresh start" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/cosmic-path/gameplay_early.png" alt="Early gameplay level" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/cosmic-path/gameplay_mid_tracing.png" alt="Mid-level tracing gameplay" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/cosmic-path/gameplay_large_grid.png" alt="Large grid challenge" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/cosmic-path/gameplay_completed_path.png" alt="Completed path celebration" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/cosmic-path/menu_veteran.png" alt="Main menu — veteran progress" loading="lazy">
+          <img src="images/memo-mini/logo.png" alt="Memo Mini — screenshots coming soon" loading="lazy" style="object-fit: contain; padding: 20%; background: var(--color-surface);">
         </div>
       </div>
       <button class="carousel-arrow carousel-arrow--right" aria-label="Scroll right">&#8250;</button>
@@ -74,37 +59,42 @@
     <h2 class="section-title">Features</h2>
     <div class="features-grid">
       <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">&#9854;</div>
-        <h3>Endless Mode</h3>
-        <p>100+ levels with growing grids, longer paths, and faster comets</p>
+        <div class="feature-icon">&#127757;</div>
+        <h3>11 themed worlds</h3>
+        <p>Animals, fruits, sweets, dinosaurs and more — each with its own art style and pairs to memorize.</p>
       </div>
       <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">&#9788;</div>
-        <h3>Daily Challenge</h3>
-        <p>Same puzzle for everyone, every day. Build your streak.</p>
+        <div class="feature-icon">&#127919;</div>
+        <h3>Three difficulty modes</h3>
+        <p>From 4-card grids for first-timers to 24-card grids for confident memorizers — same worlds, different challenge.</p>
       </div>
       <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">&#10024;</div>
-        <h3>3 Skills</h3>
-        <p>Slow time, extend the trail, or reveal the path — use them wisely</p>
+        <div class="feature-icon">&#128202;</div>
+        <h3>Picture collection</h3>
+        <p>Every matched pair unlocks the picture in a pokedex-style screen — completionists can chase 100%.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">&#129392;</div>
+        <h3>Ad-free, kid-safe</h3>
+        <p>No ads, no text input, no timers, no harsh fail states. Designed for ages 4+ from the ground up.</p>
       </div>
       <div class="feature-card animate-on-scroll">
         <div class="feature-icon">&#127942;</div>
-        <h3>Leaderboards</h3>
-        <p>Compete on Game Center and Google Play Games rankings</p>
+        <h3>Game Center &amp; Play Games</h3>
+        <p>Achievements and global leaderboards — optional, opt-in via the platform's system prompts.</p>
       </div>
       <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">&#9878;</div>
-        <h3>Fair Paths</h3>
-        <p>Procedurally generated with directional balance — no cheap randomness</p>
+        <div class="feature-icon">&#11088;</div>
+        <h3>Star rating system</h3>
+        <p>Earn up to 3 stars per level for perfect recall — stars persist across replays so progress always counts.</p>
       </div>
     </div>
   </section>
 
   <!-- Download CTA -->
   <section class="download" id="download">
-    <h2 class="section-title">Get Cosmic Path</h2>
-    <p class="download-description">A neon memory puzzle game. Watch. Memorize. Trace. Master.</p>
+    <h2 class="section-title">Get Memo Mini</h2>
+    <p class="download-description">A relaxing memory pairs game for the whole family. Free to play, premium worlds optional.</p>
     <div class="store-badges">
       <div class="store-badge coming-soon">
         <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -114,7 +104,7 @@
         </div>
       </div>
       <div class="store-badge coming-soon">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M3.18 23.54L14.46 12 3.18.46a1.06 1.06 0 0 0-.18.6v21.88c0 .22.06.42.18.6zm1.44.94l12.58-7.26-2.77-2.78L4.62 24.48zm14.06-8.12L21 15l-2.32-1.34-3.04 3.04 3.04 3.66zM4.62-.48l10.81 10.04 2.77-2.78L5.62-.48z"/></svg>
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a.996.996 0 0 1 .609-.92zm10.89 10.892l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626c.781.45.781 1.6 0 2.051l-2.807 1.626-2.598-2.652 2.598-2.651zm-2.302-2.302L5.864 1.872l10.937 6.333-2.302 2.302z"/></svg>
         <div>
           <span class="store-badge-label">Coming Soon on</span>
           <span class="store-badge-store">Google Play</span>
@@ -126,8 +116,8 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <img src="images/cosmic-path/icon.png" alt="Cosmic Path icon" class="footer-icon">
-      <span class="footer-name">Cosmic Path</span>
+      <img src="images/memo-mini/icon.png" alt="Memo Mini icon" class="footer-icon">
+      <span class="footer-name">Memo Mini</span>
       <span class="footer-year">&copy; 2026</span>
     </div>
   </footer>

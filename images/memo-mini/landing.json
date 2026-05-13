@@ -1,0 +1,62 @@
+{
+  "name": "Memo Mini",
+  "slug": "memo-mini",
+  "tagline": "Match the pairs. Grow your collection. A relaxing memory game for kids 4+.",
+  "description": "Memo Mini is a relaxing memory pairs game for kids aged 4 and up — and the adults playing along. Match pictures across 11 themed worlds (animals, fruits, sweets, dinosaurs, tools and more), earn stars for accuracy, and unlock items in your collection. No ads, no timers, no scolding — just calm, confidence-building puzzles with three difficulty modes that scale from 4 cards to 24.",
+  "genre": "Memory Puzzle",
+  "platforms": [
+    {
+      "name": "iOS",
+      "min_version": "18.0",
+      "store_url": null
+    },
+    {
+      "name": "Android",
+      "store_url": null
+    }
+  ],
+  "features": [
+    {
+      "title": "11 themed worlds",
+      "description": "Animals, fruits, sweets, dinosaurs and more — each with its own art style and pairs to memorize."
+    },
+    {
+      "title": "Three difficulty modes",
+      "description": "From 4-card grids for first-timers to 24-card grids for confident memorizers — same worlds, different challenge."
+    },
+    {
+      "title": "Picture collection",
+      "description": "Every matched pair unlocks the picture in a pokedex-style screen — completionists can chase 100%."
+    },
+    {
+      "title": "Ad-free, kid-safe",
+      "description": "No ads, no text input, no timers, no harsh fail states. Designed for ages 4+ from the ground up."
+    },
+    {
+      "title": "Game Center & Play Games",
+      "description": "Achievements and global leaderboards — optional, opt-in via the platform's system prompts."
+    },
+    {
+      "title": "Star rating system",
+      "description": "Earn up to 3 stars per level for perfect recall — stars persist across replays so progress always counts."
+    }
+  ],
+  "colors": {
+    "primary": "#F5A623",
+    "secondary": "#4BACF7",
+    "background": "#88D1FA",
+    "text": "#283146"
+  },
+  "icon": "assets/icon.png",
+  "logo": "assets/logo.png",
+  "screenshots": [],
+  "status": "in-development",
+  "version": "0.1.1",
+  "links": {
+    "app_store": null,
+    "play_store": null,
+    "website": null,
+    "trailer": null
+  },
+  "monetization": "freemium"
+}
