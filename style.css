@@ -84,6 +84,9 @@ body.game-memo-mini {
   box-shadow:
     0 6px 0 rgba(40, 49, 70, 0.18),
     0 12px 32px rgba(40, 49, 70, 0.25) !important;
+  /* iPhone screenshots are 1290x2796 (~9/19.5) — match container so
+     object-fit: cover doesn't crop the top/bottom of the screen. */
+  aspect-ratio: 1290 / 2796;
 }
 
 /* === Reset & Base === */
@@ -137,7 +140,9 @@ a {
     0 0 30px rgba(var(--color-glow), 0.08),
     0 20px 60px rgba(0, 0, 0, 0.4);
   background: #000;
-  aspect-ratio: 9 / 16;
+  /* Matches modern iPhone screenshots (1179x2556, 1290x2796) so
+     object-fit: cover doesn't crop the top/bottom of the screen. */
+  aspect-ratio: 9 / 19.5;
 }
 
 .phone-mockup img {
@@ -233,6 +238,37 @@ a {
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 0 30px rgba(var(--color-glow), 0.5);
+}
+
+/* Coming-soon hero label (replaces hero CTA before launch) */
+.hero-coming-soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  border: 1px dashed rgba(var(--color-glow), 0.5);
+  background: rgba(var(--color-glow), 0.06);
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-coming-soon::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 8px rgba(var(--color-glow), 0.7);
+  animation: comingSoonPulse 2s ease-in-out infinite;
+}
+
+@keyframes comingSoonPulse {
+  0%, 100% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); }
 }
 
 
@@ -846,5 +882,395 @@ a {
 
   .carousel-item {
     flex: 0 0 240px;
+  }
+}
+
+/* === Doc pages (privacy, support, etc.) === */
+.doc-page {
+  padding: 6rem 1.5rem 3rem;
+}
+
+.doc-container {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  padding: 2.25rem 1.75rem;
+}
+
+.doc-eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.doc-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.doc-meta {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 2rem;
+}
+
+.doc-container h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 2rem 0 0.6rem;
+  color: var(--color-text);
+}
+
+.doc-container h2:first-of-type {
+  margin-top: 0;
+}
+
+.doc-container p,
+.doc-container li {
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+.doc-container p + p {
+  margin-top: 0.75rem;
+}
+
+.doc-container ul {
+  margin: 0.5rem 0 0 1.25rem;
+  padding: 0;
+}
+
+.doc-container li + li {
+  margin-top: 0.35rem;
+}
+
+.doc-container a {
+  color: var(--color-primary);
+  border-bottom: 1px solid rgba(var(--color-glow), 0.35);
+}
+
+.doc-container a:hover {
+  border-bottom-color: var(--color-primary);
+}
+
+.doc-summary {
+  background: rgba(var(--color-glow), 0.08);
+  border: 1px solid rgba(var(--color-glow), 0.2);
+  border-radius: 0.75rem;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.doc-summary strong {
+  color: var(--color-primary);
+}
+
+/* Theme overrides — memo-mini doc pages match the sticker look */
+.game-memo-mini .doc-container {
+  background: rgba(255, 255, 255, 0.95);
+  border: 3px solid #fff;
+  color: #283146;
+  box-shadow:
+    0 4px 0 rgba(40, 49, 70, 0.18),
+    0 8px 24px rgba(40, 49, 70, 0.18);
+}
+
+.game-memo-mini .doc-eyebrow,
+.game-memo-mini .doc-meta {
+  color: rgba(40, 49, 70, 0.55);
+}
+
+.game-memo-mini .doc-title {
+  color: #283146;
+  text-shadow: none;
+}
+
+.game-memo-mini .doc-container h2 {
+  color: #283146;
+}
+
+.game-memo-mini .doc-container p,
+.game-memo-mini .doc-container li {
+  color: rgba(40, 49, 70, 0.85);
+}
+
+.game-memo-mini .doc-container a {
+  color: #2A78B8;
+  border-bottom-color: rgba(75, 172, 247, 0.4);
+}
+
+.game-memo-mini .doc-container a:hover {
+  border-bottom-color: #2A78B8;
+}
+
+.game-memo-mini .doc-summary {
+  background: rgba(75, 172, 247, 0.12);
+  border-color: rgba(75, 172, 247, 0.35);
+  color: rgba(40, 49, 70, 0.9);
+}
+
+.game-memo-mini .doc-summary strong {
+  color: #2A78B8;
+}
+
+/* Footer mini-links (privacy, support) */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--color-primary);
+}
+
+.game-memo-mini .footer-links a {
+  color: rgba(40, 49, 70, 0.6);
+}
+
+.game-memo-mini .footer-links a:hover {
+  color: #283146;
+}
+
+/* Support page — game contact cards */
+.support-games {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.support-game {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  transition: border-color 0.2s, background 0.2s;
+  color: inherit;
+}
+
+.support-game:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.support-game img {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.support-game-name {
+  font-weight: 600;
+  color: #fff;
+}
+
+.support-game-tagline {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 0.1rem;
+}
+
+/* Language toggle (bilingual doc pages) */
+.doc-lang-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 720px;
+  margin: 0 auto 1.25rem;
+}
+
+.doc-lang-toggle a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.doc-lang-toggle a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.game-memo-mini .doc-lang-toggle a {
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid #fff;
+  color: #283146;
+  box-shadow: 0 2px 0 rgba(40, 49, 70, 0.12);
+}
+
+.game-memo-mini .doc-lang-toggle a:hover {
+  background: #fff;
+  color: #2A78B8;
+}
+
+/* Stacked doc-containers (e.g. EN + PL on one page) */
+.doc-container + .doc-container {
+  margin-top: 1.5rem;
+}
+
+.doc-container code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.92em;
+}
+
+.game-memo-mini .doc-container code {
+  background: rgba(40, 49, 70, 0.08);
+  color: #283146;
+}
+
+@media (min-width: 600px) {
+  .doc-container {
+    padding: 2.75rem 2.25rem;
+  }
+  .doc-title {
+    font-size: 2rem;
+  }
+}
+
+/* === Image lightbox (click a screenshot to enlarge) === */
+.phone-mockup img {
+  cursor: zoom-in;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(5, 8, 16, 0.92);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.lightbox--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-image {
+  max-width: min(420px, 92vw);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  transform: scale(0.96);
+  transition: transform 0.25s ease;
+  display: block;
+}
+
+.lightbox--open .lightbox-image {
+  transform: scale(1);
+}
+
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  line-height: 1;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.lightbox-close {
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  font-size: 1.6rem;
+  padding-bottom: 2px;
+}
+
+.lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.75rem;
+}
+
+.lightbox-nav--prev { left: 1rem; }
+.lightbox-nav--next { right: 1rem; }
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.lightbox-nav:hover {
+  transform: translateY(-50%) scale(1.06);
+}
+
+.lightbox-close:focus-visible,
+.lightbox-nav:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+  .lightbox-nav--prev { left: 0.5rem; }
+  .lightbox-nav--next { right: 0.5rem; }
+  .lightbox-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox,
+  .lightbox-image {
+    transition: none;
   }
 }
