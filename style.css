@@ -1378,3 +1378,123 @@ a {
     transition: none;
   }
 }
+
+/* ============================================================
+   Per-game signature visuals — the audit's "one borrowed visual
+   primitive per game" recommendation. Memo Mini already had its
+   sticker treatment. Cosmic Path and Memo Maze now each get one
+   distinctive element so the three games stop reading as
+   color-swaps of the same template.
+   ============================================================ */
+
+/* === Cosmic Path: comet trace around feature cards ===
+   When a feature card scrolls into view, a glowing dot orbits its
+   rounded-rectangle border once. The card's own ::after is the
+   comet head; CSS Motion Path (offset-path) drives the orbit.
+   Browsers without offset-path degrade silently — no dot drawn. */
+.game-cosmic-path .feature-card {
+  position: relative;
+  overflow: visible;
+}
+
+.game-cosmic-path .feature-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: rgba(var(--color-glow), 1);
+  box-shadow:
+    0 0 8px 2px rgba(var(--color-glow), 0.9),
+    0 0 24px 6px rgba(var(--color-glow), 0.45);
+  offset-path: rect(0 100% 100% 0 round 1rem);
+  offset-distance: 0%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.game-cosmic-path .feature-card.visible::after {
+  animation: cosmicCometTrace 2.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Stagger durations so the six cards orbit at slightly different
+   speeds — same trick real-world comets pull and the eye reads as
+   "not just six synced loops". */
+.game-cosmic-path .feature-card:nth-child(2).visible::after { animation-duration: 2.7s; }
+.game-cosmic-path .feature-card:nth-child(3).visible::after { animation-duration: 2.1s; }
+.game-cosmic-path .feature-card:nth-child(4).visible::after { animation-duration: 2.5s; }
+.game-cosmic-path .feature-card:nth-child(5).visible::after { animation-duration: 2.3s; }
+.game-cosmic-path .feature-card:nth-child(6).visible::after { animation-duration: 2.85s; }
+
+@keyframes cosmicCometTrace {
+  0%   { opacity: 0; offset-distance: 0%; }
+  6%   { opacity: 1; }
+  94%  { opacity: 1; }
+  100% { opacity: 0; offset-distance: 100%; }
+}
+
+/* === Memo Maze: torchlit stone-tile feature cards ===
+   Each card is one chiseled stone. Asymmetric border-radius per
+   card so the six "stones" don't look stamped from one mould, an
+   SVG noise overlay gives a faint rock-grain, and an inset
+   warm-light shadow flickers like the in-game torchlit dungeon. */
+.game-memo-maze .feature-card {
+  position: relative;
+  border-radius: 1.4rem 0.55rem 1.4rem 0.55rem;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(var(--color-glow), 0.08), transparent 65%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.55  0 0 0 0 0.42  0 0 0 0 0.25  0 0 0 0.08 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  box-shadow:
+    inset 0 -22px 40px rgba(0, 0, 0, 0.35),
+    inset 0 8px 24px rgba(var(--color-glow), 0.08);
+  animation: torchFlicker 5.2s ease-in-out infinite;
+}
+
+.game-memo-maze .feature-card:nth-child(1) { border-radius: 1.4rem 0.5rem 1.4rem 0.5rem; animation-delay: 0s; }
+.game-memo-maze .feature-card:nth-child(2) { border-radius: 0.5rem 1.4rem 0.5rem 1.4rem; animation-delay: 0.9s; }
+.game-memo-maze .feature-card:nth-child(3) { border-radius: 1.4rem 1.4rem 0.4rem 1.4rem; animation-delay: 1.7s; }
+.game-memo-maze .feature-card:nth-child(4) { border-radius: 1.4rem 0.4rem 1.4rem 1.4rem; animation-delay: 2.4s; }
+.game-memo-maze .feature-card:nth-child(5) { border-radius: 1.5rem 1.5rem 1.5rem 0.4rem; animation-delay: 3.1s; }
+.game-memo-maze .feature-card:nth-child(6) { border-radius: 0.4rem 1.5rem 1.5rem 1.5rem; animation-delay: 3.8s; }
+
+@keyframes torchFlicker {
+  0%, 100% {
+    box-shadow:
+      inset 0 -22px 40px rgba(0, 0, 0, 0.35),
+      inset 0 8px 24px rgba(var(--color-glow), 0.08);
+  }
+  22% {
+    box-shadow:
+      inset 0 -22px 40px rgba(0, 0, 0, 0.40),
+      inset 0 8px 30px rgba(var(--color-glow), 0.13);
+  }
+  35% {
+    box-shadow:
+      inset 0 -22px 40px rgba(0, 0, 0, 0.32),
+      inset 0 8px 20px rgba(var(--color-glow), 0.06);
+  }
+  58% {
+    box-shadow:
+      inset 0 -22px 40px rgba(0, 0, 0, 0.36),
+      inset 0 8px 22px rgba(var(--color-glow), 0.09);
+  }
+  74% {
+    box-shadow:
+      inset 0 -22px 40px rgba(0, 0, 0, 0.42),
+      inset 0 8px 32px rgba(var(--color-glow), 0.14);
+  }
+}
+
+/* Respect reduced-motion: pause flicker, suppress comet trace. */
+@media (prefers-reduced-motion: reduce) {
+  .game-memo-maze .feature-card {
+    animation: none;
+  }
+  .game-cosmic-path .feature-card.visible::after {
+    animation: none;
+    opacity: 0;
+  }
+}
