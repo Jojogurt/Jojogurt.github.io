@@ -275,7 +275,10 @@ a {
   box-shadow: 0 0 30px rgba(var(--color-glow), 0.5);
 }
 
-/* Coming-soon hero label (replaces hero CTA before launch) */
+/* Coming-soon hero pill — doubles as a mailto so a visitor excited about
+   a not-yet-shipped game has a one-tap way to be notified. The pulsing
+   dot stays for the "this thing is alive" feel; hover lifts the pill so
+   it visibly invites a click. */
 .hero-coming-soon {
   display: inline-flex;
   align-items: center;
@@ -289,6 +292,21 @@ a {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+a.hero-coming-soon:hover {
+  background: rgba(var(--color-glow), 0.12);
+  border-color: rgba(var(--color-glow), 0.85);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(var(--color-glow), 0.18);
+}
+
+a.hero-coming-soon:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
 }
 
 .hero-coming-soon::before {
@@ -354,10 +372,79 @@ a {
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 2;
-  transition: background 0.2s, border-color 0.2s;
+  transition: background 0.2s, border-color 0.2s, opacity 0.2s;
   align-items: center;
   justify-content: center;
   line-height: 1;
+}
+
+.carousel-arrow.disabled {
+  opacity: 0.25;
+  pointer-events: none;
+  cursor: default;
+}
+
+.carousel-arrow:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* Mobile dot indicator — sub-768px users have no arrows, so without
+   dots they can't tell how many screenshots there are or where they
+   are in the set. JS builds one button per carousel-item and toggles
+   .active based on which item is most-centered in the track. */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.5rem auto 0;
+  padding: 0;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.carousel-dot.active {
+  background: var(--color-primary);
+  transform: scale(1.25);
+}
+
+.carousel-dot:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.game-memo-mini .carousel-dot {
+  background: rgba(40, 49, 70, 0.25);
+}
+
+.game-memo-mini .carousel-dot.active {
+  background: #2A78B8;
+}
+
+/* Image fallback for broken screenshot paths — when JS catches an
+   onerror, it sets data-fallback on the phone-mockup and the alt
+   text surfaces in the dark frame instead of an empty box. */
+.phone-mockup[data-fallback]::after {
+  content: attr(data-fallback);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-style: italic;
 }
 
 .carousel-arrow:hover {
@@ -754,45 +841,6 @@ a {
   box-shadow: 0 0 20px rgba(var(--color-glow), 0.45);
 }
 
-/* === Scroll Snap (game subpages, desktop only) ===
-   Hero, screenshots, and features snap full-viewport. Download + footer scroll freely.
-   Disabled below 1024px because the 6-card features grid stacks too tall to fit. */
-@media (min-width: 1024px) and (min-height: 700px) {
-  html:has(body.game-cosmic-path),
-  html:has(body.game-memo-maze) {
-    scroll-snap-type: y mandatory;
-  }
-
-  /* JS toggles this class once the user has scrolled past features.
-     Disables snap so download + footer are reachable via normal scroll. */
-  html.snap-released {
-    scroll-snap-type: none !important;
-  }
-
-  .game-cosmic-path .hero,
-  .game-memo-maze .hero,
-  .game-cosmic-path .screenshots,
-  .game-memo-maze .screenshots,
-  .game-cosmic-path .features,
-  .game-memo-maze .features {
-    min-height: 100vh;
-    min-height: 100dvh;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-
-/* Respect reduced motion preference — disable snap when user asked for less motion */
-@media (prefers-reduced-motion: reduce) {
-  html:has(body.game-cosmic-path),
-  html:has(body.game-memo-maze) {
-    scroll-snap-type: none !important;
-  }
-}
-
 /* === Keyframe Animations === */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -834,7 +882,7 @@ a {
 }
 
 .hero-cta {
-  animation: fadeInUp 0.8s ease-out 1s both;
+  animation: fadeInUp 0.7s ease-out 0.5s both;
 }
 
 /* === Scroll Animations === */
@@ -1177,6 +1225,11 @@ a {
 .support-game:hover {
   background: rgba(255, 255, 255, 0.07);
   border-color: rgba(255, 255, 255, 0.18);
+}
+
+.support-game:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
 .support-game img {

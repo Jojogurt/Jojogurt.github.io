@@ -27,92 +27,94 @@
   window.__observeAnimated();
 })();
 
-// Scroll-snap release: once user scrolls past features, disable mandatory snap
-// so download + footer are freely reachable. Re-enable when scrolling back up.
+// Carousel UX — arrow clicks, disabled state at edges, mobile dot indicator.
+// Sub-768px users have no arrows; without dots they can't tell how many
+// screenshots there are or which one they're on. Active dot is the item
+// most-centered in the track.
 (function () {
-  var html = document.documentElement;
-  var features = document.querySelector('.features');
-  if (!features) return;
+  var wrapper = document.querySelector('.carousel-wrapper');
+  if (!wrapper) return;
+  var track = wrapper.querySelector('.carousel-track');
+  if (!track) return;
+  var leftBtn = wrapper.querySelector('.carousel-arrow--left');
+  var rightBtn = wrapper.querySelector('.carousel-arrow--right');
+  var items = track.querySelectorAll('.carousel-item');
 
-  // Only activate on game subpages where snap is enabled via CSS media query
-  var isGamePage = document.body.classList.contains('game-cosmic-path') ||
-                   document.body.classList.contains('game-memo-maze');
-  if (!isGamePage) return;
+  var scrollAmount = 260;
+  if (leftBtn) leftBtn.addEventListener('click', function () {
+    track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+  if (rightBtn) rightBtn.addEventListener('click', function () {
+    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+
+  if (!items.length) return;
+
+  // Build dot indicator row inside the wrapper so it sits beneath the track.
+  var dotsRow = document.createElement('div');
+  dotsRow.className = 'carousel-dots';
+  dotsRow.setAttribute('role', 'tablist');
+  dotsRow.setAttribute('aria-label', 'Screenshot navigation');
+  items.forEach(function (item, i) {
+    var d = document.createElement('button');
+    d.type = 'button';
+    d.className = 'carousel-dot';
+    d.setAttribute('aria-label', 'Show screenshot ' + (i + 1));
+    d.addEventListener('click', function () {
+      item.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    });
+    dotsRow.appendChild(d);
+  });
+  wrapper.appendChild(dotsRow);
+  var dots = dotsRow.querySelectorAll('.carousel-dot');
 
   var ticking = false;
-
   function update() {
     ticking = false;
-    // Release snap as soon as the user nudges below features' top edge.
-    // Tiny offset so sitting exactly on the features snap point keeps snap on.
-    var threshold = features.offsetTop + 30;
-    if (window.scrollY > threshold) {
-      html.classList.add('snap-released');
-    } else {
-      html.classList.remove('snap-released');
-    }
+    var rect = track.getBoundingClientRect();
+    var center = rect.left + rect.width / 2;
+    var closest = 0, closestDist = Infinity;
+    items.forEach(function (item, i) {
+      var r = item.getBoundingClientRect();
+      var d = Math.abs(r.left + r.width / 2 - center);
+      if (d < closestDist) { closestDist = d; closest = i; }
+    });
+    dots.forEach(function (d, i) { d.classList.toggle('active', i === closest); });
+
+    if (leftBtn) leftBtn.classList.toggle('disabled', track.scrollLeft < 4);
+    if (rightBtn) rightBtn.classList.toggle('disabled',
+      track.scrollLeft + track.clientWidth >= track.scrollWidth - 4);
   }
 
-  window.addEventListener('scroll', function () {
+  track.addEventListener('scroll', function () {
     if (!ticking) {
       window.requestAnimationFrame(update);
       ticking = true;
     }
   }, { passive: true });
-
   window.addEventListener('resize', update, { passive: true });
   update();
 })();
 
-// Vertical wheel over the carousel jumps to the next/previous <section> entirely.
-// Fine-grained scrollBy fights mandatory snap and feels laggy, so we make one decisive hop.
+// Image error fallback — when a screenshot 404s, surface its alt text in
+// the dark phone-mockup frame instead of leaving an empty black box.
+// Also disables pointer events on the broken image so the lightbox
+// click handler attached below doesn't open an empty modal for it.
 (function () {
-  var track = document.querySelector('.carousel-track');
-  if (!track) return;
-
-  var locked = false;
-
-  track.addEventListener('wheel', function (e) {
-    // Leave horizontal wheel alone — that's carousel navigation
-    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
-    e.preventDefault();
-    if (locked) return;
-
-    var section = track.closest('section');
-    if (!section) return;
-
-    var dir = e.deltaY > 0 ? 'next' : 'prev';
-    var target = dir === 'next' ? section.nextElementSibling : section.previousElementSibling;
-    while (target && target.tagName !== 'SECTION') {
-      target = dir === 'next' ? target.nextElementSibling : target.previousElementSibling;
-    }
-    if (!target) return;
-
-    locked = true;
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(function () { locked = false; }, 700);
-  }, { passive: false });
-})();
-
-// Carousel arrows
-(function () {
-  var track = document.querySelector('.carousel-track');
-  var leftBtn = document.querySelector('.carousel-arrow--left');
-  var rightBtn = document.querySelector('.carousel-arrow--right');
-  if (!track || !leftBtn || !rightBtn) return;
-
-  var scrollAmount = 260;
-
-  leftBtn.addEventListener('click', function () {
-    track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  });
-
-  rightBtn.addEventListener('click', function () {
-    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  document.querySelectorAll('.phone-mockup img').forEach(function (img) {
+    img.addEventListener('error', function () {
+      var parent = img.parentElement;
+      if (!parent) return;
+      img.style.display = 'none';
+      img.style.pointerEvents = 'none';
+      parent.dataset.fallback = img.alt || 'Screenshot unavailable';
+    });
   });
 })();
 
-// Image lightbox — click a carousel screenshot to view it full-size
+// Image lightbox — click a carousel screenshot to view it full-size.
+// Locks the background via `inert` so Tab can't escape the dialog and
+// screen readers don't read both layers at once.
 (function () {
   var images = document.querySelectorAll('.phone-mockup img');
   if (!images.length) return;
@@ -139,6 +141,14 @@
   });
   var lastFocus = null;
 
+  function lockBackground(locked) {
+    Array.prototype.forEach.call(document.body.children, function (el) {
+      if (el === overlay) return;
+      if (locked) el.inert = true;
+      else el.inert = false;
+    });
+  }
+
   function show(index) {
     if (index < 0 || index >= items.length) return;
     current = index;
@@ -149,6 +159,7 @@
       overlay.classList.add('lightbox--open');
       overlay.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      lockBackground(true);
       closeBtn.focus();
     }
   }
@@ -157,6 +168,7 @@
     overlay.classList.remove('lightbox--open');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    lockBackground(false);
     if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
     setTimeout(function () {
       if (!overlay.classList.contains('lightbox--open')) lightboxImg.src = '';
