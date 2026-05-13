@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Games</title>
-  <meta name="description" content="A small collection of mobile puzzle games.">
+  <title>Karol Kędziora — Memory games for mobile</title>
+  <meta name="description" content="Three small memory games for iOS and Android, built in Godot by Karol Kędziora. No ads, no dark patterns — just memory.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,15 +13,15 @@
 <body class="index-body">
 
   <section class="index-hero">
-    <h1 class="index-title">Games</h1>
-    <p class="index-subtitle">Small, hand-crafted memory puzzles for mobile.</p>
+    <h1 class="index-title">Memory puzzles for mobile</h1>
+    <p class="index-subtitle">Three small games by Karol Kędziora. Built in Godot. No ads, no dark patterns — just memory.</p>
   </section>
 
   <!-- Cards are static HTML so cross-document View Transitions have a reliable DOM
        to snapshot. Regenerated from games.json whenever the registry changes. -->
   <main class="games-root">
     <div class="games-grid">
-      <a class="game-card animate-on-scroll" href="cosmic-path.html">
+      <a class="game-card animate-on-scroll" data-game="cosmic-path" href="cosmic-path.html">
         <img class="game-card-icon vt-cosmic-path" src="images/cosmic-path/icon.png" alt="Cosmic Path icon" loading="eager" decoding="sync">
         <div class="game-card-body">
           <div class="game-card-name">Cosmic Path</div>
@@ -30,7 +30,7 @@
         </div>
       </a>
 
-      <a class="game-card animate-on-scroll" href="memo-maze.html">
+      <a class="game-card animate-on-scroll" data-game="memo-maze" href="memo-maze.html">
         <img class="game-card-icon vt-memo-maze" src="images/memo-maze/icon.png" alt="Memo Maze icon" loading="eager" decoding="sync">
         <div class="game-card-body">
           <div class="game-card-name">Memo Maze</div>
@@ -39,7 +39,7 @@
         </div>
       </a>
 
-      <a class="game-card animate-on-scroll" href="memo-mini.html">
+      <a class="game-card animate-on-scroll" data-game="memo-mini" href="memo-mini.html">
         <img class="game-card-icon vt-memo-mini" src="images/memo-mini/icon.png" alt="Memo Mini icon" loading="eager" decoding="sync">
         <div class="game-card-body">
           <div class="game-card-name">Memo Mini</div>
@@ -53,6 +53,12 @@
   <footer class="footer">
     <div class="footer-content">
       <span class="footer-year">&copy; 2026</span>
+    </div>
+    <div class="footer-meta">
+      Solo studio by Karol Kędziora. Memory games in Godot, from Poland.
+    </div>
+    <div class="footer-links">
+      <a href="support.html">Support</a>
     </div>
   </footer>
 

@@ -518,6 +518,7 @@ a {
 
 
 .game-card {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 1.25rem;
@@ -525,7 +526,8 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 1.25rem;
   padding: 1.5rem;
-  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.3s;
   color: var(--color-text);
 }
 
@@ -533,6 +535,54 @@ a {
   transform: translateY(-3px);
   background: var(--color-surface-hover);
   border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Per-game accent on landing cards — pulls each game's hero color
+   through as a left-edge strip + matching icon glow + hover tint so
+   the three cards read as distinct products rather than three rows
+   in a list. */
+.game-card[data-game="cosmic-path"] {
+  --card-accent: #22D3EE;
+  --card-glow: 34, 211, 238;
+}
+.game-card[data-game="memo-maze"] {
+  --card-accent: #E8B04A;
+  --card-glow: 232, 176, 74;
+}
+.game-card[data-game="memo-mini"] {
+  --card-accent: #F5A623;
+  --card-glow: 245, 166, 35;
+}
+
+.game-card[data-game]::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--card-accent);
+  opacity: 0.85;
+}
+
+.game-card[data-game] .game-card-icon {
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(var(--card-glow), 0.25),
+    0 0 24px rgba(var(--card-glow), 0.18);
+}
+
+.game-card[data-game]:hover {
+  border-color: rgba(var(--card-glow), 0.35);
+  box-shadow: 0 12px 32px rgba(var(--card-glow), 0.12);
+}
+
+.game-card[data-game]:hover::before {
+  opacity: 1;
+  width: 5px;
+}
+
+.game-card[data-game]:focus-visible {
+  outline: 2px solid var(--card-accent);
+  outline-offset: 4px;
 }
 
 .game-card-icon {
@@ -1023,13 +1073,28 @@ a {
   color: #2A78B8;
 }
 
+/* Footer personality line — "Made by Karol Kędziora · Built in Godot" etc.
+   Audit flagged the footer as the visual equivalent of saying "this site
+   is over." This adds a single human-voice line above the link row. */
+.footer-meta {
+  text-align: center;
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.42);
+  letter-spacing: 0.01em;
+}
+
+.game-memo-mini .footer-meta {
+  color: rgba(40, 49, 70, 0.55);
+}
+
 /* Footer mini-links (privacy, support) */
 .footer-links {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.4rem 1rem;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   font-size: 0.85rem;
 }
 
