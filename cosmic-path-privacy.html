@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmic Path — Privacy Policy</title>
+  <meta name="description" content="Privacy policy for Cosmic Path. What the app collects, what third-party SDKs it uses, and your rights.">
+  <link rel="icon" type="image/png" href="images/cosmic-path/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="game-cosmic-path">
+
+  <nav class="game-nav" aria-label="Game navigation">
+    <a class="game-nav-back" href="cosmic-path.html" aria-label="Back to Cosmic Path">&larr;</a>
+    <div class="game-nav-icons">
+      <a href="cosmic-path.html" aria-label="Cosmic Path" aria-current="page">
+        <img class="game-nav-icon active vt-cosmic-path" src="images/cosmic-path/icon.png" alt="Cosmic Path" loading="eager" decoding="sync">
+      </a>
+    </div>
+  </nav>
+
+  <main class="doc-page">
+    <div class="doc-lang-toggle">
+      <a href="#en">English</a>
+      <a href="#pl">Polski</a>
+    </div>
+
+    <article class="doc-container" id="en" lang="en">
+      <div class="doc-eyebrow">Cosmic Path</div>
+      <h1 class="doc-title">Privacy Policy</h1>
+      <p class="doc-meta">Effective 18 May 2026 · Last updated 18 May 2026</p>
+
+      <div class="doc-summary">
+        <strong>Short version:</strong> Cosmic Path uses standard mobile SDKs (AdMob, GameAnalytics, Sentry) and the platform's own cloud-save / leaderboard services. We don't run our own user accounts or servers, and we never see your name, email, payment information, or anything else that personally identifies you. The full detail is below.
+      </div>
+
+      <p>This Privacy Policy explains what information <strong>Cosmic Path</strong> ("the App", "we", "our") handles when you play it on iOS or Android. The App is developed by Karol Kędziora ("the Developer"). For questions, email <a href="mailto:kedziora.karol@gmail.com">kedziora.karol@gmail.com</a>.</p>
+
+      <h2>1. What we collect</h2>
+      <p>We designed Cosmic Path to collect as little personal data as possible. The App itself does not ask for your name, email, phone number, location, photos, microphone, camera, or contacts. It does not create or store any user account on our own servers.</p>
+      <p>What is processed falls into two categories.</p>
+
+      <h2>1.1. Data stored on your device only</h2>
+      <p>The game saves your progress and preferences to a local file (<code>save.json</code>) on your device:</p>
+      <ul>
+        <li>Current and highest level reached</li>
+        <li>Score from the current run</li>
+        <li>Audio, music, and haptics preferences</li>
+        <li>Whether you've finished the tutorial</li>
+        <li>Number of times you've launched the game</li>
+        <li>Daily-challenge state (last completed date, current streak)</li>
+        <li>Skill charge counts</li>
+        <li>Relax-mode parameters (grid size, path length, speed)</li>
+        <li>Whether you've purchased "Remove Ads"</li>
+        <li>Whether cloud sync is enabled</li>
+      </ul>
+      <p>This data never leaves your device unless cloud sync is on (see §2.4). Uninstalling the App deletes this file.</p>
+
+      <h2>1.2. Data processed by third-party services</h2>
+      <p>The App integrates a small number of third-party SDKs and platform services described in §2. Each handles its own data flow under its own privacy policy — we don't add anything to what they collect by default.</p>
+
+      <h2>2. Third-party services</h2>
+
+      <h2>2.1. Google AdMob (advertising)</h2>
+      <p>For free players, the App shows ads delivered by Google AdMob. AdMob may use your device's advertising identifier (IDFA on iOS, GAID on Android — only with your OS-level consent) and standard ad-request data (IP address, device model, OS version, language, ad interactions). You can purchase "Remove Ads" to remove banners and interstitials.</p>
+      <p>Google's policies: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a> and <a href="https://support.google.com/admob/answer/6128543">support.google.com/admob/answer/6128543</a>.</p>
+
+      <h2>2.2. GameAnalytics (gameplay analytics)</h2>
+      <p>The App sends anonymous gameplay events to GameAnalytics — for example: level started / completed / failed, skills used, daily-challenge completion, tutorial progress, IAP started / succeeded, menu actions, session start and end. <strong>No name, email, or device identifier is attached.</strong> GameAnalytics helps us understand game balance and player flow.</p>
+      <p>Privacy policy: <a href="https://gameanalytics.com/privacy">gameanalytics.com/privacy</a>.</p>
+
+      <h2>2.3. Sentry (crash reports)</h2>
+      <p>If the App crashes, Sentry receives a stack trace and the scene structure at the moment of the crash so we can fix bugs. Crash reports may incidentally include log messages but <strong>no personal information is attached</strong> (no name, email, screenshots). We do not link crash reports to any specific user.</p>
+      <p>Privacy policy: <a href="https://sentry.io/privacy/">sentry.io/privacy</a>.</p>
+
+      <h2>2.4. iCloud and Play Games Saved Games (cloud sync)</h2>
+      <p>If cloud sync is enabled (Settings → cloud sync row), the App backs up your <code>save.json</code> to your own iCloud account (iOS) or Play Games Saved Games slot (Android) so you can continue progress across devices. Apple / Google host this data on your behalf — we do not run our own save server. You can delete cloud data at any time via your platform settings.</p>
+      <p>Cloud sync excludes the "Remove Ads" flag (the store handles that directly) and the cloud-sync toggle itself.</p>
+
+      <h2>2.5. Game Center and Play Games (leaderboards &amp; achievements)</h2>
+      <p>If you sign in to Game Center / Play Games, your scores and unlocked achievements are submitted to those services so you appear on leaderboards. The submitted data is integer values only (level reached, score, streak). The platform identifies you using its own account ID — we never see your real name unless you've made your platform profile public.</p>
+      <p><a href="https://www.apple.com/legal/privacy/">Apple Game Center</a> · <a href="https://policies.google.com/privacy">Google Play Games</a></p>
+
+      <h2>2.6. Apple StoreKit and Google Play Billing (purchases)</h2>
+      <p>If you buy "Remove Ads", Apple or Google handles the entire transaction. We never see your credit card or account information — we only receive a confirmation that the purchase succeeded for the product ID <code>com.kked.games.cosmicPath.adFree</code>. Restoring a purchase works the same way.</p>
+
+      <h2>2.7. App Store / Play Store in-app review</h2>
+      <p>If we ask you to rate the App, the rating prompt is presented by Apple or Google directly. We never see your review content; you submit it to the store, not to us.</p>
+
+      <h2>2.8. Daily-challenge server time</h2>
+      <p>Once per launch, the App makes a single HTTPS request to a small Cloudflare Worker (<code>https://raspy-poetry-6c03.kedziora-karol.workers.dev/</code>) that returns today's UTC date. This ensures everyone gets the same Daily Challenge regardless of their device clock or timezone. <strong>The request contains no personal data, no identifiers, and no body</strong> — only standard HTTP metadata such as your IP address, which we don't log persistently.</p>
+
+      <h2>3. Permissions the App requests</h2>
+      <ul>
+        <li><strong>Internet / network state</strong> — required for ads, cloud sync, leaderboards, analytics, and the daily-challenge date check.</li>
+        <li><strong>Vibration / haptics</strong> (Android) — tactile feedback on button taps and gameplay events. Disable in Settings.</li>
+      </ul>
+      <p>The App does <strong>not</strong> request location, camera, microphone, contacts, photo library, calendar, SMS, or any other sensitive permission.</p>
+
+      <h2>4. Children</h2>
+      <p>Cosmic Path is a non-violent puzzle game suitable for general audiences but is <strong>not specifically directed at children under 13</strong>. We do not knowingly collect personal information from children. If you are a parent or guardian and believe your child has used the App, simply delete the App and any local progress is removed.</p>
+      <p>We do not currently enable "child-directed treatment" on AdMob. If you are publishing the App in a market that requires COPPA / GDPR-K compliance, please reach out before installing.</p>
+
+      <h2>5. Your rights and choices</h2>
+      <p>Because we don't collect personal data ourselves, there is nothing on our side to access, correct, or delete. You can, however:</p>
+      <ul>
+        <li><strong>Reset your progress</strong> — delete the App from your device.</li>
+        <li><strong>Delete cloud saves</strong> — iOS: Settings → Apple ID → iCloud → Manage Storage → Cosmic Path. Android: Play Games → Settings → Delete Play Games account &amp; data.</li>
+        <li><strong>Reset your advertising identifier</strong> — iOS: Settings → Privacy &amp; Security → Tracking. Android: Settings → Google → Ads.</li>
+        <li><strong>Opt out of personalized ads</strong> — see Google's instructions at <a href="https://support.google.com/My-Ad-Center-Help">support.google.com/My-Ad-Center-Help</a>.</li>
+        <li><strong>Stop crash reports &amp; analytics</strong> — uninstalling the App stops all data collection going forward.</li>
+      </ul>
+      <p>For requests related to GameAnalytics or Sentry data tied to your device, contact those providers directly using the links in §2 — we don't have a way to identify you on their side, since we don't tag events with personal identifiers.</p>
+
+      <h2>6. Data retention</h2>
+      <ul>
+        <li><strong>On your device:</strong> until you uninstall the App.</li>
+        <li><strong>iCloud / Play Games Saved Games:</strong> until you delete it via your platform settings.</li>
+        <li><strong>GameAnalytics:</strong> per GameAnalytics' retention schedule (typically 12–24 months for raw events).</li>
+        <li><strong>Sentry:</strong> per Sentry's retention schedule (typically 30–90 days on free tiers).</li>
+        <li><strong>AdMob:</strong> per Google's policies.</li>
+      </ul>
+
+      <h2>7. Security</h2>
+      <p>The local save file is signed with an HMAC to detect tampering. Cloud syncs use Apple and Google's own encrypted transports. Third-party SDKs operate over HTTPS. No system is perfectly secure, but the only data of consequence here is your gameplay progress.</p>
+
+      <h2>8. International users</h2>
+      <p>Cosmic Path is available worldwide. The third-party services we use may transfer data outside your country (e.g. to the US, EU, or Asia depending on the provider). By using the App, you acknowledge these transfers occur under the providers' own legal frameworks.</p>
+      <p>If you are in the EU/EEA: our legal basis for the limited processing described above is our <strong>legitimate interest</strong> in operating, improving, and monetizing the game. You can object at any time by uninstalling the App.</p>
+
+      <h2>9. Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we do, the "Last updated" date at the top changes. Material changes are also announced in the App's update notes.</p>
+
+      <h2>10. Contact</h2>
+      <p>Developer: Karol Kędziora<br>
+      Email: <a href="mailto:kedziora.karol@gmail.com">kedziora.karol@gmail.com</a><br>
+      App: Cosmic Path<br>
+      Bundle IDs: <code>com.kked.games.follow-the-trail</code> (iOS), <code>com.kked.games.cosmicpath</code> (Android)</p>
+    </article>
+
+    <article class="doc-container" id="pl" lang="pl">
+      <div class="doc-eyebrow">Cosmic Path</div>
+      <h1 class="doc-title">Polityka Prywatności</h1>
+      <p class="doc-meta">Data wejścia w życie: 18 maja 2026 · Ostatnia aktualizacja: 18 maja 2026</p>
+
+      <div class="doc-summary">
+        <strong>Krótkie podsumowanie:</strong> Cosmic Path korzysta ze standardowych SDK mobilnych (AdMob, GameAnalytics, Sentry) oraz usług platform Apple i Google (cloud save, leaderboards). Nie prowadzimy własnych kont użytkowników ani serwerów, nigdy nie widzimy Twojego imienia, e-maila, danych płatniczych ani niczego, co mogłoby Cię zidentyfikować. Pełne szczegóły poniżej.
+      </div>
+
+      <p>Niniejsza Polityka prywatności wyjaśnia, jakie dane są przetwarzane podczas korzystania z gry <strong>Cosmic Path</strong> ("Aplikacja", "my", "nasza") na urządzeniach iOS i Android. Aplikacja jest tworzona przez Karola Kędziorę ("Developer"). W razie pytań skontaktuj się z nami pod adresem <a href="mailto:kedziora.karol@gmail.com">kedziora.karol@gmail.com</a>.</p>
+
+      <h2>1. Jakie dane zbieramy</h2>
+      <p>Aplikacja Cosmic Path została zaprojektowana tak, aby zbierać jak najmniej danych osobowych. Sama Aplikacja nie pyta Cię o imię, nazwisko, e-mail, numer telefonu, lokalizację, zdjęcia, mikrofon, aparat ani kontakty. Nie tworzy ani nie przechowuje żadnego konta użytkownika na naszych własnych serwerach.</p>
+      <p>Przetwarzane informacje dzielą się na dwie kategorie.</p>
+
+      <h2>1.1. Dane przechowywane wyłącznie na Twoim urządzeniu</h2>
+      <p>Aplikacja zapisuje Twój postęp i ustawienia do lokalnego pliku (<code>save.json</code>) na urządzeniu:</p>
+      <ul>
+        <li>Aktualny i najwyższy osiągnięty poziom</li>
+        <li>Wynik z bieżącej rozgrywki</li>
+        <li>Ustawienia dźwięku, muzyki i wibracji</li>
+        <li>Informację, czy ukończyłeś samouczek</li>
+        <li>Liczbę uruchomień gry</li>
+        <li>Stan codziennego wyzwania (data ostatniego ukończenia, aktualna seria)</li>
+        <li>Liczbę ładunków każdej umiejętności</li>
+        <li>Parametry trybu relaksu (rozmiar siatki, długość ścieżki, prędkość)</li>
+        <li>Informację, czy zakupiłeś "Usuń reklamy"</li>
+        <li>Informację, czy włączona jest synchronizacja w chmurze</li>
+      </ul>
+      <p>Dane nie opuszczają Twojego urządzenia, chyba że włączysz synchronizację w chmurze (patrz §2.4). Odinstalowanie Aplikacji usuwa ten plik.</p>
+
+      <h2>1.2. Dane przetwarzane przez usługi zewnętrzne</h2>
+      <p>Aplikacja korzysta z niewielkiej liczby zewnętrznych SDK i usług platformowych opisanych w §2. Każde z nich obsługuje własny przepływ danych zgodnie ze swoją polityką prywatności — nie dodajemy nic ponad to, co zbierają domyślnie.</p>
+
+      <h2>2. Usługi zewnętrzne</h2>
+
+      <h2>2.1. Google AdMob (reklamy)</h2>
+      <p>Graczom korzystającym z darmowej wersji Aplikacja wyświetla reklamy dostarczane przez Google AdMob. AdMob może wykorzystywać identyfikator reklamowy Twojego urządzenia (IDFA na iOS, GAID na Android — wyłącznie za Twoją zgodą na poziomie systemu) oraz standardowe dane żądania reklamowego (adres IP, model urządzenia, wersja systemu, język, interakcje z reklamą). Możesz wykupić "Usuń reklamy", aby usunąć banery i reklamy pełnoekranowe.</p>
+      <p>Polityki Google: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a> oraz <a href="https://support.google.com/admob/answer/6128543">support.google.com/admob/answer/6128543</a>.</p>
+
+      <h2>2.2. GameAnalytics (analityka rozgrywki)</h2>
+      <p>Aplikacja wysyła anonimowe zdarzenia rozgrywki do GameAnalytics — np. rozpoczęcie / ukończenie / niezaliczenie poziomu, użycie umiejętności, ukończenie codziennego wyzwania, postęp w samouczku, rozpoczęcie / sukces zakupu, interakcje z menu, początek i koniec sesji. <strong>Do tych zdarzeń nie są dołączane imię, e-mail ani identyfikator urządzenia.</strong> GameAnalytics pomaga nam zrozumieć balans gry i przepływ użytkowników.</p>
+      <p>Polityka prywatności: <a href="https://gameanalytics.com/privacy">gameanalytics.com/privacy</a>.</p>
+
+      <h2>2.3. Sentry (raporty awarii)</h2>
+      <p>Jeśli Aplikacja ulegnie awarii, Sentry otrzymuje ślad stosu i strukturę sceny w momencie awarii, abyśmy mogli naprawić błędy. Raporty awarii mogą zawierać komunikaty z logów, ale <strong>nie są dołączane żadne dane osobowe</strong> (brak imienia, e-maila, zrzutów ekranu). Nie łączymy raportów awarii z konkretnymi użytkownikami.</p>
+      <p>Polityka prywatności: <a href="https://sentry.io/privacy/">sentry.io/privacy</a>.</p>
+
+      <h2>2.4. iCloud i Play Games Saved Games (synchronizacja w chmurze)</h2>
+      <p>Jeżeli synchronizacja w chmurze jest włączona (Ustawienia → wiersz synchronizacji w chmurze), Aplikacja kopiuje Twój plik <code>save.json</code> na Twoje własne konto iCloud (iOS) lub do slotu Saved Games w Play Games (Android), aby umożliwić kontynuację postępu na innych urządzeniach. Apple / Google przechowują te dane w Twoim imieniu — nie prowadzimy własnego serwera zapisów. Możesz w każdej chwili usunąć dane z chmury w ustawieniach platformy.</p>
+      <p>Synchronizacja w chmurze nie obejmuje flagi "Usuń reklamy" (obsługiwanej bezpośrednio przez sklep) ani samej preferencji synchronizacji.</p>
+
+      <h2>2.5. Game Center i Play Games (tablice wyników i osiągnięcia)</h2>
+      <p>Jeśli zalogujesz się do Game Center / Play Games, Twoje wyniki i zdobyte osiągnięcia są przesyłane do tych usług, aby pojawić się w rankingach. Przesyłane dane to wyłącznie wartości liczbowe (osiągnięty poziom, wynik, seria). Platforma identyfikuje Cię własnym identyfikatorem konta — nigdy nie widzimy Twojego prawdziwego imienia, chyba że Twój profil platformowy jest publiczny.</p>
+      <p><a href="https://www.apple.com/legal/privacy/">Apple Game Center</a> · <a href="https://policies.google.com/privacy">Google Play Games</a></p>
+
+      <h2>2.6. Apple StoreKit i Google Play Billing (zakupy)</h2>
+      <p>Jeśli kupujesz "Usuń reklamy", całą transakcję obsługuje Apple lub Google. Nigdy nie widzimy danych Twojej karty ani konta — otrzymujemy jedynie potwierdzenie, że zakup produktu <code>com.kked.games.cosmicPath.adFree</code> się powiódł. Przywracanie zakupu działa tak samo.</p>
+
+      <h2>2.7. Ocena Aplikacji w App Store / Google Play</h2>
+      <p>Jeśli zaprosimy Cię do oceny Aplikacji, monit zostaje wyświetlony bezpośrednio przez Apple lub Google. Nigdy nie widzimy treści Twojej recenzji; przesyłasz ją do sklepu, nie do nas.</p>
+
+      <h2>2.8. Czas serwera dla codziennego wyzwania</h2>
+      <p>Raz na każde uruchomienie Aplikacja wykonuje pojedyncze zapytanie HTTPS do niewielkiego Cloudflare Workera (<code>https://raspy-poetry-6c03.kedziora-karol.workers.dev/</code>), który zwraca dzisiejszą datę UTC. Dzięki temu każdy gracz otrzymuje tę samą zagadkę Daily Challenge niezależnie od zegara urządzenia lub strefy czasowej. <strong>Zapytanie nie zawiera żadnych danych osobowych, identyfikatorów ani treści w body</strong> — wyłącznie standardowe metadane HTTP, takie jak adres IP, których nie zapisujemy trwale.</p>
+
+      <h2>3. Uprawnienia, o które prosi Aplikacja</h2>
+      <ul>
+        <li><strong>Internet / stan sieci</strong> — wymagane do reklam, synchronizacji w chmurze, tablic wyników, analityki oraz sprawdzania daty codziennego wyzwania.</li>
+        <li><strong>Wibracje / haptyka</strong> (Android) — do feedbacku dotykowego przy stuknięciach przycisków i wydarzeniach w grze. Można wyłączyć w Ustawieniach.</li>
+      </ul>
+      <p>Aplikacja <strong>nie</strong> prosi o lokalizację, aparat, mikrofon, kontakty, galerię zdjęć, kalendarz, SMS ani żadne inne wrażliwe uprawnienia.</p>
+
+      <h2>4. Dzieci</h2>
+      <p>Cosmic Path to gra logiczna pozbawiona przemocy, odpowiednia dla szerokiej grupy odbiorców, ale <strong>nie jest specjalnie skierowana do dzieci poniżej 13. roku życia</strong>. Świadomie nie zbieramy danych osobowych dzieci. Jeśli jesteś rodzicem lub opiekunem i sądzisz, że Twoje dziecko korzystało z Aplikacji, możesz po prostu odinstalować Aplikację — wszystkie lokalne dane postępu zostaną usunięte.</p>
+      <p>Obecnie nie aktywujemy w AdMob trybu "child-directed treatment". Jeśli planujesz publikować Aplikację na rynku wymagającym zgodności z COPPA / RODO-K, skontaktuj się z nami przed instalacją.</p>
+
+      <h2>5. Twoje prawa i wybory</h2>
+      <p>Ponieważ sami nie zbieramy danych osobowych, po naszej stronie nie ma do czego uzyskiwać dostępu, niczego korygować ani usuwać. Możesz jednak:</p>
+      <ul>
+        <li><strong>Zresetować postęp</strong> — odinstalować Aplikację.</li>
+        <li><strong>Usunąć zapisy w chmurze</strong> — iOS: Ustawienia → Apple ID → iCloud → Zarządzaj pamięcią → Cosmic Path. Android: Play Games → Ustawienia → Usuń konto Play Games i dane.</li>
+        <li><strong>Zresetować identyfikator reklamowy</strong> — iOS: Ustawienia → Prywatność i zabezpieczenia → Śledzenie. Android: Ustawienia → Google → Reklamy.</li>
+        <li><strong>Zrezygnować z reklam spersonalizowanych</strong> — instrukcje Google: <a href="https://support.google.com/My-Ad-Center-Help">support.google.com/My-Ad-Center-Help</a>.</li>
+        <li><strong>Zatrzymać raporty awarii i analitykę</strong> — odinstalowanie Aplikacji zatrzymuje całe zbieranie danych na przyszłość.</li>
+      </ul>
+      <p>W sprawach dotyczących danych powiązanych z Twoim urządzeniem po stronie GameAnalytics lub Sentry skontaktuj się bezpośrednio z tymi dostawcami za pomocą linków w §2 — my nie mamy jak Cię u nich zidentyfikować, ponieważ nie tagujemy zdarzeń identyfikatorami osobowymi.</p>
+
+      <h2>6. Okresy przechowywania danych</h2>
+      <ul>
+        <li><strong>Na Twoim urządzeniu:</strong> do momentu odinstalowania Aplikacji.</li>
+        <li><strong>iCloud / Play Games Saved Games:</strong> do momentu usunięcia przez Ciebie w ustawieniach platformy.</li>
+        <li><strong>GameAnalytics:</strong> zgodnie z harmonogramem GameAnalytics (zwykle 12–24 miesięcy dla surowych zdarzeń).</li>
+        <li><strong>Sentry:</strong> zgodnie z harmonogramem Sentry (zwykle 30–90 dni dla planów darmowych).</li>
+        <li><strong>AdMob:</strong> zgodnie z politykami Google.</li>
+      </ul>
+
+      <h2>7. Bezpieczeństwo</h2>
+      <p>Lokalny plik zapisu jest podpisany HMAC, aby wykrywać manipulacje. Synchronizacje w chmurze korzystają z zaszyfrowanych mechanizmów transportowych Apple i Google. Zewnętrzne SDK komunikują się przez HTTPS. Żaden system nie jest w pełni bezpieczny, ale jedyne dane o istotnym znaczeniu to Twój postęp w grze.</p>
+
+      <h2>8. Użytkownicy międzynarodowi</h2>
+      <p>Cosmic Path jest dostępna na całym świecie. Zewnętrzne usługi, z których korzystamy, mogą przesyłać dane poza Twój kraj (np. do USA, UE lub Azji, w zależności od dostawcy). Korzystając z Aplikacji, akceptujesz, że takie transfery zachodzą w ramach własnych podstaw prawnych dostawców.</p>
+      <p>Jeśli jesteś w UE/EOG: podstawą prawną dla ograniczonego przetwarzania opisanego powyżej jest nasz <strong>uzasadniony interes</strong> w prowadzeniu, ulepszaniu i monetyzacji gry. Możesz w każdej chwili wnieść sprzeciw, odinstalowując Aplikację.</p>
+
+      <h2>9. Zmiany w polityce</h2>
+      <p>Co jakiś czas możemy aktualizować niniejszą Politykę prywatności. Wówczas zaktualizujemy datę "Ostatniej aktualizacji" na górze dokumentu. Istotne zmiany zostaną ogłoszone w notatkach aktualizacji Aplikacji.</p>
+
+      <h2>10. Kontakt</h2>
+      <p>Developer: Karol Kędziora<br>
+      E-mail: <a href="mailto:kedziora.karol@gmail.com">kedziora.karol@gmail.com</a><br>
+      Aplikacja: Cosmic Path<br>
+      Bundle ID: <code>com.kked.games.follow-the-trail</code> (iOS), <code>com.kked.games.cosmicpath</code> (Android)</p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <img src="images/cosmic-path/icon.png" alt="Cosmic Path icon" class="footer-icon">
+      <span class="footer-name">Cosmic Path</span>
+      <span class="footer-year">&copy; 2026</span>
+    </div>
+    <div class="footer-meta">
+      Made by Karol Kędziora · Built in Godot
+    </div>
+    <div class="footer-links">
+      <a href="cosmic-path.html">Game page</a>
+      <a href="support.html">Support</a>
+    </div>
+  </footer>
+
+</body>
+</html>
