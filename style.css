@@ -515,7 +515,23 @@ a {
   border-radius: 0.75rem;
   padding: 0.85rem 1.5rem;
   min-width: 220px;
-  transition: border-color 0.2s;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+/* Live (anchored) store-badge — hover lifts + glows in game's accent.
+   Plain divs without href stay flat as "Coming Soon" placeholders. */
+a.store-badge:hover {
+  border-color: var(--color-primary);
+  background: var(--color-surface-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(var(--color-glow), 0.22);
+}
+
+a.store-badge:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
 /* coming-soon opacity handled by .store-badge.coming-soon.visible */
@@ -725,6 +741,14 @@ a {
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
   color: rgba(255, 255, 255, 0.65);
+}
+
+/* Live (shipped) badge — tinted in the game's accent so live games
+   read as different from in-development cards at a glance. */
+.game-card[data-game] .game-card-badge--live {
+  background: rgba(var(--card-glow), 0.15);
+  color: var(--card-accent);
+  font-weight: 600;
 }
 
 @media (min-width: 768px) {
