@@ -8,7 +8,7 @@
     {
       "name": "iOS",
       "min_version": "18.0",
-      "store_url": null
+      "store_url": "https://apps.apple.com/app/id6766694453"
     },
     {
       "name": "Android",
@@ -55,10 +55,10 @@
     "03_gameplay_match.png",
     "04_collection.png"
   ],
-  "status": "in-development",
+  "status": "released",
   "version": "0.1.1",
   "links": {
-    "app_store": null,
+    "app_store": "https://apps.apple.com/app/id6766694453",
     "play_store": null,
     "website": null,
     "trailer": null

@@ -8,7 +8,7 @@
     {
       "name": "iOS",
       "min_version": "18.0",
-      "store_url": null
+      "store_url": "https://apps.apple.com/app/id1355832531"
     },
     {
       "name": "Android",
@@ -47,10 +47,10 @@
   "icon": "assets/icon.png",
   "logo": "assets/flat/logo/logo.png",
   "screenshots": [],
-  "status": "in-development",
+  "status": "released",
   "version": "1.8.0",
   "links": {
-    "app_store": null,
+    "app_store": "https://apps.apple.com/app/id1355832531",
     "play_store": null,
     "website": null,
     "trailer": null
