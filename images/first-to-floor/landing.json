@@ -1,0 +1,62 @@
+{
+  "name": "First to Floor",
+  "slug": "first-to-floor",
+  "tagline": "Guess what falls first. A friendly physics-puzzle for kids 4+.",
+  "description": "First to Floor is a friendly guess-the-order game for little kids — ages 4 and up. Colorful items rain down: a feather, an apple, a hammer, a pumpkin, a dinosaur. Watch the slow-motion preview, then guess the order they'll hit the floor. Real physics — feathers float, anvils drop. No penalties, no stress, no loud noises.",
+  "genre": "Physics Puzzle",
+  "platforms": [
+    {
+      "name": "iOS",
+      "min_version": "18.0",
+      "store_url": null
+    },
+    {
+      "name": "Android",
+      "store_url": null
+    }
+  ],
+  "features": [
+    {
+      "title": "10 themed worlds",
+      "description": "Animals, fruits, vegetables, household, sport, tools, sweets, farm, dinosaurs and construction — each with its own falling cast."
+    },
+    {
+      "title": "Three difficulty levels",
+      "description": "Easy, medium and hard rows that grow with the child — same worlds, more items, faster gravity."
+    },
+    {
+      "title": "Picture collection",
+      "description": "Every correctly-guessed item joins your pokedex-style collection — come back any time and admire what you've gathered."
+    },
+    {
+      "title": "Two skills",
+      "description": "Freeze time or ask for a hint when the items are flying fast — a gentle safety net, not a paywall."
+    },
+    {
+      "title": "Game Center built in",
+      "description": "16 achievements and a family high-score leaderboard, opt-in via the platform's system prompts."
+    },
+    {
+      "title": "Ad-free, kid-safe",
+      "description": "No ads, no logins, no chat, no interruptive purchases. One parental gate unlocks all premium worlds forever."
+    }
+  ],
+  "colors": {
+    "primary": "#FFCB3B",
+    "secondary": "#E63946",
+    "background": "#88D1FA",
+    "text": "#283146"
+  },
+  "icon": "icon.png",
+  "logo": "logo.png",
+  "screenshots": [],
+  "status": "in-development",
+  "version": "1.0.0",
+  "links": {
+    "app_store": null,
+    "play_store": null,
+    "website": null,
+    "trailer": null
+  },
+  "monetization": "freemium"
+}

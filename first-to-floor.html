@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memo Mini — Match the pairs. Grow your collection.</title>
-  <meta name="description" content="Memo Mini is a relaxing memory pairs game for kids 4+. Match pictures across 11 themed worlds, earn stars, and grow a collection — no ads, no timers, no harsh fail states.">
-  <link rel="icon" type="image/png" href="images/memo-mini/icon.png">
+  <title>First to Floor — Guess what falls first</title>
+  <meta name="description" content="First to Floor is a friendly guess-the-order physics game for kids 4+. Watch a slow-motion preview, predict the order items hit the floor, earn stars. No ads, no stress.">
+  <link rel="icon" type="image/png" href="images/first-to-floor/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="game-memo-mini">
+<body class="game-first-to-floor">
 
   <!-- Top Nav -->
   <nav class="game-nav" aria-label="Game navigation">
@@ -23,11 +23,11 @@
       <a href="memo-maze.html" aria-label="Memo Maze">
         <img class="game-nav-icon vt-memo-maze" src="images/memo-maze/icon.png" alt="Memo Maze" loading="eager" decoding="sync">
       </a>
-      <a href="memo-mini.html" aria-label="Memo Mini" aria-current="page">
-        <img class="game-nav-icon active vt-memo-mini" src="images/memo-mini/icon.png" alt="Memo Mini" loading="eager" decoding="sync">
+      <a href="memo-mini.html" aria-label="Memo Mini">
+        <img class="game-nav-icon vt-memo-mini" src="images/memo-mini/icon.png" alt="Memo Mini" loading="eager" decoding="sync">
       </a>
-      <a href="first-to-floor.html" aria-label="First to Floor">
-        <img class="game-nav-icon vt-first-to-floor" src="images/first-to-floor/icon.png" alt="First to Floor" loading="eager" decoding="sync">
+      <a href="first-to-floor.html" aria-label="First to Floor" aria-current="page">
+        <img class="game-nav-icon active vt-first-to-floor" src="images/first-to-floor/icon.png" alt="First to Floor" loading="eager" decoding="sync">
       </a>
     </div>
   </nav>
@@ -35,34 +35,35 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero-content hero-content--centered">
-      <img src="images/memo-mini/logo.png" alt="Memo Mini logo" class="hero-logo">
-      <p class="hero-tagline">Match the pairs. Grow your collection. A relaxing memory game for kids 4+.</p>
+      <img src="images/first-to-floor/logo.png" alt="First to Floor logo" class="hero-logo">
+      <p class="hero-tagline">Watch what falls. Guess the order. Earn stars. A friendly physics puzzle for kids 4+.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="https://apps.apple.com/app/id6766694453">Get it on the App Store</a>
+        <span class="hero-coming-soon">Coming Soon</span>
       </div>
     </div>
   </section>
 
   <!-- Screenshots Carousel -->
+  <!-- TODO: replace memo-mini placeholders with real First to Floor screenshots once captured -->
   <section class="screenshots" id="screenshots">
     <h2 class="section-title">Gameplay</h2>
     <div class="carousel-wrapper">
       <button class="carousel-arrow carousel-arrow--left" aria-label="Scroll left">&#8249;</button>
       <div class="carousel-track">
         <div class="phone-mockup carousel-item">
-          <img src="images/memo-mini/01_world_select.png" alt="World select — 11 themed worlds" loading="lazy">
+          <img src="images/memo-mini/01_world_select.png" alt="Placeholder screenshot — Memo Mini world select" loading="lazy">
         </div>
         <div class="phone-mockup carousel-item">
-          <img src="images/memo-mini/02_gameplay_memorize.png" alt="Memorize the pairs phase" loading="lazy">
+          <img src="images/memo-mini/02_gameplay_memorize.png" alt="Placeholder screenshot — Memo Mini memorize phase" loading="lazy">
         </div>
         <div class="phone-mockup carousel-item">
-          <img src="images/memo-mini/03_gameplay_match.png" alt="Find a match phase" loading="lazy">
+          <img src="images/memo-mini/03_gameplay_match.png" alt="Placeholder screenshot — Memo Mini match phase" loading="lazy">
         </div>
         <div class="phone-mockup carousel-item">
-          <img src="images/memo-mini/04_collection.png" alt="Picture collection — pokedex-style unlocks" loading="lazy">
+          <img src="images/memo-mini/04_collection.png" alt="Placeholder screenshot — Memo Mini collection" loading="lazy">
         </div>
         <div class="phone-mockup carousel-item">
-          <img src="images/memo-mini/05_menu.png" alt="Main menu — Play, Collection, Leaderboards, Achievements, Settings" loading="lazy">
+          <img src="images/memo-mini/05_menu.png" alt="Placeholder screenshot — Memo Mini main menu" loading="lazy">
         </div>
       </div>
       <button class="carousel-arrow carousel-arrow--right" aria-label="Scroll right">&#8250;</button>
@@ -75,49 +76,49 @@
     <div class="features-grid">
       <div class="feature-card animate-on-scroll">
         <div class="feature-icon">&#127757;</div>
-        <h3>11 themed worlds</h3>
-        <p>Animals, fruits, sweets, dinosaurs and more — each with its own art style and pairs to memorize.</p>
+        <h3>10 themed worlds</h3>
+        <p>Animals, fruits, vegetables, household, sport, tools, sweets, farm, dinosaurs and construction — each with its own falling cast.</p>
       </div>
       <div class="feature-card animate-on-scroll">
         <div class="feature-icon">&#127919;</div>
-        <h3>Three difficulty modes</h3>
-        <p>From 4-card grids for first-timers to 24-card grids for confident memorizers — same worlds, different challenge.</p>
+        <h3>Three difficulty levels</h3>
+        <p>Easy, medium and hard rows that grow with the child — same worlds, more items, faster gravity.</p>
       </div>
       <div class="feature-card animate-on-scroll">
         <div class="feature-icon">&#128202;</div>
         <h3>Picture collection</h3>
-        <p>Every matched pair unlocks the picture in a pokedex-style screen — completionists can chase 100%.</p>
+        <p>Every correctly-guessed item joins your pokedex-style collection — come back any time and admire what you've gathered.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">&#10052;</div>
+        <h3>Two skills</h3>
+        <p>Freeze time or ask for a hint when items are flying fast — a gentle safety net, not a paywall.</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <div class="feature-icon">&#127942;</div>
+        <h3>Game Center built in</h3>
+        <p>16 achievements and a family high-score leaderboard, opt-in via the platform's system prompts.</p>
       </div>
       <div class="feature-card animate-on-scroll">
         <div class="feature-icon">&#129392;</div>
         <h3>Ad-free, kid-safe</h3>
-        <p>No ads, no text input, no timers, no harsh fail states. Designed for ages 4+ from the ground up.</p>
-      </div>
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">&#127942;</div>
-        <h3>Game Center &amp; Play Games</h3>
-        <p>Achievements and global leaderboards — optional, opt-in via the platform's system prompts.</p>
-      </div>
-      <div class="feature-card animate-on-scroll">
-        <div class="feature-icon">&#11088;</div>
-        <h3>Star rating system</h3>
-        <p>Earn up to 3 stars per level for perfect recall — stars persist across replays so progress always counts.</p>
+        <p>No ads, no logins, no chat, no interruptive purchases. A single parental gate unlocks all premium worlds forever.</p>
       </div>
     </div>
   </section>
 
   <!-- Download CTA -->
   <section class="download" id="download">
-    <h2 class="section-title">Get Memo Mini</h2>
-    <p class="download-description">A relaxing memory pairs game for the whole family. Free to play, premium worlds optional.</p>
+    <h2 class="section-title">Get First to Floor</h2>
+    <p class="download-description">A physics-puzzle the whole family can enjoy. Free to play, premium worlds optional.</p>
     <div class="store-badges">
-      <a class="store-badge" href="https://apps.apple.com/app/id6766694453">
+      <div class="store-badge coming-soon">
         <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         <div>
-          <span class="store-badge-label">Get it on the</span>
+          <span class="store-badge-label">Coming Soon on</span>
           <span class="store-badge-store">App Store</span>
         </div>
-      </a>
+      </div>
       <div class="store-badge coming-soon">
         <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a.996.996 0 0 1 .609-.92zm10.89 10.892l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626c.781.45.781 1.6 0 2.051l-2.807 1.626-2.598-2.652 2.598-2.651zm-2.302-2.302L5.864 1.872l10.937 6.333-2.302 2.302z"/></svg>
         <div>
@@ -131,8 +132,8 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <img src="images/memo-mini/icon.png" alt="Memo Mini icon" class="footer-icon">
-      <span class="footer-name">Memo Mini</span>
+      <img src="images/first-to-floor/icon.png" alt="First to Floor icon" class="footer-icon">
+      <span class="footer-name">First to Floor</span>
       <span class="footer-year">&copy; 2026</span>
     </div>
     <div class="footer-meta">
@@ -141,7 +142,6 @@
     <div class="footer-links">
       <a href="index.html">All games</a>
       <a href="support.html">Support</a>
-      <a href="memo-mini-privacy.html">Privacy</a>
     </div>
   </footer>
 

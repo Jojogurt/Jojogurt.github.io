@@ -89,6 +89,69 @@ body.game-memo-mini {
   aspect-ratio: 1290 / 2796;
 }
 
+/* === First to Floor: kid-friendly physics-puzzle theme ===
+   Palette borrows from the in-app art: warm yellow primary (matches the
+   FIRST TO FLOOR stone-letter logo), red secondary (matches the balloon
+   + anvil icon question mark), bright sky background. Like Memo Mini,
+   --color-bg stays dark navy so the yellow btn-primary keeps readable
+   foreground text; the page bg is overridden as a sky gradient below.
+   Signature: feature cards "drop" from above with bounce easing,
+   echoing the game's falling-items mechanic. */
+.game-first-to-floor {
+  --color-primary: #FFCB3B;
+  --color-secondary: #E63946;
+  --color-bg: #1B2330;
+  --color-text: #F4F8FC;
+  --color-surface: #1F2D45;
+  --color-surface-hover: #283A57;
+  --color-glow: 255, 203, 59;
+  --color-glow-secondary: 230, 57, 70;
+}
+
+body.game-first-to-floor {
+  background-image: linear-gradient(180deg, #BFE3FF 0%, #5BB6F0 100%);
+  background-attachment: fixed;
+  background-color: #BFE3FF;
+}
+
+/* Match Memo Mini's sticker styling — both are 4+ kid games sitting on
+   bright sky backgrounds and need the chunky white frame to read as a
+   floating card. Outline color is the dark brown from the logo stone
+   letters (#5A3A1A) instead of Memo Mini's navy, so the two kid games
+   stay visually distinct despite the shared treatment. */
+.game-first-to-floor .section-title,
+.game-first-to-floor .hero-tagline,
+.game-first-to-floor .download-description,
+.game-first-to-floor .feature-card h3 {
+  color: #fff;
+  text-shadow:
+    -2px -2px 0 #5A3A1A,
+     2px -2px 0 #5A3A1A,
+    -2px  2px 0 #5A3A1A,
+     2px  2px 0 #5A3A1A,
+    -2px  0   0 #5A3A1A,
+     2px  0   0 #5A3A1A,
+     0   -2px 0 #5A3A1A,
+     0    2px 0 #5A3A1A,
+     0    4px 6px rgba(90, 58, 26, 0.3);
+}
+
+.game-first-to-floor .feature-card,
+.game-first-to-floor .store-badge {
+  border: 3px solid #fff;
+  box-shadow:
+    0 4px 0 rgba(90, 58, 26, 0.2),
+    0 8px 24px rgba(90, 58, 26, 0.2);
+}
+
+.game-first-to-floor .phone-mockup {
+  border: 4px solid #fff !important;
+  box-shadow:
+    0 6px 0 rgba(90, 58, 26, 0.2),
+    0 12px 32px rgba(90, 58, 26, 0.25) !important;
+  aspect-ratio: 1290 / 2796;
+}
+
 /* === Reset & Base === */
 *, *::before, *::after {
   margin: 0;
@@ -250,6 +313,16 @@ a {
 .game-memo-mini .hero-coming-soon {
   font-family: 'Fredoka', 'Space Grotesk', sans-serif;
   letter-spacing: -0.01em;
+}
+
+/* First to Floor → Lilita One (chunky display face, mirrors the
+   thick stone-letter logo and reads as proudly kid-targeted). */
+.game-first-to-floor .hero-tagline,
+.game-first-to-floor .section-title,
+.game-first-to-floor .feature-card h3,
+.game-first-to-floor .hero-coming-soon {
+  font-family: 'Lilita One', 'Space Grotesk', sans-serif;
+  letter-spacing: 0.01em;
 }
 
 .btn {
@@ -673,6 +746,10 @@ a.store-badge:focus-visible {
   --card-accent: #F5A623;
   --card-glow: 245, 166, 35;
 }
+.game-card[data-game="first-to-floor"] {
+  --card-accent: #FFCB3B;
+  --card-glow: 255, 203, 59;
+}
 
 .game-card[data-game]::before {
   content: '';
@@ -762,14 +839,16 @@ a.store-badge:focus-visible {
 }
 
 /* Assign unique transition names to matching elements on both pages */
-.vt-cosmic-path { view-transition-name: vt-icon-cosmic-path; }
-.vt-memo-maze   { view-transition-name: vt-icon-memo-maze; }
-.vt-memo-mini   { view-transition-name: vt-icon-memo-mini; }
+.vt-cosmic-path    { view-transition-name: vt-icon-cosmic-path; }
+.vt-memo-maze      { view-transition-name: vt-icon-memo-maze; }
+.vt-memo-mini      { view-transition-name: vt-icon-memo-mini; }
+.vt-first-to-floor { view-transition-name: vt-icon-first-to-floor; }
 
 /* Slow the morph a touch so the shrink is visible */
 ::view-transition-group(vt-icon-cosmic-path),
 ::view-transition-group(vt-icon-memo-maze),
-::view-transition-group(vt-icon-memo-mini) {
+::view-transition-group(vt-icon-memo-mini),
+::view-transition-group(vt-icon-first-to-floor) {
   animation-duration: 0.55s;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -910,6 +989,20 @@ a.store-badge:focus-visible {
 .feature-card:nth-child(4) { transition-delay: 0.3s; }
 .feature-card:nth-child(5) { transition-delay: 0.4s; }
 .feature-card:nth-child(6) { transition-delay: 0.5s; }
+
+/* First to Floor signature: feature cards drop from above with a
+   back-overshoot bounce instead of fading up — mirrors the game's
+   "items fall and land" mechanic. Overrides the default
+   .animate-on-scroll translateY(30px) with translateY(-50px) +
+   overshoot easing. */
+.game-first-to-floor .feature-card.animate-on-scroll {
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.game-first-to-floor .feature-card.animate-on-scroll.visible {
+  transform: translateY(0);
+}
 
 /* Section titles animate on scroll */
 .section-title {
