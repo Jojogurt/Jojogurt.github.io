@@ -49,7 +49,12 @@
   },
   "icon": "icon.png",
   "logo": "logo.png",
-  "screenshots": [],
+  "screenshots": [
+    "01_menu.png",
+    "02_predict.png",
+    "03_throw.png",
+    "04_collection.png"
+  ],
   "status": "beta",
   "version": "1.0.0",
   "links": {
