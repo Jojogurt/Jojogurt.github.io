@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Karol Kędziora — Memory games for mobile</title>
-  <meta name="description" content="Three small memory games for iOS and Android, built in Godot by Karol Kędziora. No ads, no dark patterns — just memory.">
+  <meta name="description" content="Four small memory games for iOS and Android, built in Godot by Karol Kędziora. No ads where kids play, no dark patterns anywhere.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,61 +13,77 @@
 <body class="index-body">
 
   <section class="index-hero">
-    <h1 class="index-title">Memory puzzles for mobile</h1>
-    <p class="index-subtitle">Three small games by Karol Kędziora. Built in Godot. No ads, no dark patterns — just memory.</p>
+    <h1 class="index-title">Small games.<br><span class="index-title-accent">Big memories.</span></h1>
+    <p class="index-subtitle">Four mobile puzzles by Karol Kędziora — built solo in Godot, from Poland. No ads where kids play, no dark patterns anywhere.</p>
   </section>
 
-  <!-- Cards are static HTML so cross-document View Transitions have a reliable DOM
-       to snapshot. Regenerated from games.json whenever the registry changes. -->
+  <!-- Tiles are static HTML so cross-document View Transitions have a reliable DOM
+       to snapshot. Each tile wears its game's own theme — a shelf of different
+       boxes, not four rows in a list. Regenerated from games.json on changes. -->
   <main class="games-root">
-    <div class="games-grid">
-      <a class="game-card animate-on-scroll" data-game="cosmic-path" href="cosmic-path.html">
-        <img class="game-card-icon vt-cosmic-path" src="images/cosmic-path/icon.png" alt="Cosmic Path icon" loading="eager" decoding="sync">
-        <div class="game-card-body">
-          <div class="game-card-name">Cosmic Path</div>
-          <div class="game-card-tagline">Remember the path. Trace the comet. Master the cosmic challenge.</div>
-          <span class="game-card-badge game-card-badge--live">On the App Store</span>
+    <div class="games-shelf">
+
+      <a class="game-tile animate-on-scroll" data-game="cosmic-path" href="cosmic-path.html">
+        <div class="game-tile-body">
+          <img class="game-tile-logo" src="images/cosmic-path/logo.png" alt="Cosmic Path">
+          <p class="game-tile-tagline">Remember the path. Trace the comet.</p>
+          <div class="game-tile-meta">
+            <img class="game-tile-icon vt-cosmic-path" src="images/cosmic-path/icon.png" alt="" loading="eager" decoding="sync">
+            <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
+          </div>
         </div>
+        <img class="game-tile-shot" src="images/cosmic-path/promo_trace.png" alt="" loading="lazy">
       </a>
 
-      <a class="game-card animate-on-scroll" data-game="memo-maze" href="memo-maze.html">
-        <img class="game-card-icon vt-memo-maze" src="images/memo-maze/icon.png" alt="Memo Maze icon" loading="eager" decoding="sync">
-        <div class="game-card-body">
-          <div class="game-card-name">Memo Maze</div>
-          <div class="game-card-tagline">Memorize the maze. Swipe the path. Don't lose your way.</div>
-          <span class="game-card-badge">In development</span>
+      <a class="game-tile animate-on-scroll" data-game="memo-maze" href="memo-maze.html">
+        <div class="game-tile-body">
+          <img class="game-tile-logo" src="images/memo-maze/logo.png" alt="Memo Maze">
+          <p class="game-tile-tagline">Memorize the maze. Swipe the path.</p>
+          <div class="game-tile-meta">
+            <img class="game-tile-icon vt-memo-maze" src="images/memo-maze/icon.png" alt="" loading="eager" decoding="sync">
+            <span class="game-tile-badge">In development</span>
+          </div>
         </div>
+        <img class="game-tile-shot" src="images/memo-maze/04_gameplay_memorize.png" alt="" loading="lazy">
       </a>
 
-      <a class="game-card animate-on-scroll" data-game="memo-mini" href="memo-mini.html">
-        <img class="game-card-icon vt-memo-mini" src="images/memo-mini/icon.png" alt="Memo Mini icon" loading="eager" decoding="sync">
-        <div class="game-card-body">
-          <div class="game-card-name">Memo Mini</div>
-          <div class="game-card-tagline">Match the pairs. Grow your collection. A relaxing memory game for kids 4+.</div>
-          <span class="game-card-badge game-card-badge--live">On the App Store</span>
+      <a class="game-tile animate-on-scroll" data-game="memo-mini" href="memo-mini.html">
+        <div class="game-tile-body">
+          <img class="game-tile-logo" src="images/memo-mini/logo.png" alt="Memo Mini">
+          <p class="game-tile-tagline">Match the pairs. Grow your collection. For kids 4+.</p>
+          <div class="game-tile-meta">
+            <img class="game-tile-icon vt-memo-mini" src="images/memo-mini/icon.png" alt="" loading="eager" decoding="sync">
+            <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
+          </div>
         </div>
+        <img class="game-tile-shot" src="images/memo-mini/02_gameplay_memorize.png" alt="" loading="lazy">
       </a>
 
-      <a class="game-card animate-on-scroll" data-game="first-to-floor" href="first-to-floor.html">
-        <img class="game-card-icon vt-first-to-floor" src="images/first-to-floor/icon.png" alt="First to Floor icon" loading="eager" decoding="sync">
-        <div class="game-card-body">
-          <div class="game-card-name">First to Floor</div>
-          <div class="game-card-tagline">Which item hits the floor first? A physics guessing game for kids 4+.</div>
-          <span class="game-card-badge">In development</span>
+      <a class="game-tile animate-on-scroll" data-game="first-to-floor" href="first-to-floor.html">
+        <div class="game-tile-body">
+          <img class="game-tile-logo" src="images/first-to-floor/logo.png" alt="First to Floor">
+          <p class="game-tile-tagline">Which item hits the floor first? For kids 4+.</p>
+          <div class="game-tile-meta">
+            <img class="game-tile-icon vt-first-to-floor" src="images/first-to-floor/icon.png" alt="" loading="eager" decoding="sync">
+            <span class="game-tile-badge">In development</span>
+          </div>
         </div>
+        <img class="game-tile-shot" src="images/first-to-floor/03_throw.png" alt="" loading="lazy">
       </a>
+
     </div>
   </main>
 
   <footer class="footer">
     <div class="footer-content">
-      <span class="footer-year">&copy; 2026</span>
+      <span class="footer-year">&copy; 2026 Karol Kędziora</span>
     </div>
     <div class="footer-meta">
-      Solo studio by Karol Kędziora. Memory games in Godot, from Poland.
+      Solo studio. Memory games in Godot, from Poland.
     </div>
     <div class="footer-links">
       <a href="support.html">Support</a>
+      <a href="mailto:kedziora.karol@gmail.com">Email</a>
     </div>
   </footer>
 
