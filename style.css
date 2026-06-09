@@ -122,16 +122,13 @@ body.game-first-to-floor {
 }
 
 /* Sticker styling — both kid games sit on bright sky backgrounds and
-   share the chunky white card frame. For First to Floor we skip the
-   8-direction text outline that Memo Mini uses; brown ink (#5A3A1A,
-   from the logo stone-letter shadow) on sky bg already carries enough
-   contrast, and the cleaner letterforms read like a children's
-   picture book. Feature-card h3 falls through to the base rule
-   (var(--color-primary) yellow on the dark card surface). */
+   share the chunky white card frame. White labels over the sky bg,
+   no 8-direction outline. Feature-card h3 falls through to the base
+   rule (var(--color-primary) yellow on the dark card surface). */
 .game-first-to-floor .section-title,
 .game-first-to-floor .hero-tagline,
 .game-first-to-floor .download-description {
-  color: #5A3A1A;
+  color: #fff;
   text-shadow: none;
 }
 
