@@ -121,15 +121,24 @@ body.game-first-to-floor {
   background-color: #6FC0FA;
 }
 
-/* Sticker styling — both kid games sit on bright sky backgrounds and
-   share the chunky white card frame. White labels over the sky bg,
-   no 8-direction outline. Feature-card h3 falls through to the base
-   rule (var(--color-primary) yellow on the dark card surface). */
+/* Sticker styling — same treatment as Memo Mini: white text + chunky
+   navy 8-direction outline + soft drop shadow. Keeps the two 4+ kid
+   games visually consistent against their shared sky backgrounds. */
 .game-first-to-floor .section-title,
 .game-first-to-floor .hero-tagline,
-.game-first-to-floor .download-description {
+.game-first-to-floor .download-description,
+.game-first-to-floor .feature-card h3 {
   color: #fff;
-  text-shadow: none;
+  text-shadow:
+    -2px -2px 0 #283146,
+     2px -2px 0 #283146,
+    -2px  2px 0 #283146,
+     2px  2px 0 #283146,
+    -2px  0   0 #283146,
+     2px  0   0 #283146,
+     0   -2px 0 #283146,
+     0    2px 0 #283146,
+     0    4px 6px rgba(40, 49, 70, 0.25);
 }
 
 .game-first-to-floor .feature-card,
