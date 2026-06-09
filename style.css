@@ -121,26 +121,18 @@ body.game-first-to-floor {
   background-color: #6FC0FA;
 }
 
-/* Match Memo Mini's sticker styling — both are 4+ kid games sitting on
-   bright sky backgrounds and need the chunky white frame to read as a
-   floating card. Outline color is the dark brown from the logo stone
-   letters (#5A3A1A) instead of Memo Mini's navy, so the two kid games
-   stay visually distinct despite the shared treatment. */
+/* Sticker styling — both kid games sit on bright sky backgrounds and
+   share the chunky white card frame. For First to Floor we skip the
+   8-direction text outline that Memo Mini uses; brown ink (#5A3A1A,
+   from the logo stone-letter shadow) on sky bg already carries enough
+   contrast, and the cleaner letterforms read like a children's
+   picture book. Feature-card h3 falls through to the base rule
+   (var(--color-primary) yellow on the dark card surface). */
 .game-first-to-floor .section-title,
 .game-first-to-floor .hero-tagline,
-.game-first-to-floor .download-description,
-.game-first-to-floor .feature-card h3 {
-  color: #fff;
-  text-shadow:
-    -2px -2px 0 #5A3A1A,
-     2px -2px 0 #5A3A1A,
-    -2px  2px 0 #5A3A1A,
-     2px  2px 0 #5A3A1A,
-    -2px  0   0 #5A3A1A,
-     2px  0   0 #5A3A1A,
-     0   -2px 0 #5A3A1A,
-     0    2px 0 #5A3A1A,
-     0    4px 6px rgba(90, 58, 26, 0.3);
+.game-first-to-floor .download-description {
+  color: #5A3A1A;
+  text-shadow: none;
 }
 
 .game-first-to-floor .feature-card,
