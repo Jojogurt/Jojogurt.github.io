@@ -2035,3 +2035,81 @@ a.store-badge:focus-visible {
     transition: none;
   }
 }
+
+/* === Shared-element screenshot morph (index tile → game-page hero) ===
+   The screenshot peeking out of the tile and the hero phone mockup are
+   the same image on both pages, so the cross-document view transition
+   morphs one into the other — the game literally "comes off the shelf"
+   into its page. Browsers without cross-document VT just cross-fade. */
+.vt-shot-cosmic-path    { view-transition-name: vt-shot-cosmic-path; }
+.vt-shot-memo-maze      { view-transition-name: vt-shot-memo-maze; }
+.vt-shot-memo-mini      { view-transition-name: vt-shot-memo-mini; }
+.vt-shot-first-to-floor { view-transition-name: vt-shot-first-to-floor; }
+
+::view-transition-group(vt-shot-cosmic-path),
+::view-transition-group(vt-shot-memo-maze),
+::view-transition-group(vt-shot-memo-mini),
+::view-transition-group(vt-shot-first-to-floor) {
+  animation-duration: 0.55s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* When the page is entered through a view transition, the morph IS the
+   hero entrance — the local drop-in animation would fight it (the morph
+   would land on an element that's still at opacity 0 waiting out its
+   delay). script.js flags the arrival via the pagereveal event. */
+html.vt-arrived .hero-shot {
+  animation: none;
+}
+
+/* Tile entrance stagger — cascade like boxes being set on the shelf.
+   script.js zeroes the delay after reveal so hover stays instant. */
+.games-shelf .game-tile:nth-child(2) { transition-delay: 0.09s; }
+.games-shelf .game-tile:nth-child(3) { transition-delay: 0.18s; }
+.games-shelf .game-tile:nth-child(4) { transition-delay: 0.27s; }
+
+/* Tap feedback — tiles compress slightly under the finger. */
+.game-tile:active {
+  transform: translateY(-2px) scale(0.985);
+}
+
+/* CTA sheen — a single light sweep across the primary button on hover.
+   Once per hover-in, no loop; stays out of reduced-motion's way via the
+   global animation kill. */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.btn-primary:hover::after {
+  transition: left 0.55s ease;
+  left: 130%;
+}
+
+/* Carousel screenshots hint their clickability with a small lift. */
+@media (hover: hover) {
+  .carousel-item:hover {
+    transform: translateY(-6px);
+  }
+}
+
+/* Reduced motion: view-transition morphs become plain swaps. */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

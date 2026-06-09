@@ -1,3 +1,15 @@
+// Cross-document view transitions: when the page is entered through a
+// transition, the shared-element morph (tile screenshot → hero shot) IS
+// the entrance — flag the arrival so CSS can suppress the local hero
+// drop-in animation that would otherwise fight the morph.
+(function () {
+  window.addEventListener('pagereveal', function (e) {
+    if (e.viewTransition) {
+      document.documentElement.classList.add('vt-arrived');
+    }
+  });
+})();
+
 // Scroll animations via IntersectionObserver
 (function () {
   var selector = '.animate-on-scroll, .section-title, .carousel-item, .store-badge';
@@ -15,6 +27,11 @@
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
         observer.unobserve(entry.target);
+        // Stagger delays (tiles, feature cards) are only for the entrance;
+        // zero them once revealed so hover transitions respond instantly.
+        window.setTimeout(function () {
+          entry.target.style.transitionDelay = '0s';
+        }, 900);
       }
     });
   }, { threshold: 0.15 });
