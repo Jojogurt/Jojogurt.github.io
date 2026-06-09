@@ -90,28 +90,35 @@ body.game-memo-mini {
 }
 
 /* === First to Floor: kid-friendly physics-puzzle theme ===
-   Palette borrows from the in-app art: warm yellow primary (matches the
-   FIRST TO FLOOR stone-letter logo), red secondary (matches the balloon
-   + anvil icon question mark), bright sky background. Like Memo Mini,
-   --color-bg stays dark navy so the yellow btn-primary keeps readable
-   foreground text; the page bg is overridden as a sky gradient below.
-   Signature: feature cards "drop" from above with bounce easing,
-   echoing the game's falling-items mechanic. */
+   Palette mirrors the in-app art (see variants/ftf/landing.json):
+   warm yellow primary (#FFC23E — the FIRST TO FLOOR stone-letter
+   logo), sky-blue secondary (#4BACF7 — matches the icon background),
+   and a slightly lighter sky background. Like Memo Mini, --color-bg
+   stays dark navy so the yellow btn-primary keeps readable foreground
+   text; the page bg is overridden as a sky gradient below.
+
+   Differentiation from Memo Mini despite similar kid-sky palette:
+   - Slightly warmer yellow primary (FFC23E vs F5A623)
+   - Dark-brown outline (#5A3A1A from the stone letters) vs Memo
+     Mini's navy
+   - Lilita One display face vs Memo Mini's Fredoka
+   - Signature: feature cards "drop" from above with bounce easing,
+     echoing the game's falling-items mechanic. */
 .game-first-to-floor {
-  --color-primary: #FFCB3B;
-  --color-secondary: #E63946;
+  --color-primary: #FFC23E;
+  --color-secondary: #4BACF7;
   --color-bg: #1B2330;
   --color-text: #F4F8FC;
   --color-surface: #1F2D45;
   --color-surface-hover: #283A57;
-  --color-glow: 255, 203, 59;
-  --color-glow-secondary: 230, 57, 70;
+  --color-glow: 75, 172, 247;
+  --color-glow-secondary: 255, 194, 62;
 }
 
 body.game-first-to-floor {
-  background-image: linear-gradient(180deg, #BFE3FF 0%, #5BB6F0 100%);
+  background-image: linear-gradient(180deg, #BFE3FF 0%, #6FC0FA 100%);
   background-attachment: fixed;
-  background-color: #BFE3FF;
+  background-color: #6FC0FA;
 }
 
 /* Match Memo Mini's sticker styling — both are 4+ kid games sitting on
@@ -320,6 +327,7 @@ a {
 .game-first-to-floor .hero-tagline,
 .game-first-to-floor .section-title,
 .game-first-to-floor .feature-card h3,
+.game-first-to-floor .doc-title,
 .game-first-to-floor .hero-coming-soon {
   font-family: 'Lilita One', 'Space Grotesk', sans-serif;
   letter-spacing: 0.01em;
@@ -747,8 +755,8 @@ a.store-badge:focus-visible {
   --card-glow: 245, 166, 35;
 }
 .game-card[data-game="first-to-floor"] {
-  --card-accent: #FFCB3B;
-  --card-glow: 255, 203, 59;
+  --card-accent: #FFC23E;
+  --card-glow: 255, 194, 62;
 }
 
 .game-card[data-game]::before {
@@ -1259,6 +1267,57 @@ a.store-badge:focus-visible {
   color: #2A78B8;
 }
 
+/* Theme overrides — first-to-floor doc pages match the sticker look,
+   mirroring memo-mini's pattern but with the dark-brown stone-letter
+   ink (#5A3A1A) instead of navy. Accent link color stays sky blue
+   because both kid games share the sky-blue secondary. */
+.game-first-to-floor .doc-container {
+  background: rgba(255, 255, 255, 0.95);
+  border: 3px solid #fff;
+  color: #5A3A1A;
+  box-shadow:
+    0 4px 0 rgba(90, 58, 26, 0.18),
+    0 8px 24px rgba(90, 58, 26, 0.18);
+}
+
+.game-first-to-floor .doc-eyebrow,
+.game-first-to-floor .doc-meta {
+  color: rgba(90, 58, 26, 0.6);
+}
+
+.game-first-to-floor .doc-title {
+  color: #5A3A1A;
+  text-shadow: none;
+}
+
+.game-first-to-floor .doc-container h2 {
+  color: #5A3A1A;
+}
+
+.game-first-to-floor .doc-container p,
+.game-first-to-floor .doc-container li {
+  color: rgba(90, 58, 26, 0.85);
+}
+
+.game-first-to-floor .doc-container a {
+  color: #2A78B8;
+  border-bottom-color: rgba(75, 172, 247, 0.4);
+}
+
+.game-first-to-floor .doc-container a:hover {
+  border-bottom-color: #2A78B8;
+}
+
+.game-first-to-floor .doc-summary {
+  background: rgba(75, 172, 247, 0.12);
+  border-color: rgba(75, 172, 247, 0.35);
+  color: rgba(90, 58, 26, 0.9);
+}
+
+.game-first-to-floor .doc-summary strong {
+  color: #2A78B8;
+}
+
 /* Footer personality line — "Made by Karol Kędziora · Built in Godot" etc.
    Audit flagged the footer as the visual equivalent of saying "this site
    is over." This adds a single human-voice line above the link row. */
@@ -1299,6 +1358,18 @@ a.store-badge:focus-visible {
 
 .game-memo-mini .footer-links a:hover {
   color: #283146;
+}
+
+.game-first-to-floor .footer-meta {
+  color: rgba(90, 58, 26, 0.6);
+}
+
+.game-first-to-floor .footer-links a {
+  color: rgba(90, 58, 26, 0.65);
+}
+
+.game-first-to-floor .footer-links a:hover {
+  color: #5A3A1A;
 }
 
 /* Support page — game contact cards */
@@ -1388,6 +1459,18 @@ a.store-badge:focus-visible {
   color: #2A78B8;
 }
 
+.game-first-to-floor .doc-lang-toggle a {
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid #fff;
+  color: #5A3A1A;
+  box-shadow: 0 2px 0 rgba(90, 58, 26, 0.12);
+}
+
+.game-first-to-floor .doc-lang-toggle a:hover {
+  background: #fff;
+  color: #2A78B8;
+}
+
 /* Stacked doc-containers (e.g. EN + PL on one page) */
 .doc-container + .doc-container {
   margin-top: 1.5rem;
@@ -1403,6 +1486,11 @@ a.store-badge:focus-visible {
 .game-memo-mini .doc-container code {
   background: rgba(40, 49, 70, 0.08);
   color: #283146;
+}
+
+.game-first-to-floor .doc-container code {
+  background: rgba(90, 58, 26, 0.08);
+  color: #5A3A1A;
 }
 
 @media (min-width: 600px) {

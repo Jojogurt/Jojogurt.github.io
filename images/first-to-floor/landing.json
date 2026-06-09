@@ -1,13 +1,13 @@
 {
   "name": "First to Floor",
   "slug": "first-to-floor",
-  "tagline": "Guess what falls first. A friendly physics-puzzle for kids 4+.",
-  "description": "First to Floor is a friendly guess-the-order game for little kids — ages 4 and up. Colorful items rain down: a feather, an apple, a hammer, a pumpkin, a dinosaur. Watch the slow-motion preview, then guess the order they'll hit the floor. Real physics — feathers float, anvils drop. No penalties, no stress, no loud noises.",
+  "tagline": "Which item hits the floor first? A physics guessing game for kids 4+.",
+  "description": "First to Floor is a friendly guess-the-order game for little kids - ages 4 and up. Colorful items rain down from above: a feather, an apple, a hammer, a pumpkin, a dinosaur. Watch carefully during the slow-motion preview, then guess the order they'll hit the floor. Light things float down slowly; heavy things drop like a rock. Nail the whole row and earn three stars. No penalties, no stress, no loud noises - a wrong guess just means fewer stars and the game always moves on.",
   "genre": "Physics Puzzle",
   "platforms": [
     {
       "name": "iOS",
-      "min_version": "18.0",
+      "min_version": "16.0",
       "store_url": null
     },
     {
@@ -17,45 +17,45 @@
   ],
   "features": [
     {
-      "title": "10 themed worlds",
-      "description": "Animals, fruits, vegetables, household, sport, tools, sweets, farm, dinosaurs and construction — each with its own falling cast."
+      "title": "Predict the landing order",
+      "description": "Watch the slow-motion preview, then guess which items hit the floor first. Real physics - feathers float, anvils drop."
     },
     {
-      "title": "Three difficulty levels",
-      "description": "Easy, medium and hard rows that grow with the child — same worlds, more items, faster gravity."
+      "title": "10 themed worlds",
+      "description": "Animals, fruits, vegetables, household, sport, tools, sweets, farm, dinosaurs and construction."
+    },
+    {
+      "title": "Freeze & hint skills",
+      "description": "Slow down time or ask for a hint when the items are flying fast - just enough help to keep it fair."
     },
     {
       "title": "Picture collection",
-      "description": "Every correctly-guessed item joins your pokedex-style collection — come back any time and admire what you've gathered."
-    },
-    {
-      "title": "Two skills",
-      "description": "Freeze time or ask for a hint when the items are flying fast — a gentle safety net, not a paywall."
-    },
-    {
-      "title": "Game Center built in",
-      "description": "16 achievements and a family high-score leaderboard, opt-in via the platform's system prompts."
+      "description": "Every correctly-guessed item joins your pokedex-style collection - fun to come back and admire what you've gathered."
     },
     {
       "title": "Ad-free, kid-safe",
-      "description": "No ads, no logins, no chat, no interruptive purchases. One parental gate unlocks all premium worlds forever."
+      "description": "No ads, no logins, no chat, no interrupting purchases. Designed for ages 4+ with big icons for little fingers."
+    },
+    {
+      "title": "Game Center & Play Games",
+      "description": "16 achievements and a high-score leaderboard to share with the family - optional and opt-in."
     }
   ],
   "colors": {
-    "primary": "#FFCB3B",
-    "secondary": "#E63946",
-    "background": "#88D1FA",
+    "primary": "#FFC23E",
+    "secondary": "#4BACF7",
+    "background": "#6FC0FA",
     "text": "#283146"
   },
   "icon": "icon.png",
   "logo": "logo.png",
   "screenshots": [],
-  "status": "in-development",
+  "status": "beta",
   "version": "1.0.0",
   "links": {
     "app_store": null,
     "play_store": null,
-    "website": null,
+    "website": "https://jojogurt.github.io/first-to-floor.html",
     "trailer": null
   },
   "monetization": "freemium"
