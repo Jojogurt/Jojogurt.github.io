@@ -15,6 +15,11 @@
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
         observer.unobserve(entry.target);
+        // Stagger delays (tiles, feature cards) are only for the entrance;
+        // zero them once revealed so hover transitions respond instantly.
+        window.setTimeout(function () {
+          entry.target.style.transitionDelay = '0s';
+        }, 900);
       }
     });
   }, { threshold: 0.15 });
