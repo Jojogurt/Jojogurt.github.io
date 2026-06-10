@@ -1787,7 +1787,16 @@ a.store-badge:focus-visible {
 .hero-shot {
   flex: 0 0 auto;
   width: 210px;
-  animation: heroShotIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both;
+}
+
+/* Drop-in entrance only where view transitions are NOT supported.
+   Where they are, the shelf→hero morph is the entrance — any local
+   opacity animation would leave the morph target invisible at
+   snapshot time and silently kill the effect (observed in Safari). */
+@supports not (view-transition-name: none) {
+  .hero-shot {
+    animation: heroShotIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both;
+  }
 }
 
 @keyframes heroShotIn {
@@ -2052,14 +2061,6 @@ a.store-badge:focus-visible {
 ::view-transition-group(vt-shot-first-to-floor) {
   animation-duration: 0.55s;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* When the page is entered through a view transition, the morph IS the
-   hero entrance — the local drop-in animation would fight it (the morph
-   would land on an element that's still at opacity 0 waiting out its
-   delay). script.js flags the arrival via the pagereveal event. */
-html.vt-arrived .hero-shot {
-  animation: none;
 }
 
 /* Tile entrance stagger — cascade like boxes being set on the shelf.
