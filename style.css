@@ -854,40 +854,30 @@ a.store-badge:focus-visible {
   .games-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* === Cross-page View Transitions (shared game icons) === */
+/* === Cross-page View Transitions === */
 @view-transition {
   navigation: auto;
 }
 
-/* Assign unique transition names to matching elements on both pages */
-.vt-cosmic-path    { view-transition-name: vt-icon-cosmic-path; }
-.vt-memo-maze      { view-transition-name: vt-icon-memo-maze; }
-.vt-memo-mini      { view-transition-name: vt-icon-memo-mini; }
-.vt-first-to-floor { view-transition-name: vt-icon-first-to-floor; }
-
-/* Slow the morph a touch so the shrink is visible */
-::view-transition-group(vt-icon-cosmic-path),
-::view-transition-group(vt-icon-memo-maze),
-::view-transition-group(vt-icon-memo-mini),
-::view-transition-group(vt-icon-first-to-floor) {
-  animation-duration: 0.55s;
-  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-}
+/* No shared-element morphs — clicking a tile used to fly all four game
+   icons across the screen to the nav shelf at once (every icon shares a
+   name, so every icon matches), which read as fast, busy, and prone to
+   tearing. A single clean body crossfade is calmer and never janks. */
 
 /* Page body crossfade with a gentle rise on the incoming page — reads
-   as "drilling into" the game while the icon morph rides on top. Works
-   identically on every browser with cross-document VT (incl. Safari). */
+   as "drilling into" the game. Works identically on every browser with
+   cross-document view transitions (incl. Safari). */
 ::view-transition-old(root) {
-  animation: vtRootOut 0.26s ease both;
+  animation: vtRootOut 0.32s ease both;
 }
 ::view-transition-new(root) {
-  animation: vtRootIn 0.46s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: vtRootIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 @keyframes vtRootOut {
   to { opacity: 0; }
 }
 @keyframes vtRootIn {
-  from { opacity: 0; transform: translateY(16px); }
+  from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: none; }
 }
 
