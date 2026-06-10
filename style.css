@@ -874,10 +874,21 @@ a.store-badge:focus-visible {
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Keep the non-matching page content from flashing too hard */
-::view-transition-old(root),
+/* Page body crossfade with a gentle rise on the incoming page — reads
+   as "drilling into" the game while the icon morph rides on top. Works
+   identically on every browser with cross-document VT (incl. Safari). */
+::view-transition-old(root) {
+  animation: vtRootOut 0.26s ease both;
+}
 ::view-transition-new(root) {
-  animation-duration: 0.35s;
+  animation: vtRootIn 0.46s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes vtRootOut {
+  to { opacity: 0; }
+}
+@keyframes vtRootIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
 }
 
 /* === Top Game Nav (on each game page) === */
@@ -1789,18 +1800,15 @@ a.store-badge:focus-visible {
   width: 210px;
 }
 
-/* Drop-in entrance only where view transitions are NOT supported.
-   Where they are, the shelf→hero morph is the entrance — any local
-   opacity animation would leave the morph target invisible at
-   snapshot time and silently kill the effect (observed in Safari). */
-@supports not (view-transition-name: none) {
-  .hero-shot {
-    animation: heroShotIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both;
-  }
+/* Drop-in entrance — the hero shot settles in with a slight rotation,
+   in step with the logo/tagline/CTA stagger on direct loads and just
+   under the root crossfade when arriving via a view transition. */
+.hero-shot {
+  animation: heroShotIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
 }
 
 @keyframes heroShotIn {
-  from { opacity: 0; transform: translateY(36px) rotate(4deg); }
+  from { opacity: 0; transform: translateY(34px) rotate(3deg); }
   to   { opacity: 1; transform: translateY(0) rotate(0deg); }
 }
 
@@ -2043,24 +2051,6 @@ a.store-badge:focus-visible {
   .game-tile {
     transition: none;
   }
-}
-
-/* === Shared-element screenshot morph (index tile → game-page hero) ===
-   The screenshot peeking out of the tile and the hero phone mockup are
-   the same image on both pages, so the cross-document view transition
-   morphs one into the other — the game literally "comes off the shelf"
-   into its page. Browsers without cross-document VT just cross-fade. */
-.vt-shot-cosmic-path    { view-transition-name: vt-shot-cosmic-path; }
-.vt-shot-memo-maze      { view-transition-name: vt-shot-memo-maze; }
-.vt-shot-memo-mini      { view-transition-name: vt-shot-memo-mini; }
-.vt-shot-first-to-floor { view-transition-name: vt-shot-first-to-floor; }
-
-::view-transition-group(vt-shot-cosmic-path),
-::view-transition-group(vt-shot-memo-maze),
-::view-transition-group(vt-shot-memo-mini),
-::view-transition-group(vt-shot-first-to-floor) {
-  animation-duration: 0.55s;
-  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Tile entrance stagger — cascade like boxes being set on the shelf.
