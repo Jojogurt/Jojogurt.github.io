@@ -7,6 +7,16 @@
         "components": [
           { "/": "/share*", "comment": "Shared level deep link" }
         ]
+      },
+      {
+        "appIDs": ["57V928Q27F.com.kked.apps.hearth"],
+        "components": [
+          {
+            "/": "/apps/hearth/join",
+            "?": { "code": "?*" },
+            "comment": "Hearth join link with invite code"
+          }
+        ]
       }
     ]
   }
