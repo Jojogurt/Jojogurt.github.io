@@ -41,7 +41,11 @@
    Dark cards float on the bright sky for a kid-friendly daylight feel. */
 body.game-memo-mini {
   background-image: linear-gradient(180deg, #88D1FA 0%, #4BACF7 100%);
-  background-attachment: fixed;
+  /* No background-attachment: fixed — it seams on iOS Safari when the
+     toolbar collapses on scroll (a visible cut near the notch). The
+     gradient scrolls with the page instead; the solid base below = the
+     gradient's TOP colour, so the strip iOS paints behind the notch /
+     status bar matches the sky seamlessly. */
   background-color: #88D1FA;
 }
 
@@ -117,8 +121,10 @@ body.game-memo-mini {
 
 body.game-first-to-floor {
   background-image: linear-gradient(180deg, #BFE3FF 0%, #6FC0FA 100%);
-  background-attachment: fixed;
-  background-color: #6FC0FA;
+  /* No background-attachment: fixed (iOS seam). Solid base = gradient TOP
+     colour so the notch / status-bar strip matches the sky — was #6FC0FA,
+     the bottom colour, which is what produced the visible cut. */
+  background-color: #BFE3FF;
 }
 
 /* Sticker styling — same treatment as Memo Mini: white text + chunky
@@ -1852,14 +1858,15 @@ a.store-badge:focus-visible {
   color: transparent;
 }
 
+/* Faint accent auras from each game's palette so the dark landing doesn't
+   read as a flat void. No background-attachment: fixed — it seams on iOS
+   Safari on scroll; the auras scroll with the page instead (dark base =
+   --color-bg, so the notch / status-bar strip stays seamless). */
 .index-body {
-  /* Faint accent auras from each game's palette so the dark landing
-     doesn't read as a flat void. */
   background-image:
     radial-gradient(ellipse 60% 40% at 12% 0%, rgba(34, 211, 238, 0.07), transparent 70%),
     radial-gradient(ellipse 50% 35% at 88% 10%, rgba(245, 166, 35, 0.06), transparent 70%),
     radial-gradient(ellipse 70% 30% at 50% 100%, rgba(232, 176, 74, 0.05), transparent 70%);
-  background-attachment: fixed;
 }
 
 /* === Index: games shelf === */

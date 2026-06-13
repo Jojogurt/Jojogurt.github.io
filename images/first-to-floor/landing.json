@@ -8,7 +8,7 @@
     {
       "name": "iOS",
       "min_version": "16.0",
-      "store_url": null
+      "store_url": "https://apps.apple.com/app/id6765926150"
     },
     {
       "name": "Android",
@@ -55,10 +55,10 @@
     "03_throw.png",
     "04_collection.png"
   ],
-  "status": "beta",
+  "status": "released",
   "version": "1.0.0",
   "links": {
-    "app_store": null,
+    "app_store": "https://apps.apple.com/app/id6765926150",
     "play_store": null,
     "website": "https://jojogurt.github.io/first-to-floor.html",
     "trailer": null
