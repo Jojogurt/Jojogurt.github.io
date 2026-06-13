@@ -39,15 +39,12 @@
 /* Memo Mini's body background = the in-game sky gradient (#88D1FA top
    → #4BACF7 bottom, from src/components/sky_background/sky_background.tscn).
    Dark cards float on the bright sky for a kid-friendly daylight feel. */
-body.game-memo-mini {
-  background-image: linear-gradient(180deg, #88D1FA 0%, #4BACF7 100%);
-  /* No background-attachment: fixed — it seams on iOS Safari when the
-     toolbar collapses on scroll (a visible cut near the notch). The
-     gradient scrolls with the page instead; the solid base below = the
-     gradient's TOP colour, so the strip iOS paints behind the notch /
-     status bar matches the sky seamlessly. */
-  background-color: #88D1FA;
-}
+/* Sky gradient lives on a fixed full-viewport layer (see .game-bg-sky
+   rules near the end of this file) so it always covers the whole screen
+   edge-to-edge incl. behind the notch — no iOS scroll seam, no reload
+   needed. The root colour below fills the safe-area / overscroll. */
+html:has(body.game-memo-mini) { background-color: #88D1FA; }
+body.game-memo-mini { background: transparent; }
 
 /* === Memo Mini: in-game outline / sticker styling ===
    Mirrors the game's typography (white text + dark navy outline used on
@@ -119,13 +116,9 @@ body.game-memo-mini {
   --color-glow-secondary: 255, 194, 62;
 }
 
-body.game-first-to-floor {
-  background-image: linear-gradient(180deg, #BFE3FF 0%, #6FC0FA 100%);
-  /* No background-attachment: fixed (iOS seam). Solid base = gradient TOP
-     colour so the notch / status-bar strip matches the sky — was #6FC0FA,
-     the bottom colour, which is what produced the visible cut. */
-  background-color: #BFE3FF;
-}
+/* Sky gradient on a fixed full-viewport layer — see .game-bg-sky below. */
+html:has(body.game-first-to-floor) { background-color: #BFE3FF; }
+body.game-first-to-floor { background: transparent; }
 
 /* Sticker styling — same treatment as Memo Mini: white text + chunky
    navy 8-direction outline + soft drop shadow. Keeps the two 4+ kid
@@ -2100,4 +2093,49 @@ a.store-badge:focus-visible {
   ::view-transition-new(*) {
     animation: none !important;
   }
+}
+
+/* ============================================================
+   EDGE-TO-EDGE BACKGROUNDS + SAFE AREA (mobile / notch)
+   With viewport-fit=cover the page fills the whole screen incl.
+   behind the notch and home indicator. Page backgrounds are
+   painted on a fixed full-viewport layer so they always cover
+   the visual viewport — no iOS scroll seam, no reload needed.
+   ============================================================ */
+
+/* Fixed sky-gradient layer for the two kid games. inset:0 on a fixed
+   element = the whole visual viewport, repainted every frame, so the
+   gradient never tears or stops short. z-index:-1 keeps it behind all
+   content (body background is transparent on these pages). */
+body.game-memo-mini::before,
+body.game-first-to-floor::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+body.game-memo-mini::before {
+  background: linear-gradient(180deg, #88D1FA 0%, #4BACF7 100%);
+}
+body.game-first-to-floor::before {
+  background: linear-gradient(180deg, #BFE3FF 0%, #6FC0FA 100%);
+}
+
+/* Dark game pages: the solid --color-bg already propagates to the
+   canvas (behind notch + overscroll) since html has no background, so
+   they need nothing extra. Index keeps its dark base + scrolling auras. */
+
+/* Top nav: stretch the shadow gradient up through the status-bar area
+   and keep the back button / icons clear of the notch + rounded
+   corners via safe-area insets (additive to the base padding). */
+.game-nav {
+  padding-top: max(0.85rem, env(safe-area-inset-top));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+}
+
+/* Footer clears the home indicator. */
+.footer {
+  padding-bottom: max(2.5rem, env(safe-area-inset-bottom));
 }
