@@ -1,8 +1,16 @@
-/* === CSS Variables (per-game override) === */
+/* === CSS Variables (per-game override) ===
+   --bg-top = the colour at the very top edge of the page. On iOS 26 Safari
+   the status-bar / toolbar tint is sampled from the background-color of the
+   fixed nav (and falls back to body), so the nav, the page top, and the
+   safe-area strip all use this one value to stay seamless under the notch.
+   --nav-h = nav content height (excl. the safe-area inset added on top). */
+:root { --nav-h: 60px; }
+
 .game-cosmic-path {
   --color-primary: #00FFFF;
   --color-secondary: #00FF00;
   --color-bg: #070A13;
+  --bg-top: #070A13;
   --color-text: #FFFFFF;
   --color-surface: #0E1220;
   --color-surface-hover: #151B2E;
@@ -14,6 +22,7 @@
   --color-primary: #E8B04A;
   --color-secondary: #C44536;
   --color-bg: #120A04;
+  --bg-top: #120A04;
   --color-text: #F3E4C4;
   --color-surface: #221409;
   --color-surface-hover: #2D1C11;
@@ -26,9 +35,9 @@
   --color-secondary: #4BACF7;
   /* --color-bg stays a readable dark navy because btn-primary uses it
      as foreground text on the orange CTA — flipping it light breaks
-     readability. The actual page background is overridden below as a
-     bright sky gradient, matching the in-game sky_background. */
+     readability. The actual page background is the bright sky gradient. */
   --color-bg: #0A1B2E;
+  --bg-top: #88D1FA;   /* sky gradient TOP — also the nav / status-bar tint */
   --color-text: #F4F8FC;
   --color-surface: #122A45;
   --color-surface-hover: #183555;
@@ -109,6 +118,7 @@ body.game-memo-mini { background: transparent; }
   --color-primary: #FFC23E;
   --color-secondary: #4BACF7;
   --color-bg: #1B2330;
+  --bg-top: #BFE3FF;   /* sky gradient TOP — also the nav / status-bar tint */
   --color-text: #F4F8FC;
   --color-surface: #1F2D45;
   --color-surface-hover: #283A57;
@@ -220,12 +230,16 @@ a {
 
 /* === Hero === */
 .hero {
+  /* svh = smallest viewport height: fills the screen on first paint and
+     does NOT jump when the iOS toolbar collapses on scroll (dvh would). */
   min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1.5rem;
+  /* Top padding clears the fixed nav (its own height already includes the
+     safe-area inset) so the logo never slides under the back button. */
+  padding: calc(var(--nav-h) + env(safe-area-inset-top) + 1.5rem) 1.5rem 2rem;
   position: relative;
   overflow: hidden;
 }
@@ -890,9 +904,18 @@ a.store-badge:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.85rem 1.25rem;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent);
-  pointer-events: none;
+  box-sizing: border-box;
+  min-height: calc(var(--nav-h) + env(safe-area-inset-top));
+  /* Safe-area insets keep the buttons clear of the notch + rounded
+     corners. Solid --bg-top (NOT an rgba gradient): on iOS 26 Safari the
+     status-bar tint samples this fixed element's colour, so it must be
+     the opaque page-top colour to stay seamless under the notch. */
+  padding:
+    calc(env(safe-area-inset-top) + 0.6rem)
+    max(1.25rem, env(safe-area-inset-right))
+    0.6rem
+    max(1.25rem, env(safe-area-inset-left));
+  background: var(--bg-top);
 }
 
 .game-nav > * { pointer-events: auto; }
@@ -1144,7 +1167,12 @@ a.store-badge:focus-visible {
 
 /* === Doc pages (privacy, support, etc.) === */
 .doc-page {
-  padding: 6rem 1.5rem 3rem;
+  /* Clears the fixed nav (on privacy pages) + the notch; on the nav-less
+     support page it's just comfortable top whitespace. */
+  padding: calc(var(--nav-h, 60px) + env(safe-area-inset-top) + 1.5rem)
+           max(1.5rem, env(safe-area-inset-right))
+           3rem
+           max(1.5rem, env(safe-area-inset-left));
 }
 
 .doc-container {
@@ -2122,18 +2150,11 @@ body.game-first-to-floor::before {
   background: linear-gradient(180deg, #BFE3FF 0%, #6FC0FA 100%);
 }
 
-/* Dark game pages: the solid --color-bg already propagates to the
-   canvas (behind notch + overscroll) since html has no background, so
-   they need nothing extra. Index keeps its dark base + scrolling auras. */
-
-/* Top nav: stretch the shadow gradient up through the status-bar area
-   and keep the back button / icons clear of the notch + rounded
-   corners via safe-area insets (additive to the base padding). */
-.game-nav {
-  padding-top: max(0.85rem, env(safe-area-inset-top));
-  padding-right: max(1.25rem, env(safe-area-inset-right));
-  padding-left: max(1.25rem, env(safe-area-inset-left));
-}
+/* Dark game pages (cosmic-path, memo-maze): body's solid --color-bg
+   propagates to the canvas (behind notch + overscroll) since html has no
+   background, and the nav's solid --bg-top matches it — no extra rules.
+   Nav safe-area padding + solid tint are handled in the base .game-nav.
+   Index keeps its dark base; its overscroll matches via body propagation. */
 
 /* Footer clears the home indicator. */
 .footer {
