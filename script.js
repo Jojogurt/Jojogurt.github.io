@@ -204,3 +204,27 @@
     else if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
   });
 })();
+
+// Hero trailer (Memo Mini): muted autoplay loop + a sound toggle. With
+// reduced motion the video stays on its poster until the visitor taps it.
+(function () {
+  var video = document.querySelector('video.trailer');
+  if (!video) return;
+  var button = document.querySelector('.trailer-sound');
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    video.removeAttribute('autoplay');
+    video.pause();
+    video.addEventListener('click', function () {
+      if (video.paused) { video.play(); } else { video.pause(); }
+    });
+  }
+  if (button) {
+    button.addEventListener('click', function () {
+      video.muted = !video.muted;
+      if (!video.muted && video.paused) video.play();
+      button.setAttribute('aria-pressed', String(!video.muted));
+      button.setAttribute('aria-label', video.muted ? 'Turn sound on' : 'Turn sound off');
+      button.innerHTML = video.muted ? '&#128263;' : '&#128266;';
+    });
+  }
+})();

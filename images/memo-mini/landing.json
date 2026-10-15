@@ -2,12 +2,12 @@
   "name": "Memo Mini",
   "slug": "memo-mini",
   "tagline": "Match the pairs. Grow your collection. A relaxing memory game for kids 4+.",
-  "description": "Memo Mini is a relaxing memory pairs game for kids aged 4 and up — and the adults playing along. Match pictures across 11 themed worlds (animals, fruits, sweets, dinosaurs, tools and more), earn stars for accuracy, and unlock items in your collection. No ads, no timers, no scolding — just calm, confidence-building puzzles with three difficulty modes that scale from 4 cards to 24.",
+  "description": "Memo Mini is a relaxing memory pairs game for kids aged 4 and up - and the adults playing along. Match pictures across 14 colorful worlds (animals, farm, ocean, dinosaurs, instruments, happy numbers and more), discover 175 pictures for the collection, hear every name read aloud and, with the optional Educational Features, learn words in 7 languages. No ads, no timers, no scolding - three difficulty modes from 4 cards to 24.",
   "genre": "Memory Puzzle",
   "platforms": [
     {
       "name": "iOS",
-      "min_version": "18.0",
+      "min_version": "16.0",
       "store_url": "https://apps.apple.com/app/id6766694453"
     },
     {
@@ -17,28 +17,28 @@
   ],
   "features": [
     {
-      "title": "11 themed worlds",
-      "description": "Animals, fruits, sweets, dinosaurs and more — each with its own art style and pairs to memorize."
+      "title": "14 colorful worlds",
+      "description": "Animals, farm, ocean, dinosaurs, instruments, happy numbers and more - each with its own painted world and pictures to match."
     },
     {
-      "title": "Three difficulty modes",
-      "description": "From 4-card grids for first-timers to 24-card grids for confident memorizers — same worlds, different challenge."
+      "title": "175 pictures to collect",
+      "description": "Every new pair flies into the collection, and after each level you see the cards you have just discovered."
     },
     {
-      "title": "Picture collection",
-      "description": "Every matched pair unlocks the picture in a pokedex-style screen — completionists can chase 100%."
+      "title": "Learn words in 7 languages",
+      "description": "Optional Educational Features: names on cards, reading and picture-word matching in English, Polish, German, French, Spanish, Portuguese and Italian."
+    },
+    {
+      "title": "Read aloud and real sounds",
+      "description": "The name of every matched pair is spoken, and many pictures - farm animals, instruments, sea creatures - make their own sounds."
+    },
+    {
+      "title": "Grows with your child",
+      "description": "Easy, Medium and Hard - from 4 cards to 24, gentle automatic hints and up to 3 stars per level."
     },
     {
       "title": "Ad-free, kid-safe",
-      "description": "No ads, no text input, no timers, no harsh fail states. Designed for ages 4+ from the ground up."
-    },
-    {
-      "title": "Game Center & Play Games",
-      "description": "Achievements and global leaderboards — optional, opt-in via the platform's system prompts."
-    },
-    {
-      "title": "Star rating system",
-      "description": "Earn up to 3 stars per level for perfect recall — stars persist across replays so progress always counts."
+      "description": "No ads, no tracking, no text input, no timers, no harsh fail states. Purchases sit behind a parental gate."
     }
   ],
   "colors": {
@@ -50,18 +50,21 @@
   "icon": "assets/icon.png",
   "logo": "assets/logo.png",
   "screenshots": [
-    "01_world_select.png",
-    "02_gameplay_memorize.png",
-    "03_gameplay_match.png",
-    "04_collection.png"
+    "01_world_select.webp",
+    "02_memorize.webp",
+    "03_new_discovery.webp",
+    "04_discoveries.webp",
+    "05_words.webp",
+    "06_collection.webp",
+    "07_settings.webp"
   ],
   "status": "released",
-  "version": "0.1.1",
+  "version": "1.1.1",
   "links": {
     "app_store": "https://apps.apple.com/app/id6766694453",
     "play_store": null,
     "website": null,
-    "trailer": null
+    "trailer": "images/memo-mini/trailer.mp4"
   },
   "monetization": "freemium"
 }
