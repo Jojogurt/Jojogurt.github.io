@@ -45,7 +45,7 @@
     <article class="doc-container" id="en" lang="en">
       <div class="doc-eyebrow">Cosmic Path</div>
       <h1 class="doc-title">Privacy Policy</h1>
-      <p class="doc-meta">Effective 18 May 2026 · Last updated 1 June 2026</p>
+      <p class="doc-meta">Effective 15 October 2026 · Last updated 15 October 2026</p>
 
       <div class="doc-summary">
         <strong>Short version:</strong> Cosmic Path uses standard mobile SDKs (AdMob, GameAnalytics, Sentry) and the platform's own cloud-save / leaderboard services. We don't run our own user accounts or servers, and we never see your name, email, payment information, or anything else that personally identifies you. The full detail is below.
@@ -61,15 +61,17 @@
       <p>The game saves your progress and preferences to a local file (<code>save.json</code>) on your device:</p>
       <ul>
         <li>Current and highest level reached</li>
-        <li>Score from the current run</li>
-        <li>Audio, music, and haptics preferences</li>
-        <li>Whether you've finished the tutorial</li>
+        <li>Score and combo from the current run</li>
+        <li>Stars collected on the path and stars spent</li>
+        <li>Audio, music, haptics, and reduce-motion preferences</li>
+        <li>Whether you've finished the tutorial, and which rule lessons you've already seen</li>
         <li>Number of times you've launched the game</li>
         <li>Daily-challenge state (last completed date, current streak)</li>
-        <li>Skill charge counts</li>
-        <li>Relax-mode parameters (grid size, path length, speed)</li>
+        <li>Skill charge counts, and how many skill refills from rewarded ads you've used today</li>
+        <li>Relax-mode parameters (grid size, path length, speed, trail length, and rules)</li>
         <li>Whether you've purchased "Remove Ads"</li>
         <li>Whether cloud sync is enabled</li>
+        <li>A random install ID (random bytes generated on the device), used only to keep your star count correct when progress syncs between your devices. It is not linked to your name, account, or advertising ID, and it is never sent to us or to analytics.</li>
       </ul>
       <p>This data never leaves your device unless cloud sync is on (see §2.4). Uninstalling the App deletes this file.</p>
 
@@ -87,7 +89,7 @@
       <p><strong>Withdraw or change your consent at any time:</strong> open Settings inside the App and tap <em>Privacy Options</em> — the UMP form re-appears with your current choice. iOS users can additionally manage tracking system-wide under <em>Settings → Privacy &amp; Security → Tracking</em>.</p>
 
       <h2>2.1. Google AdMob (advertising)</h2>
-      <p>For free players, the App shows ads delivered by Google AdMob. AdMob may use your device's advertising identifier (IDFA on iOS, GAID on Android — only with your OS-level consent) and standard ad-request data (IP address, device model, OS version, language, ad interactions). You can purchase "Remove Ads" to remove banners and interstitials.</p>
+      <p>For free players, the App shows ads delivered by Google AdMob. AdMob may use your device's advertising identifier (IDFA on iOS, GAID on Android — only with your OS-level consent) and standard ad-request data (IP address, device model, OS version, language, ad interactions). You can purchase "Remove Ads" to remove banners and interstitials. The App also offers optional rewarded videos (for example, to refill a skill); they play only when you tap to watch one, and they stay available after "Remove Ads".</p>
       <p>Google's policies: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a> and <a href="https://support.google.com/admob/answer/6128543">support.google.com/admob/answer/6128543</a>.</p>
 
       <h2>2.2. GameAnalytics (gameplay analytics)</h2>
@@ -100,7 +102,7 @@
 
       <h2>2.4. iCloud and Play Games Saved Games (cloud sync)</h2>
       <p>If cloud sync is enabled (Settings → cloud sync row), the App backs up your <code>save.json</code> to your own iCloud account (iOS) or Play Games Saved Games slot (Android) so you can continue progress across devices. Apple / Google host this data on your behalf — we do not run our own save server. You can delete cloud data at any time via your platform settings.</p>
-      <p>Cloud sync excludes the "Remove Ads" flag (the store handles that directly) and the cloud-sync toggle itself.</p>
+      <p>Cloud sync excludes the "Remove Ads" flag (the store handles that directly) and the cloud-sync toggle itself. The synced file includes the random install IDs from §1.1, so stars earned on each of your devices add up correctly.</p>
 
       <h2>2.5. Game Center and Play Games (leaderboards &amp; achievements)</h2>
       <p>If you sign in to Game Center / Play Games, your scores and unlocked achievements are submitted to those services so you appear on leaderboards. The submitted data is integer values only (level reached, score, streak). The platform identifies you using its own account ID — we never see your real name unless you've made your platform profile public.</p>
@@ -155,7 +157,7 @@
       <p>Cosmic Path does not run its own user accounts or servers, so on our side there is no personal information to access, correct, port, or delete. What is processed flows through the third-party SDKs and platform services listed in §2 — primarily AdMob for advertising and GameAnalytics for anonymous gameplay metrics.</p>
       <p><strong>"Do Not Sell or Share My Personal Information" / Opt out of targeted advertising.</strong> Open the App and tap Settings → <em>Privacy Options</em>. The form that appears is the same one we use for EEA consent — it is provided by Google's User Messaging Platform (UMP) and automatically presents the appropriate state-specific opt-out controls based on your region. Disabling personalization there stops AdMob from "selling" or "sharing" data for targeted advertising within the meaning of these state laws.</p>
       <p>Categories of personal information potentially processed by our partners include device identifiers (IDFA / GAID, only with your OS-level consent), IP address, device model, OS version, language, and aggregate ad/interaction data. We do not knowingly sell, share, or use sensitive personal information, and we do not engage in profiling that produces legal or similarly significant effects.</p>
-      <p>If you have questions about a request under your state's privacy law, reach out via the contact email in §10. Because we don't tag events with personal identifiers on our side, requests directed at the providers (AdMob, GameAnalytics, Sentry) are best made via the links in §2.</p>
+      <p>If you have questions about a request under your state's privacy law, reach out via the contact email in §11. Because we don't tag events with personal identifiers on our side, requests directed at the providers (AdMob, GameAnalytics, Sentry) are best made via the links in §2.</p>
 
       <h2>9. International users</h2>
       <p>Cosmic Path is available worldwide. The third-party services we use may transfer data outside your country (e.g. to the US, EU, or Asia depending on the provider). By using the App, you acknowledge these transfers occur under the providers' own legal frameworks.</p>
@@ -174,7 +176,7 @@
     <article class="doc-container" id="pl" lang="pl">
       <div class="doc-eyebrow">Cosmic Path</div>
       <h1 class="doc-title">Polityka Prywatności</h1>
-      <p class="doc-meta">Data wejścia w życie: 18 maja 2026 · Ostatnia aktualizacja: 1 czerwca 2026</p>
+      <p class="doc-meta">Data wejścia w życie: 15 października 2026 · Ostatnia aktualizacja: 15 października 2026</p>
 
       <div class="doc-summary">
         <strong>Krótkie podsumowanie:</strong> Cosmic Path korzysta ze standardowych SDK mobilnych (AdMob, GameAnalytics, Sentry) oraz usług platform Apple i Google (cloud save, leaderboards). Nie prowadzimy własnych kont użytkowników ani serwerów, nigdy nie widzimy Twojego imienia, e-maila, danych płatniczych ani niczego, co mogłoby Cię zidentyfikować. Pełne szczegóły poniżej.
@@ -190,15 +192,17 @@
       <p>Aplikacja zapisuje Twój postęp i ustawienia do lokalnego pliku (<code>save.json</code>) na urządzeniu:</p>
       <ul>
         <li>Aktualny i najwyższy osiągnięty poziom</li>
-        <li>Wynik z bieżącej rozgrywki</li>
-        <li>Ustawienia dźwięku, muzyki i wibracji</li>
-        <li>Informację, czy ukończyłeś samouczek</li>
+        <li>Wynik i combo z bieżącej rozgrywki</li>
+        <li>Gwiazdki zebrane na ścieżce i wydane gwiazdki</li>
+        <li>Ustawienia dźwięku, muzyki, wibracji i ograniczenia ruchu</li>
+        <li>Informację, czy ukończyłeś samouczek, oraz które lekcje zasad już widziałeś</li>
         <li>Liczbę uruchomień gry</li>
         <li>Stan codziennego wyzwania (data ostatniego ukończenia, aktualna seria)</li>
-        <li>Liczbę ładunków każdej umiejętności</li>
-        <li>Parametry trybu relaksu (rozmiar siatki, długość ścieżki, prędkość)</li>
+        <li>Liczbę ładunków każdej umiejętności oraz liczbę dzisiejszych doładowań umiejętności za reklamy z nagrodą</li>
+        <li>Parametry trybu relaksu (rozmiar siatki, długość ścieżki, prędkość, długość smugi i zasady)</li>
         <li>Informację, czy zakupiłeś "Usuń reklamy"</li>
         <li>Informację, czy włączona jest synchronizacja w chmurze</li>
+        <li>Losowy identyfikator instalacji (losowe bajty wygenerowane na urządzeniu), używany wyłącznie do poprawnego liczenia gwiazdek przy synchronizacji postępu między Twoimi urządzeniami. Nie jest powiązany z Twoim imieniem, kontem ani identyfikatorem reklamowym i nigdy nie jest wysyłany do nas ani do analityki.</li>
       </ul>
       <p>Dane nie opuszczają Twojego urządzenia, chyba że włączysz synchronizację w chmurze (patrz §2.4). Odinstalowanie Aplikacji usuwa ten plik.</p>
 
@@ -216,7 +220,7 @@
       <p><strong>Wycofanie lub zmiana zgody w dowolnym momencie:</strong> otwórz Ustawienia w Aplikacji i wybierz <em>Prywatność</em> — formularz UMP pojawi się ponownie z aktualnym wyborem. Użytkownicy iOS mogą też zarządzać śledzeniem na poziomie systemu w <em>Ustawienia → Prywatność i bezpieczeństwo → Śledzenie</em>.</p>
 
       <h2>2.1. Google AdMob (reklamy)</h2>
-      <p>Graczom korzystającym z darmowej wersji Aplikacja wyświetla reklamy dostarczane przez Google AdMob. AdMob może wykorzystywać identyfikator reklamowy Twojego urządzenia (IDFA na iOS, GAID na Android — wyłącznie za Twoją zgodą na poziomie systemu) oraz standardowe dane żądania reklamowego (adres IP, model urządzenia, wersja systemu, język, interakcje z reklamą). Możesz wykupić "Usuń reklamy", aby usunąć banery i reklamy pełnoekranowe.</p>
+      <p>Graczom korzystającym z darmowej wersji Aplikacja wyświetla reklamy dostarczane przez Google AdMob. AdMob może wykorzystywać identyfikator reklamowy Twojego urządzenia (IDFA na iOS, GAID na Android — wyłącznie za Twoją zgodą na poziomie systemu) oraz standardowe dane żądania reklamowego (adres IP, model urządzenia, wersja systemu, język, interakcje z reklamą). Możesz wykupić "Usuń reklamy", aby usunąć banery i reklamy pełnoekranowe. Aplikacja oferuje też opcjonalne reklamy wideo z nagrodą (np. doładowanie umiejętności); odtwarzają się tylko wtedy, gdy sam zdecydujesz się je obejrzeć, i pozostają dostępne po zakupie "Usuń reklamy".</p>
       <p>Polityki Google: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a> oraz <a href="https://support.google.com/admob/answer/6128543">support.google.com/admob/answer/6128543</a>.</p>
 
       <h2>2.2. GameAnalytics (analityka rozgrywki)</h2>
@@ -229,7 +233,7 @@
 
       <h2>2.4. iCloud i Play Games Saved Games (synchronizacja w chmurze)</h2>
       <p>Jeżeli synchronizacja w chmurze jest włączona (Ustawienia → wiersz synchronizacji w chmurze), Aplikacja kopiuje Twój plik <code>save.json</code> na Twoje własne konto iCloud (iOS) lub do slotu Saved Games w Play Games (Android), aby umożliwić kontynuację postępu na innych urządzeniach. Apple / Google przechowują te dane w Twoim imieniu — nie prowadzimy własnego serwera zapisów. Możesz w każdej chwili usunąć dane z chmury w ustawieniach platformy.</p>
-      <p>Synchronizacja w chmurze nie obejmuje flagi "Usuń reklamy" (obsługiwanej bezpośrednio przez sklep) ani samej preferencji synchronizacji.</p>
+      <p>Synchronizacja w chmurze nie obejmuje flagi "Usuń reklamy" (obsługiwanej bezpośrednio przez sklep) ani samej preferencji synchronizacji. Synchronizowany plik zawiera losowe identyfikatory instalacji z §1.1, dzięki czemu gwiazdki zdobyte na każdym z Twoich urządzeń sumują się poprawnie.</p>
 
       <h2>2.5. Game Center i Play Games (tablice wyników i osiągnięcia)</h2>
       <p>Jeśli zalogujesz się do Game Center / Play Games, Twoje wyniki i zdobyte osiągnięcia są przesyłane do tych usług, aby pojawić się w rankingach. Przesyłane dane to wyłącznie wartości liczbowe (osiągnięty poziom, wynik, seria). Platforma identyfikuje Cię własnym identyfikatorem konta — nigdy nie widzimy Twojego prawdziwego imienia, chyba że Twój profil platformowy jest publiczny.</p>

@@ -1,41 +1,45 @@
 {
   "name": "Cosmic Path",
   "slug": "cosmic-path",
-  "tagline": "Remember the path. Trace the comet. Master the cosmic challenge.",
-  "description": "Cosmic Path is a neon memory puzzle game. Watch a glowing comet trace a path across a grid, memorize it, then recreate it from memory. Progress through endless levels of increasing difficulty, compete on leaderboards, and take on a new daily challenge every day.",
+  "tagline": "Watch the comet. Remember its path. Trace it back. A visual memory game for brain training.",
+  "description": "Cosmic Path is a visual memory game for brain training in deep space. Watch a comet trace a path across the grid, then draw it back from memory. Paths get longer, the grid gets bigger and new rules join one at a time - a decoy comet, paths traced backwards, lights out and portals that make the path jump across the board - while boss levels mix the rules into one long path. Daily Challenge with a streak, a Relax mode, Game Center leaderboards and achievements, 7 languages, no internet needed to play.",
   "genre": "Memory Puzzle",
   "platforms": [
     {
       "name": "iOS",
-      "min_version": "18.0",
+      "min_version": "17.0",
       "store_url": "https://apps.apple.com/app/id1355832531"
     },
     {
       "name": "Android",
-      "min_version": "SDK 34",
+      "min_version": "SDK 24",
       "store_url": null
     }
   ],
   "features": [
     {
-      "title": "Endless Mode",
-      "description": "100+ levels with growing grids, longer paths, and faster comets"
+      "title": "Campaign in three acts",
+      "description": "Learn each rule, combine them, then master them all: a decoy comet, paths traced backwards, lights out and total darkness - each with a short lesson and a free try."
+    },
+    {
+      "title": "Portals and boss levels",
+      "description": "The comet dives into one portal and comes out of another. Every few levels a boss mixes the rules into one long path - beat it for 10 stars."
+    },
+    {
+      "title": "4 skills",
+      "description": "Slow Time, Trail, Hint and Checkpoint. Slow Time, Trail and Checkpoint last 3 rounds - refill them with the stars you collect on the path."
     },
     {
       "title": "Daily Challenge",
-      "description": "Same puzzle for everyone, every day. Build your streak."
+      "description": "5 rounds with a new twist for every day of the week, the same for every player. Keep your streak alive."
     },
     {
-      "title": "3 Skills",
-      "description": "Slow time, extend the trail, or reveal the path — use them wisely"
+      "title": "Relax mode",
+      "description": "Unlocks at level 15. Choose the grid, path length, speed and rules - no pressure, no internet needed."
     },
     {
-      "title": "Leaderboards",
-      "description": "Compete on Game Center and Google Play Games rankings"
-    },
-    {
-      "title": "Fair Paths",
-      "description": "Procedurally generated with directional balance — no cheap randomness"
+      "title": "Game Center & Play Games",
+      "description": "3 leaderboards, 10 achievements and cloud save. In 7 languages: English, Polish, German, French, Spanish, Portuguese and Italian."
     }
   ],
   "colors": {
@@ -46,14 +50,20 @@
   },
   "icon": "assets/icon.png",
   "logo": "assets/flat/logo/logo.png",
-  "screenshots": [],
+  "screenshots": [
+    "01_watch.webp",
+    "02_trace.webp",
+    "03_portals.webp",
+    "04_power_ups.webp",
+    "05_boss.webp"
+  ],
   "status": "released",
-  "version": "1.8.0",
+  "version": "1.1.0",
   "links": {
     "app_store": "https://apps.apple.com/app/id1355832531",
     "play_store": null,
     "website": null,
-    "trailer": null
+    "trailer": "images/cosmic-path/trailer.mp4"
   },
   "monetization": "freemium"
 }
