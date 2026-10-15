@@ -3,9 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <script>document.documentElement.classList.add('js')</script>
   <title>Memo Maze — Memorize the maze. Swipe the path.</title>
   <meta name="description" content="Memo Maze is a mobile memory puzzle. Study a tile maze, watch it vanish, then navigate from memory with swipe gestures across 30 hand-crafted levels.">
-  <link rel="icon" type="image/png" href="images/memo-maze/icon.png">
+  <link rel="canonical" href="https://jojogurt.github.io/memo-maze.html">
+  <meta name="theme-color" content="#120A04">
+  <link rel="apple-touch-icon" href="images/memo-maze/icon-180.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Karol Kędziora — Games">
+  <meta property="og:title" content="Memo Maze — Memorize the maze. Swipe the path.">
+  <meta property="og:description" content="Memo Maze is a mobile memory puzzle. Study a tile maze, watch it vanish, then navigate from memory with swipe gestures across 30 hand-crafted levels.">
+  <meta property="og:url" content="https://jojogurt.github.io/memo-maze.html">
+  <meta property="og:image" content="https://jojogurt.github.io/images/memo-maze/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Memo Maze — logo and gameplay screenshot">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="images/memo-maze/icon-64.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,16 +32,16 @@
     <a class="game-nav-back" href="index.html" aria-label="Back to all games">&larr;</a>
     <div class="game-nav-icons">
       <a href="cosmic-path.html" aria-label="Cosmic Path">
-        <img class="game-nav-icon vt-cosmic-path" src="images/cosmic-path/icon.png" alt="Cosmic Path" loading="eager" decoding="sync">
+        <img class="game-nav-icon vt-cosmic-path" src="images/cosmic-path/icon-128.webp" width="128" height="128" alt="Cosmic Path" loading="eager" decoding="async">
       </a>
       <a href="memo-maze.html" aria-label="Memo Maze" aria-current="page">
-        <img class="game-nav-icon active vt-memo-maze" src="images/memo-maze/icon.png" alt="Memo Maze" loading="eager" decoding="sync">
+        <img class="game-nav-icon active vt-memo-maze" src="images/memo-maze/icon-128.webp" width="128" height="128" alt="Memo Maze" loading="eager" decoding="async">
       </a>
       <a href="memo-mini.html" aria-label="Memo Mini">
-        <img class="game-nav-icon vt-memo-mini" src="images/memo-mini/icon.png" alt="Memo Mini" loading="eager" decoding="sync">
+        <img class="game-nav-icon vt-memo-mini" src="images/memo-mini/icon-128.webp" width="128" height="128" alt="Memo Mini" loading="eager" decoding="async">
       </a>
       <a href="first-to-floor.html" aria-label="First to Floor">
-        <img class="game-nav-icon vt-first-to-floor" src="images/first-to-floor/icon.png" alt="First to Floor" loading="eager" decoding="sync">
+        <img class="game-nav-icon vt-first-to-floor" src="images/first-to-floor/icon-128.webp" width="128" height="128" alt="First to Floor" loading="eager" decoding="async">
       </a>
     </div>
   </nav>
@@ -36,14 +50,19 @@
   <section class="hero" id="hero">
     <div class="hero-content hero-content--split">
       <div class="hero-copy">
-        <img src="images/memo-maze/logo.png" alt="Memo Maze logo" class="hero-logo">
+        <h1 class="hero-title"><img src="images/memo-maze/logo.webp" alt="Memo Maze" class="hero-logo" width="1240" height="679"></h1>
         <p class="hero-tagline">Memorize the maze. Swipe the path. Don't lose your way.</p>
         <div class="hero-cta">
           <span class="hero-coming-soon">Coming Soon</span>
         </div>
+        <ul class="hero-chips" aria-label="At a glance">
+          <li>30 hand-crafted levels</li>
+          <li>Level designer</li>
+          <li>iOS &amp; Android</li>
+        </ul>
       </div>
       <div class="phone-mockup hero-shot">
-        <img src="images/memo-maze/04_gameplay_memorize.png" alt="Memo Maze gameplay — memorize phase" loading="eager">
+        <img src="images/memo-maze/04_gameplay_memorize.webp" alt="Memo Maze gameplay — memorize phase" loading="eager">
       </div>
     </div>
   </section>
@@ -54,27 +73,48 @@
     <div class="carousel-wrapper">
       <button class="carousel-arrow carousel-arrow--left" aria-label="Scroll left">&#8249;</button>
       <div class="carousel-track">
-        <div class="phone-mockup carousel-item">
-          <img src="images/memo-maze/01_title_screen.png" alt="Title screen" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/memo-maze/02_chapter_select.png" alt="Chapter select — six chapters of mazes" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/memo-maze/03_level_select.png" alt="Twists &amp; Turns level select" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/memo-maze/04_gameplay_memorize.png" alt="Memorize phase — study the maze" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/memo-maze/05_gameplay_navigate.png" alt="Navigate phase — swipe from memory" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/memo-maze/06_level_complete.png" alt="Level complete — three stars and scoring" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/memo-maze/07_level_designer.png" alt="In-game level designer" loading="lazy">
-        </div>
+        <figure class="carousel-item">
+          <div class="phone-mockup">
+            <img src="images/memo-maze/01_title_screen.webp" alt="Title screen" loading="lazy">
+          </div>
+          <figcaption>Title screen</figcaption>
+        </figure>
+        <figure class="carousel-item">
+          <div class="phone-mockup">
+            <img src="images/memo-maze/02_chapter_select.webp" alt="Chapter select — six chapters of mazes" loading="lazy">
+          </div>
+          <figcaption>Chapter select — six chapters of mazes</figcaption>
+        </figure>
+        <figure class="carousel-item">
+          <div class="phone-mockup">
+            <img src="images/memo-maze/03_level_select.webp" alt="Twists &amp; Turns level select" loading="lazy">
+          </div>
+          <figcaption>Twists &amp; Turns level select</figcaption>
+        </figure>
+        <figure class="carousel-item">
+          <div class="phone-mockup">
+            <img src="images/memo-maze/04_gameplay_memorize.webp" alt="Memorize phase — study the maze" loading="lazy">
+          </div>
+          <figcaption>Memorize phase — study the maze</figcaption>
+        </figure>
+        <figure class="carousel-item">
+          <div class="phone-mockup">
+            <img src="images/memo-maze/05_gameplay_navigate.webp" alt="Navigate phase — swipe from memory" loading="lazy">
+          </div>
+          <figcaption>Navigate phase — swipe from memory</figcaption>
+        </figure>
+        <figure class="carousel-item">
+          <div class="phone-mockup">
+            <img src="images/memo-maze/06_level_complete.webp" alt="Level complete — three stars and scoring" loading="lazy">
+          </div>
+          <figcaption>Level complete — three stars and scoring</figcaption>
+        </figure>
+        <figure class="carousel-item">
+          <div class="phone-mockup">
+            <img src="images/memo-maze/07_level_designer.webp" alt="In-game level designer" loading="lazy">
+          </div>
+          <figcaption>In-game level designer</figcaption>
+        </figure>
       </div>
       <button class="carousel-arrow carousel-arrow--right" aria-label="Scroll right">&#8250;</button>
     </div>
@@ -121,21 +161,13 @@
   <section class="download" id="download">
     <h2 class="section-title">Get Memo Maze</h2>
     <p class="download-description">A dungeon memory puzzle. Study. Memorize. Swipe.</p>
-    <div class="store-badges">
-      <div class="store-badge coming-soon">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        <div>
-          <span class="store-badge-label">Coming Soon on</span>
-          <span class="store-badge-store">App Store</span>
-        </div>
-      </div>
-    </div>
+    <p class="store-note store-note--soon">Coming soon to the App Store and Google Play. Want a heads-up at launch? <a href="mailto:kedziora.karol@gmail.com?subject=Memo%20Maze%20launch">Drop me an email</a>.</p>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <img src="images/memo-maze/icon.png" alt="Memo Maze icon" class="footer-icon">
+      <img src="images/memo-maze/icon-128.webp" width="128" height="128" alt="Memo Maze icon" class="footer-icon">
       <span class="footer-name">Memo Maze</span>
       <span class="footer-year">&copy; 2026</span>
     </div>

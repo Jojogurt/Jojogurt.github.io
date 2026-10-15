@@ -2,8 +2,7 @@
   "games": [
     {
       "slug": "cosmic-path",
-      "path": "/Users/kked/Projects/follow-the-trail",
-      "featured": true
+      "path": "/Users/kked/Projects/follow-the-trail"
     },
     {
       "slug": "memo-maze",
@@ -11,7 +10,8 @@
     },
     {
       "slug": "memo-mini",
-      "path": "/Users/kked/Projects/chatch-em-all"
+      "path": "/Users/kked/Projects/chatch-em-all",
+      "featured": true
     },
     {
       "slug": "first-to-floor",

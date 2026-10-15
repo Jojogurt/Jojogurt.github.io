@@ -61,10 +61,16 @@ body.game-memo-mini { background: transparent; }
    wraps cards + phone mockups in a chunky white border so they read as
    "stickers" floating on the bright sky bg. */
 
+.game-memo-mini {
+  /* Ink for body copy on the sky + on the white sticker cards. */
+  --ink: #283146;
+  --ink-soft: rgba(40, 49, 70, 0.82);
+}
+
+/* Outline only on display-size type — on body-size copy the 8-way
+   shadow smears, so paragraphs use solid navy ink instead. */
 .game-memo-mini .section-title,
-.game-memo-mini .hero-tagline,
-.game-memo-mini .download-description,
-.game-memo-mini .feature-card h3 {
+.game-memo-mini .hero-tagline {
   color: #fff;
   /* 8-direction text-shadow approximates Godot's font_outline_color +
      outline_size, with a soft drop for extra lift. Navy matches the
@@ -81,8 +87,7 @@ body.game-memo-mini { background: transparent; }
      0    4px 6px rgba(40, 49, 70, 0.25);
 }
 
-.game-memo-mini .feature-card,
-.game-memo-mini .store-badge {
+.game-memo-mini .feature-card {
   border: 3px solid #fff;
   box-shadow:
     0 4px 0 rgba(40, 49, 70, 0.18),
@@ -90,10 +95,10 @@ body.game-memo-mini { background: transparent; }
 }
 
 .game-memo-mini .phone-mockup {
-  border: 4px solid #fff !important;
+  border: 4px solid #fff;
   box-shadow:
     0 6px 0 rgba(40, 49, 70, 0.18),
-    0 12px 32px rgba(40, 49, 70, 0.25) !important;
+    0 12px 32px rgba(40, 49, 70, 0.25);
   /* iPhone screenshots are 1290x2796 (~9/19.5) — match container so
      object-fit: cover doesn't crop the top/bottom of the screen. */
   aspect-ratio: 1290 / 2796;
@@ -130,13 +135,17 @@ body.game-memo-mini { background: transparent; }
 html:has(body.game-first-to-floor) { background-color: #BFE3FF; }
 body.game-first-to-floor { background: transparent; }
 
-/* Sticker styling — same treatment as Memo Mini: white text + chunky
-   navy 8-direction outline + soft drop shadow. Keeps the two 4+ kid
-   games visually consistent against their shared sky backgrounds. */
+.game-first-to-floor {
+  /* Dark-brown stone-letter ink, shared with the FTF privacy page. */
+  --ink: #5A3A1A;
+  --ink-soft: rgba(90, 58, 26, 0.85);
+}
+
+/* Sticker styling — same treatment as Memo Mini: white display type +
+   chunky navy 8-direction outline + soft drop shadow. Keeps the two 4+
+   kid games visually consistent against their shared sky backgrounds. */
 .game-first-to-floor .section-title,
-.game-first-to-floor .hero-tagline,
-.game-first-to-floor .download-description,
-.game-first-to-floor .feature-card h3 {
+.game-first-to-floor .hero-tagline {
   color: #fff;
   text-shadow:
     -2px -2px 0 #283146,
@@ -150,8 +159,7 @@ body.game-first-to-floor { background: transparent; }
      0    4px 6px rgba(40, 49, 70, 0.25);
 }
 
-.game-first-to-floor .feature-card,
-.game-first-to-floor .store-badge {
+.game-first-to-floor .feature-card {
   border: 3px solid #fff;
   box-shadow:
     0 4px 0 rgba(90, 58, 26, 0.2),
@@ -159,11 +167,70 @@ body.game-first-to-floor { background: transparent; }
 }
 
 .game-first-to-floor .phone-mockup {
-  border: 4px solid #fff !important;
+  border: 4px solid #fff;
   box-shadow:
     0 6px 0 rgba(90, 58, 26, 0.2),
-    0 12px 32px rgba(90, 58, 26, 0.25) !important;
+    0 12px 32px rgba(90, 58, 26, 0.25);
   aspect-ratio: 1290 / 2796;
+}
+
+/* === Kid pages (Memo Mini, First to Floor): light sticker surfaces ===
+   Feature cards, chips and body copy sit on the bright sky as white
+   "stickers" with dark ink — the same look as their privacy pages —
+   instead of dark navy slabs that read like a different site. */
+:is(.game-memo-mini, .game-first-to-floor) .feature-card {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+:is(.game-memo-mini, .game-first-to-floor) .feature-card:hover {
+  border-color: #fff;
+  transform: translateY(-3px);
+}
+
+:is(.game-memo-mini, .game-first-to-floor) .feature-card h3 {
+  color: var(--ink);
+}
+
+:is(.game-memo-mini, .game-first-to-floor) .feature-card p {
+  color: var(--ink-soft);
+}
+
+:is(.game-memo-mini, .game-first-to-floor) .feature-icon {
+  background: rgba(75, 172, 247, 0.14);
+  border-color: rgba(75, 172, 247, 0.3);
+  color: #2A78B8;
+}
+
+:is(.game-memo-mini, .game-first-to-floor) .download-description,
+:is(.game-memo-mini, .game-first-to-floor) .store-note,
+:is(.game-memo-mini, .game-first-to-floor) .carousel-item figcaption {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+:is(.game-memo-mini, .game-first-to-floor) .store-note a {
+  color: #2A78B8;
+  border-bottom-color: rgba(42, 120, 184, 0.4);
+}
+
+:is(.game-memo-mini, .game-first-to-floor) .footer-content,
+:is(.game-memo-mini, .game-first-to-floor) .footer-name {
+  color: var(--ink-soft);
+}
+
+.game-first-to-floor .carousel-dot {
+  background: rgba(90, 58, 26, 0.25);
+}
+
+.game-first-to-floor .carousel-dot.active {
+  background: #2A78B8;
+}
+
+:is(.game-memo-mini, .game-first-to-floor) .hero-chips li {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #fff;
+  color: var(--ink);
+  box-shadow: 0 2px 0 rgba(40, 49, 70, 0.12);
 }
 
 /* === Reset & Base === */
@@ -613,48 +680,47 @@ a {
   gap: 1rem;
 }
 
-.store-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: var(--color-surface);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.75rem;
-  padding: 0.85rem 1.5rem;
-  min-width: 220px;
-  color: var(--color-text);
-  text-decoration: none;
-  transition: border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
+/* Official Apple artwork (images/app-store-badge.svg) — Apple's marketing
+   guidelines require the unmodified badge, so it gets only a lift on
+   hover and a focus ring, never recolouring. Black badge has its own
+   light-grey keyline, so it reads on dark and sky pages alike. */
+.appstore-badge {
+  display: inline-block;
+  border-radius: 10px;
 }
 
-/* Live (anchored) store-badge — hover lifts + glows in game's accent.
-   Plain divs without href stay flat as "Coming Soon" placeholders. */
-a.store-badge:hover {
-  border-color: var(--color-primary);
-  background: var(--color-surface-hover);
+.appstore-badge img {
+  width: 180px;
+  height: auto;
+}
+
+.appstore-badge:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(var(--color-glow), 0.22);
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.3));
 }
 
-a.store-badge:focus-visible {
+.appstore-badge:focus-visible {
   outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
+  outline-offset: 4px;
 }
 
-/* coming-soon opacity handled by .store-badge.coming-soon.visible */
-
-.store-badge-label {
-  display: block;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.5);
+/* One quiet line instead of a disabled "Coming soon" button. */
+.store-note {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.store-badge-store {
-  display: block;
-  font-size: 1.05rem;
-  font-weight: 600;
+.store-note--soon {
+  max-width: 440px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.store-note a {
+  color: var(--color-primary);
+  border-bottom: 1px solid rgba(var(--color-glow), 0.4);
 }
 
 /* === Footer === */
@@ -671,7 +737,7 @@ a.store-badge:focus-visible {
   justify-content: center;
   gap: 0.75rem;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .footer-icon {
@@ -682,7 +748,7 @@ a.store-badge:focus-visible {
 
 .footer-name {
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .footer-back {
@@ -696,175 +762,62 @@ a.store-badge:focus-visible {
   color: var(--color-primary);
 }
 
-/* === Index page — games grid === */
+/* === Index page === */
 .index-body {
   --color-primary: #E6E6FA;
   --color-text: #FFFFFF;
   --color-bg: #0B0B18;
+  --bg-top: #0B0B18;   /* nav tint on support.html */
   --color-surface: #141428;
   --color-surface-hover: #1C1C36;
   --color-glow: 230, 230, 250;
   --color-glow-secondary: 230, 230, 250;
+  /* Faint accent auras from each game's palette so the dark landing doesn't
+     read as a flat void. No background-attachment: fixed — it seams on iOS
+     Safari on scroll; the auras scroll with the page instead (dark base =
+     --color-bg, so the notch / status-bar strip stays seamless). */
+  background-image:
+    radial-gradient(ellipse 60% 40% at 12% 0%, rgba(34, 211, 238, 0.07), transparent 70%),
+    radial-gradient(ellipse 50% 35% at 88% 10%, rgba(245, 166, 35, 0.06), transparent 70%),
+    radial-gradient(ellipse 70% 30% at 50% 100%, rgba(232, 176, 74, 0.05), transparent 70%);
 }
 
 .index-hero {
-  padding: 5rem 1.5rem 2rem;
+  padding: 4.5rem 1.5rem 1rem;
   text-align: center;
 }
 
 .index-title {
   font-size: 2.25rem;
   font-weight: 700;
+  line-height: 1.08;
   letter-spacing: -0.02em;
   color: var(--color-text);
 }
 
+.index-title-accent {
+  background: linear-gradient(100deg, #22D3EE 0%, #E8B04A 45%, #F5A623 75%, #FFC23E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .index-subtitle {
-  margin-top: 0.75rem;
-  color: rgba(255, 255, 255, 0.55);
+  max-width: 560px;
+  margin: 0.75rem auto 0;
+  color: rgba(255, 255, 255, 0.62);
   font-size: 1.05rem;
 }
 
 .games-root {
-  max-width: 1000px;
+  max-width: 1080px;
   margin: 2rem auto 5rem;
   padding: 0 1.5rem;
 }
 
-.games-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-.games-error {
-  text-align: center;
-  color: rgba(255, 255, 255, 0.5);
-  padding: 2rem;
-}
-
-
-.game-card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  background: var(--color-surface);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 1.25rem;
-  padding: 1.5rem;
-  overflow: hidden;
-  transition: transform 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.3s;
-  color: var(--color-text);
-}
-
-.game-card:hover {
-  transform: translateY(-3px);
-  background: var(--color-surface-hover);
-  border-color: rgba(255, 255, 255, 0.14);
-}
-
-/* Per-game accent on landing cards — pulls each game's hero color
-   through as a left-edge strip + matching icon glow + hover tint so
-   the three cards read as distinct products rather than three rows
-   in a list. */
-.game-card[data-game="cosmic-path"] {
-  --card-accent: #22D3EE;
-  --card-glow: 34, 211, 238;
-}
-.game-card[data-game="memo-maze"] {
-  --card-accent: #E8B04A;
-  --card-glow: 232, 176, 74;
-}
-.game-card[data-game="memo-mini"] {
-  --card-accent: #F5A623;
-  --card-glow: 245, 166, 35;
-}
-.game-card[data-game="first-to-floor"] {
-  --card-accent: #FFC23E;
-  --card-glow: 255, 194, 62;
-}
-
-.game-card[data-game]::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 4px;
-  background: var(--card-accent);
-  opacity: 0.85;
-}
-
-.game-card[data-game] .game-card-icon {
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(var(--card-glow), 0.25),
-    0 0 24px rgba(var(--card-glow), 0.18);
-}
-
-.game-card[data-game]:hover {
-  border-color: rgba(var(--card-glow), 0.35);
-  box-shadow: 0 12px 32px rgba(var(--card-glow), 0.12);
-}
-
-.game-card[data-game]:hover::before {
-  opacity: 1;
-  width: 5px;
-}
-
-.game-card[data-game]:focus-visible {
-  outline: 2px solid var(--card-accent);
-  outline-offset: 4px;
-}
-
-.game-card-icon {
-  width: 84px;
-  height: 84px;
-  border-radius: 18px;
-  flex-shrink: 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
-
-.game-card-body {
-  flex: 1;
-  min-width: 0;
-}
-
-.game-card-name {
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-  color: #FFFFFF;
-}
-
-.game-card-tagline {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.4;
-}
-
-.game-card-badge {
-  display: inline-block;
-  margin-top: 0.6rem;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.25rem 0.6rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.65);
-}
-
-/* Live (shipped) badge — tinted in the game's accent so live games
-   read as different from in-development cards at a glance. */
-.game-card[data-game] .game-card-badge--live {
-  background: rgba(var(--card-glow), 0.15);
-  color: var(--card-accent);
-  font-weight: 600;
-}
-
 @media (min-width: 768px) {
-  .index-title { font-size: 3rem; }
-  .games-grid { grid-template-columns: repeat(2, 1fr); }
+  .index-hero { padding-top: 6rem; }
+  .index-title { font-size: 3.5rem; }
 }
 
 /* === Cross-page View Transitions === */
@@ -1001,27 +954,32 @@ a.store-badge:focus-visible {
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* === Hero Entrance Animations === */
+/* === Hero Entrance Animations ===
+   Short and front-loaded: the hero is the first paint, so it should be
+   readable within ~half a second, in reading order (logo → copy → CTA). */
 .hero-logo {
-  animation: fadeInScale 1s ease-out 0.2s both;
+  animation: fadeInScale 0.7s ease-out both;
 }
 
 .hero-tagline {
-  animation: fadeInUp 0.8s ease-out 0.7s both;
+  animation: fadeInUp 0.6s ease-out 0.1s both;
 }
 
-.hero-cta {
-  animation: fadeInUp 0.7s ease-out 0.5s both;
+.hero-cta,
+.hero-chips {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
 }
 
-/* === Scroll Animations === */
-.animate-on-scroll {
+/* === Scroll Animations ===
+   Hidden states are gated on html.js (set by an inline script in <head>),
+   so with JS off or failed every section is simply visible. */
+.js .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.animate-on-scroll.visible {
+.js .animate-on-scroll.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1039,35 +997,35 @@ a.store-badge:focus-visible {
    "items fall and land" mechanic. Overrides the default
    .animate-on-scroll translateY(30px) with translateY(-50px) +
    overshoot easing. */
-.game-first-to-floor .feature-card.animate-on-scroll {
+.js .game-first-to-floor .feature-card.animate-on-scroll {
   transform: translateY(-50px);
   transition: opacity 0.5s ease, transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.game-first-to-floor .feature-card.animate-on-scroll.visible {
+.js .game-first-to-floor .feature-card.animate-on-scroll.visible {
   transform: translateY(0);
 }
 
 /* Section titles animate on scroll */
-.section-title {
+.js .section-title {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.section-title.visible {
+.js .section-title.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Carousel items stagger in */
-.carousel-item {
+.js .carousel-item {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.carousel-item.visible {
+.js .carousel-item.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1079,24 +1037,17 @@ a.store-badge:focus-visible {
 .carousel-item:nth-child(5) { transition-delay: 0.32s; }
 .carousel-item:nth-child(6) { transition-delay: 0.4s; }
 
-/* Store badges animate */
-.store-badge {
+/* Store badge animates in */
+.js .appstore-badge {
   opacity: 0;
   transform: translateY(20px);
-  transition: border-color 0.2s, opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.35s ease, filter 0.2s;
 }
 
-.store-badge.visible {
+.js .appstore-badge.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
-.store-badge.coming-soon.visible {
-  opacity: 0.7;
-}
-
-.store-badge:nth-child(1) { transition-delay: 0.1s; }
-.store-badge:nth-child(2) { transition-delay: 0.25s; }
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
@@ -1366,7 +1317,7 @@ a.store-badge:focus-visible {
   text-align: center;
   margin-top: 0.6rem;
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.6);
   letter-spacing: 0.01em;
 }
 
@@ -1385,7 +1336,7 @@ a.store-badge:focus-visible {
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.62);
   transition: color 0.2s;
 }
 
@@ -1857,39 +1808,6 @@ a.store-badge:focus-visible {
   }
 }
 
-/* === Index hero: gradient accent headline === */
-.index-hero {
-  padding-top: 6rem;
-}
-
-.index-title {
-  line-height: 1.08;
-}
-
-.index-subtitle {
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.index-title-accent {
-  background: linear-gradient(100deg, #22D3EE 0%, #E8B04A 45%, #F5A623 75%, #FFC23E 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Faint accent auras from each game's palette so the dark landing doesn't
-   read as a flat void. No background-attachment: fixed — it seams on iOS
-   Safari on scroll; the auras scroll with the page instead (dark base =
-   --color-bg, so the notch / status-bar strip stays seamless). */
-.index-body {
-  background-image:
-    radial-gradient(ellipse 60% 40% at 12% 0%, rgba(34, 211, 238, 0.07), transparent 70%),
-    radial-gradient(ellipse 50% 35% at 88% 10%, rgba(245, 166, 35, 0.06), transparent 70%),
-    radial-gradient(ellipse 70% 30% at 50% 100%, rgba(232, 176, 74, 0.05), transparent 70%);
-}
-
 /* === Index: games shelf === */
 .games-shelf {
   display: grid;
@@ -1990,10 +1908,13 @@ a.store-badge:focus-visible {
   color: var(--tile-ink-soft);
 }
 
+/* Wraps the badge under the icon when the copy column is narrow, so it
+   never runs into the tilted screenshot. */
 .game-tile-meta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.6rem 0.75rem;
   margin-top: auto;
   padding-top: 1.5rem;
 }
@@ -2053,11 +1974,95 @@ a.store-badge:focus-visible {
     width: 50%;
     right: -10%;
   }
+  .game-tile-badge {
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* === Featured tile (newest release) + wide tiles ===
+   Mobile: one column, featured is just first. 768px+: featured spans the
+   full row; in the 2-column range the last tile would sit alone, so it
+   goes full-width too. 1024px+: the other three share one row of three.
+   Wide tiles anchor the screenshot from the top so the game UI shows,
+   instead of a 600px-tall phone clipped at both ends. */
+.game-tile--featured .game-tile-badge--live {
+  background: var(--card-accent);
+  color: #283146;
 }
 
 @media (min-width: 768px) {
-  .index-title {
-    font-size: 3.5rem;
+  .game-tile--featured,
+  .games-shelf > .game-tile:last-child:nth-child(even) {
+    grid-column: 1 / -1;
+    min-height: 360px;
+  }
+
+  .game-tile--featured .game-tile-body,
+  .games-shelf > .game-tile:last-child:nth-child(even) .game-tile-body {
+    max-width: 58%;
+  }
+
+  .game-tile--featured .game-tile-shot,
+  .games-shelf > .game-tile:last-child:nth-child(even) .game-tile-shot {
+    width: 230px;
+    top: 2.25rem;
+    bottom: auto;
+    right: 7%;
+  }
+
+  .game-tile--featured {
+    padding: 2.5rem;
+  }
+
+  .game-tile--featured .game-tile-logo {
+    max-height: 150px;
+  }
+
+  .game-tile--featured .game-tile-tagline {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .games-shelf {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Back to a normal tile — the 3-up row has no orphan. */
+  .games-shelf > .game-tile:last-child:nth-child(even):not(.game-tile--featured) {
+    grid-column: auto;
+    min-height: 340px;
+  }
+
+  .games-shelf > .game-tile:last-child:nth-child(even):not(.game-tile--featured) .game-tile-body {
+    max-width: 60%;
+  }
+
+  .games-shelf > .game-tile:last-child:nth-child(even):not(.game-tile--featured) .game-tile-shot {
+    width: 44%;
+    top: auto;
+    bottom: -22%;
+    right: -7%;
+  }
+
+  .game-tile:not(.game-tile--featured) {
+    min-height: 340px;
+    padding: 1.5rem;
+  }
+
+  .game-tile:not(.game-tile--featured) .game-tile-logo {
+    max-height: 84px;
+  }
+
+  .game-tile--featured {
+    min-height: 400px;
+  }
+
+  .game-tile--featured .game-tile-shot {
+    width: 260px;
+    right: 9%;
   }
 }
 
@@ -2189,4 +2194,183 @@ body.game-first-to-floor::before {
 .trailer-sound:hover,
 .trailer-sound:focus-visible {
   background: rgba(40, 49, 70, 0.8);
+}
+
+/* ============================================================
+   AUDIT FOLLOW-UPS (2026-10)
+   ============================================================ */
+
+/* Game-page h1 wraps the logo image — no text styling of its own. */
+.hero-title {
+  font-size: inherit;
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 920px) {
+  .hero-title { justify-content: flex-start; }
+}
+
+/* At-a-glance chips under the hero CTA / index subtitle. */
+.hero-chips,
+.trust-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding: 0;
+}
+
+.hero-chips li,
+.trust-chips li {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(var(--color-glow), 0.08);
+  border: 1px solid rgba(var(--color-glow), 0.22);
+  color: var(--color-text);
+}
+
+@media (min-width: 920px) {
+  .hero-chips { justify-content: flex-start; }
+}
+
+.trust-chips {
+  margin-top: 1.5rem;
+}
+
+.trust-chips li {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Carousel: <figure> with the phone mockup + a visible caption. */
+.carousel-item .phone-mockup {
+  width: 100%;
+}
+
+.carousel-item figcaption {
+  margin-top: 0.85rem;
+  padding: 0 0.25rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+/* Game nav: name tooltip on hover / keyboard focus (desktop pointers). */
+.game-nav-icons a {
+  position: relative;
+  display: block;
+  border-radius: 10px;
+}
+
+.game-nav-icons a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.game-nav-back:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .game-nav-icons a::after {
+    content: attr(aria-label);
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translate(-50%, -4px);
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    background: rgba(10, 12, 20, 0.92);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+
+  .game-nav-icons a:last-child::after {
+    left: auto;
+    right: 0;
+    transform: translate(0, -4px);
+  }
+
+  .game-nav-icons a:hover::after,
+  .game-nav-icons a:focus-visible::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  .game-nav-icons a:last-child:hover::after,
+  .game-nav-icons a:last-child:focus-visible::after {
+    transform: translate(0, 0);
+  }
+}
+
+/* Generic visible focus for plain text links. */
+.footer-links a:focus-visible,
+.doc-container a:focus-visible,
+.store-note a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* === 404 page === */
+.notfound {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.notfound .index-subtitle {
+  margin-top: -1rem;
+}
+
+.notfound-games {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.notfound-games a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 96px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.notfound-games a:hover {
+  transform: translateY(-3px);
+  color: #fff;
+}
+
+.notfound-games img {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
 }

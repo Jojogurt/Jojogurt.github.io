@@ -3,13 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <script>document.documentElement.classList.add('js')</script>
   <title>Cosmic Path — Remember the path. Trace the comet.</title>
   <meta name="description" content="Cosmic Path is a neon memory puzzle game. Watch a glowing comet trace a path across a grid, memorize it, then recreate it from memory.">
-  <link rel="icon" type="image/png" href="images/cosmic-path/icon.png">
+  <link rel="canonical" href="https://jojogurt.github.io/cosmic-path.html">
+  <meta name="theme-color" content="#070A13">
+  <link rel="apple-touch-icon" href="images/cosmic-path/icon-180.png">
+  <meta name="apple-itunes-app" content="app-id=1355832531">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Karol Kędziora — Games">
+  <meta property="og:title" content="Cosmic Path — Remember the path. Trace the comet.">
+  <meta property="og:description" content="Cosmic Path is a neon memory puzzle game. Watch a glowing comet trace a path across a grid, memorize it, then recreate it from memory.">
+  <meta property="og:url" content="https://jojogurt.github.io/cosmic-path.html">
+  <meta property="og:image" content="https://jojogurt.github.io/images/cosmic-path/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cosmic Path — logo and gameplay screenshot">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="images/cosmic-path/icon-64.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Cosmic Path",
+    "operatingSystem": "iOS",
+    "applicationCategory": "GameApplication",
+    "description": "Cosmic Path is a neon memory puzzle game. Watch a glowing comet trace a path across a grid, memorize it, then recreate it from memory.",
+    "image": "https://jojogurt.github.io/images/cosmic-path/og.jpg",
+    "url": "https://jojogurt.github.io/cosmic-path.html",
+    "downloadUrl": "https://apps.apple.com/app/id1355832531",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Karol Kędziora"
+    }
+  }
+  </script>
 </head>
 <body class="game-cosmic-path">
 
@@ -18,16 +55,16 @@
     <a class="game-nav-back" href="index.html" aria-label="Back to all games">&larr;</a>
     <div class="game-nav-icons">
       <a href="cosmic-path.html" aria-label="Cosmic Path" aria-current="page">
-        <img class="game-nav-icon active vt-cosmic-path" src="images/cosmic-path/icon.png" alt="Cosmic Path" loading="eager" decoding="sync">
+        <img class="game-nav-icon active vt-cosmic-path" src="images/cosmic-path/icon-128.webp" width="128" height="128" alt="Cosmic Path" loading="eager" decoding="async">
       </a>
       <a href="memo-maze.html" aria-label="Memo Maze">
-        <img class="game-nav-icon vt-memo-maze" src="images/memo-maze/icon.png" alt="Memo Maze" loading="eager" decoding="sync">
+        <img class="game-nav-icon vt-memo-maze" src="images/memo-maze/icon-128.webp" width="128" height="128" alt="Memo Maze" loading="eager" decoding="async">
       </a>
       <a href="memo-mini.html" aria-label="Memo Mini">
-        <img class="game-nav-icon vt-memo-mini" src="images/memo-mini/icon.png" alt="Memo Mini" loading="eager" decoding="sync">
+        <img class="game-nav-icon vt-memo-mini" src="images/memo-mini/icon-128.webp" width="128" height="128" alt="Memo Mini" loading="eager" decoding="async">
       </a>
       <a href="first-to-floor.html" aria-label="First to Floor">
-        <img class="game-nav-icon vt-first-to-floor" src="images/first-to-floor/icon.png" alt="First to Floor" loading="eager" decoding="sync">
+        <img class="game-nav-icon vt-first-to-floor" src="images/first-to-floor/icon-128.webp" width="128" height="128" alt="First to Floor" loading="eager" decoding="async">
       </a>
     </div>
   </nav>
@@ -36,14 +73,20 @@
   <section class="hero" id="hero">
     <div class="hero-content hero-content--split">
       <div class="hero-copy">
-        <img src="images/cosmic-path/logo.png" alt="Cosmic Path logo" class="hero-logo">
+        <h1 class="hero-title"><img src="images/cosmic-path/logo.webp" alt="Cosmic Path" class="hero-logo" width="1240" height="701"></h1>
         <p class="hero-tagline">Remember the path. Trace the comet. Master the cosmic challenge.</p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="https://apps.apple.com/app/id1355832531">Get it on the App Store</a>
+          <a class="btn btn-primary" href="https://apps.apple.com/app/id1355832531">Download on the App Store</a>
         </div>
+        <ul class="hero-chips" aria-label="At a glance">
+          <li>Free to play</li>
+          <li>Daily challenge</li>
+          <li>Endless mode</li>
+          <li>Leaderboards</li>
+        </ul>
       </div>
       <div class="phone-mockup hero-shot">
-        <img src="images/cosmic-path/promo_trace.png" alt="Cosmic Path gameplay — trace the paths" loading="eager">
+        <img src="images/cosmic-path/promo_trace.webp" alt="Cosmic Path gameplay — trace the paths" loading="eager">
       </div>
     </div>
   </section>
@@ -54,21 +97,36 @@
     <div class="carousel-wrapper">
       <button class="carousel-arrow carousel-arrow--left" aria-label="Scroll left">&#8249;</button>
       <div class="carousel-track">
-        <div class="phone-mockup carousel-item">
-          <img src="images/cosmic-path/01_main_menu.png" alt="Main menu — continue your streak" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/cosmic-path/promo_trace.png" alt="Trace the path you remember" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/cosmic-path/promo_memory.png" alt="Train your memory" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/cosmic-path/promo_skills.png" alt="Three skills to help you" loading="lazy">
-        </div>
-        <div class="phone-mockup carousel-item">
-          <img src="images/cosmic-path/promo_relax.png" alt="Relaxing neon puzzle" loading="lazy">
-        </div>
+        <figure class="carousel-item">
+          <div class="phone-mockup">
+            <img src="images/cosmic-path/01_main_menu.webp" alt="Main menu — continue your streak" loading="lazy">
+          </div>
+          <figcaption>Main menu — continue your streak</figcaption>
+        </figure>
+        <figure class="carousel-item">
+          <div class="phone-mockup">
+            <img src="images/cosmic-path/promo_trace.webp" alt="Trace the path you remember" loading="lazy">
+          </div>
+          <figcaption>Trace the path you remember</figcaption>
+        </figure>
+        <figure class="carousel-item">
+          <div class="phone-mockup">
+            <img src="images/cosmic-path/promo_memory.webp" alt="Train your memory" loading="lazy">
+          </div>
+          <figcaption>Train your memory</figcaption>
+        </figure>
+        <figure class="carousel-item">
+          <div class="phone-mockup">
+            <img src="images/cosmic-path/promo_skills.webp" alt="Three skills to help you" loading="lazy">
+          </div>
+          <figcaption>Three skills to help you</figcaption>
+        </figure>
+        <figure class="carousel-item">
+          <div class="phone-mockup">
+            <img src="images/cosmic-path/promo_relax.webp" alt="Relaxing neon puzzle" loading="lazy">
+          </div>
+          <figcaption>Relaxing neon puzzle</figcaption>
+        </figure>
       </div>
       <button class="carousel-arrow carousel-arrow--right" aria-label="Scroll right">&#8250;</button>
     </div>
@@ -111,27 +169,17 @@
     <h2 class="section-title">Get Cosmic Path</h2>
     <p class="download-description">A neon memory puzzle. Watch. Memorize. Trace.</p>
     <div class="store-badges">
-      <a class="store-badge" href="https://apps.apple.com/app/id1355832531">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        <div>
-          <span class="store-badge-label">Get it on the</span>
-          <span class="store-badge-store">App Store</span>
-        </div>
+      <a class="appstore-badge" href="https://apps.apple.com/app/id1355832531">
+        <img src="images/app-store-badge.svg" alt="Download on the App Store" width="180" height="60">
       </a>
-      <div class="store-badge coming-soon">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M3.18 23.54L14.46 12 3.18.46a1.06 1.06 0 0 0-.18.6v21.88c0 .22.06.42.18.6zm1.44.94l12.58-7.26-2.77-2.78L4.62 24.48zm14.06-8.12L21 15l-2.32-1.34-3.04 3.04 3.04 3.66zM4.62-.48l10.81 10.04 2.77-2.78L5.62-.48z"/></svg>
-        <div>
-          <span class="store-badge-label">Coming Soon on</span>
-          <span class="store-badge-store">Google Play</span>
-        </div>
-      </div>
     </div>
+    <p class="store-note">Android version coming soon.</p>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <img src="images/cosmic-path/icon.png" alt="Cosmic Path icon" class="footer-icon">
+      <img src="images/cosmic-path/icon-128.webp" width="128" height="128" alt="Cosmic Path icon" class="footer-icon">
       <span class="footer-name">Cosmic Path</span>
       <span class="footer-year">&copy; 2026</span>
     </div>

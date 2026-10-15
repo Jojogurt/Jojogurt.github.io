@@ -1,6 +1,6 @@
 // Scroll animations via IntersectionObserver
 (function () {
-  var selector = '.animate-on-scroll, .section-title, .carousel-item, .store-badge';
+  var selector = '.animate-on-scroll, .section-title, .carousel-item, .appstore-badge';
 
   if (!('IntersectionObserver' in window)) {
     window.__observeAnimated = function () {

@@ -3,8 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Karol Kędziora — Memory games for mobile</title>
-  <meta name="description" content="Four small memory games for iOS and Android, built in Godot by Karol Kędziora. No ads where kids play, no dark patterns anywhere.">
+  <script>document.documentElement.classList.add('js')</script>
+  <title>Karol Kędziora — Small puzzle games for iPhone</title>
+  <meta name="description" content="Four small puzzle games — memory, mazes and physics — built solo in Godot by Karol Kędziora. No ads where kids play, no dark patterns anywhere.">
+  <link rel="canonical" href="https://jojogurt.github.io/">
+  <meta name="theme-color" content="#0B0B18">
+  <link rel="icon" type="image/png" href="images/site-icon-64.png">
+  <link rel="apple-touch-icon" href="images/site-icon-180.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Karol Kędziora — Games">
+  <meta property="og:title" content="Karol Kędziora — Small puzzle games for iPhone">
+  <meta property="og:description" content="Four small puzzle games — memory, mazes and physics — built solo in Godot by Karol Kędziora. No ads where kids play, no dark patterns anywhere.">
+  <meta property="og:url" content="https://jojogurt.github.io/">
+  <meta property="og:image" content="https://jojogurt.github.io/images/og-home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Icons of four mobile games by Karol Kędziora">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,6 +30,12 @@
   <section class="index-hero">
     <h1 class="index-title">Small games.<br><span class="index-title-accent">Big memories.</span></h1>
     <p class="index-subtitle">Four mobile puzzles by Karol Kędziora — built solo in Godot, from Poland. No ads where kids play, no dark patterns anywhere.</p>
+    <ul class="trust-chips" aria-label="Studio principles">
+      <li>Made solo in Poland</li>
+      <li>Built in Godot</li>
+      <li>No ads where kids play</li>
+      <li>No dark patterns</li>
+    </ul>
   </section>
 
   <!-- Tiles are static HTML so cross-document View Transitions have a reliable DOM
@@ -23,52 +44,52 @@
   <main class="games-root">
     <div class="games-shelf">
 
-      <a class="game-tile animate-on-scroll" data-game="cosmic-path" href="cosmic-path.html">
+      <a class="game-tile game-tile--featured animate-on-scroll" data-game="memo-mini" href="memo-mini.html">
         <div class="game-tile-body">
-          <img class="game-tile-logo" src="images/cosmic-path/logo.png" alt="Cosmic Path">
-          <p class="game-tile-tagline">Remember the path. Trace the comet.</p>
-          <div class="game-tile-meta">
-            <img class="game-tile-icon vt-cosmic-path" src="images/cosmic-path/icon.png" alt="" loading="eager" decoding="sync">
-            <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
-          </div>
-        </div>
-        <img class="game-tile-shot" src="images/cosmic-path/promo_trace.png" alt="" loading="lazy">
-      </a>
-
-      <a class="game-tile animate-on-scroll" data-game="memo-maze" href="memo-maze.html">
-        <div class="game-tile-body">
-          <img class="game-tile-logo" src="images/memo-maze/logo.png" alt="Memo Maze">
-          <p class="game-tile-tagline">Memorize the maze. Swipe the path.</p>
-          <div class="game-tile-meta">
-            <img class="game-tile-icon vt-memo-maze" src="images/memo-maze/icon.png" alt="" loading="eager" decoding="sync">
-            <span class="game-tile-badge">In development</span>
-          </div>
-        </div>
-        <img class="game-tile-shot" src="images/memo-maze/04_gameplay_memorize.png" alt="" loading="lazy">
-      </a>
-
-      <a class="game-tile animate-on-scroll" data-game="memo-mini" href="memo-mini.html">
-        <div class="game-tile-body">
-          <img class="game-tile-logo" src="images/memo-mini/logo.png" alt="Memo Mini">
+          <img class="game-tile-logo" src="images/memo-mini/logo.webp" alt="Memo Mini">
           <p class="game-tile-tagline">Match the pairs. Grow your collection. For kids 4+.</p>
           <div class="game-tile-meta">
-            <img class="game-tile-icon vt-memo-mini" src="images/memo-mini/icon.png" alt="" loading="eager" decoding="sync">
+            <img class="game-tile-icon vt-memo-mini" src="images/memo-mini/icon-128.webp" width="128" height="128" alt="" loading="eager">
             <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
           </div>
         </div>
-        <img class="game-tile-shot" src="images/memo-mini/02_memorize.webp" alt="" loading="lazy">
+        <img class="game-tile-shot" src="images/memo-mini/02_memorize-400.webp" srcset="images/memo-mini/02_memorize-400.webp 400w, images/memo-mini/02_memorize.webp 1056w" sizes="(min-width: 768px) 260px, 50vw" alt="" loading="lazy">
       </a>
 
       <a class="game-tile animate-on-scroll" data-game="first-to-floor" href="first-to-floor.html">
         <div class="game-tile-body">
-          <img class="game-tile-logo" src="images/first-to-floor/logo.png" alt="First to Floor">
+          <img class="game-tile-logo" src="images/first-to-floor/logo.webp" alt="First to Floor">
           <p class="game-tile-tagline">Which item hits the floor first? For kids 4+.</p>
           <div class="game-tile-meta">
-            <img class="game-tile-icon vt-first-to-floor" src="images/first-to-floor/icon.png" alt="" loading="eager" decoding="sync">
+            <img class="game-tile-icon vt-first-to-floor" src="images/first-to-floor/icon-128.webp" width="128" height="128" alt="" loading="eager">
             <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
           </div>
         </div>
-        <img class="game-tile-shot" src="images/first-to-floor/03_throw.png" alt="" loading="lazy">
+        <img class="game-tile-shot" src="images/first-to-floor/03_throw-400.webp" alt="" loading="lazy">
+      </a>
+
+      <a class="game-tile animate-on-scroll" data-game="cosmic-path" href="cosmic-path.html">
+        <div class="game-tile-body">
+          <img class="game-tile-logo" src="images/cosmic-path/logo.webp" alt="Cosmic Path">
+          <p class="game-tile-tagline">Remember the path. Trace the comet.</p>
+          <div class="game-tile-meta">
+            <img class="game-tile-icon vt-cosmic-path" src="images/cosmic-path/icon-128.webp" width="128" height="128" alt="" loading="eager">
+            <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
+          </div>
+        </div>
+        <img class="game-tile-shot" src="images/cosmic-path/promo_trace-400.webp" alt="" loading="lazy">
+      </a>
+
+      <a class="game-tile animate-on-scroll" data-game="memo-maze" href="memo-maze.html">
+        <div class="game-tile-body">
+          <img class="game-tile-logo" src="images/memo-maze/logo.webp" alt="Memo Maze">
+          <p class="game-tile-tagline">Memorize the maze. Swipe the path.</p>
+          <div class="game-tile-meta">
+            <img class="game-tile-icon vt-memo-maze" src="images/memo-maze/icon-128.webp" width="128" height="128" alt="" loading="eager">
+            <span class="game-tile-badge">In development</span>
+          </div>
+        </div>
+        <img class="game-tile-shot" src="images/memo-maze/04_gameplay_memorize-400.webp" alt="" loading="lazy">
       </a>
 
     </div>
