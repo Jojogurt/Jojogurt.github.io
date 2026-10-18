@@ -1310,7 +1310,7 @@ a {
   color: #2A78B8;
 }
 
-/* Footer personality line — "Made by Karol Kędziora · Built in Godot" etc.
+/* Footer personality line — "Made by Jojogurt Games · Built in Godot" etc.
    Audit flagged the footer as the visual equivalent of saying "this site
    is over." This adds a single human-voice line above the link row. */
 .footer-meta {
