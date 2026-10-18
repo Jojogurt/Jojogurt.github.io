@@ -44,7 +44,19 @@
   <main class="games-root">
     <div class="games-shelf">
 
-      <a class="game-tile game-tile--featured animate-on-scroll" data-game="memo-mini" href="memo-mini.html">
+      <a class="game-tile animate-on-scroll" data-game="cosmic-path" href="cosmic-path.html">
+        <div class="game-tile-body">
+          <img class="game-tile-logo" src="images/cosmic-path/logo.webp" alt="Cosmic Path">
+          <p class="game-tile-tagline">Watch the comet. Remember its path. Trace it back.</p>
+          <div class="game-tile-meta">
+            <img class="game-tile-icon vt-cosmic-path" src="images/cosmic-path/icon-128.webp" width="128" height="128" alt="" loading="eager">
+            <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
+          </div>
+        </div>
+        <img class="game-tile-shot" src="images/cosmic-path/03_portals-400.webp" alt="" loading="lazy">
+      </a>
+
+      <a class="game-tile animate-on-scroll" data-game="memo-mini" href="memo-mini.html">
         <div class="game-tile-body">
           <img class="game-tile-logo" src="images/memo-mini/logo.webp" alt="Memo Mini">
           <p class="game-tile-tagline">Match the pairs. Grow your collection. For kids 4+.</p>
@@ -53,7 +65,7 @@
             <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
           </div>
         </div>
-        <img class="game-tile-shot" src="images/memo-mini/02_memorize-400.webp" srcset="images/memo-mini/02_memorize-400.webp 400w, images/memo-mini/02_memorize.webp 1056w" sizes="(min-width: 768px) 260px, 50vw" alt="" loading="lazy">
+        <img class="game-tile-shot" src="images/memo-mini/02_memorize-400.webp" alt="" loading="lazy">
       </a>
 
       <a class="game-tile animate-on-scroll" data-game="first-to-floor" href="first-to-floor.html">
@@ -66,18 +78,6 @@
           </div>
         </div>
         <img class="game-tile-shot" src="images/first-to-floor/03_throw-400.webp" alt="" loading="lazy">
-      </a>
-
-      <a class="game-tile animate-on-scroll" data-game="cosmic-path" href="cosmic-path.html">
-        <div class="game-tile-body">
-          <img class="game-tile-logo" src="images/cosmic-path/logo.webp" alt="Cosmic Path">
-          <p class="game-tile-tagline">Watch the comet. Remember its path. Trace it back.</p>
-          <div class="game-tile-meta">
-            <img class="game-tile-icon vt-cosmic-path" src="images/cosmic-path/icon-128.webp" width="128" height="128" alt="" loading="eager">
-            <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
-          </div>
-        </div>
-        <img class="game-tile-shot" src="images/cosmic-path/03_portals-400.webp" alt="" loading="lazy">
       </a>
 
       <a class="game-tile animate-on-scroll" data-game="memo-maze" href="memo-maze.html">
@@ -93,6 +93,26 @@
       </a>
 
     </div>
+
+    <!-- Browser games live in their own repos under jojogurt.github.io/<name>/
+         and open in a new tab — they are full apps with their own state. -->
+    <section class="web-shelf" aria-labelledby="web-shelf-title">
+      <h2 class="web-shelf-title" id="web-shelf-title">Also: play in your browser</h2>
+
+      <a class="game-tile game-tile--web animate-on-scroll" data-game="stacja" href="stacja/" target="_blank" rel="noopener">
+        <div class="game-tile-body">
+          <img class="game-tile-logo" src="images/stacja/logo.webp" width="1240" height="634" alt="Uszy &amp; Mózg" lang="pl" loading="lazy">
+          <p class="game-tile-tagline">A music pub-quiz trainer. Guess the song, artist and year — solo, as a daily challenge or live with friends.</p>
+          <div class="game-tile-meta">
+            <img class="game-tile-icon" src="images/stacja/icon-128.webp" width="128" height="128" alt="" loading="lazy">
+            <span class="game-tile-badge game-tile-badge--live">Play in browser <span aria-hidden="true">&#8599;</span></span>
+            <span class="game-tile-badge">Polish only</span>
+          </div>
+        </div>
+        <img class="game-tile-shot" src="images/stacja/menu-400.webp" srcset="images/stacja/menu-400.webp 400w, images/stacja/menu.webp 750w" sizes="(min-width: 768px) 230px, 50vw" alt="" loading="lazy">
+        <span class="visually-hidden">(opens in a new tab)</span>
+      </a>
+    </section>
   </main>
 
   <footer class="footer">

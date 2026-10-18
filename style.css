@@ -810,7 +810,7 @@ a {
 }
 
 .games-root {
-  max-width: 1080px;
+  max-width: 1000px;
   margin: 2rem auto 5rem;
   padding: 0 1.5rem;
 }
@@ -1981,91 +1981,6 @@ a {
   }
 }
 
-/* === Featured tile (newest release) + wide tiles ===
-   Mobile: one column, featured is just first. 768px+: featured spans the
-   full row; in the 2-column range the last tile would sit alone, so it
-   goes full-width too. 1024px+: the other three share one row of three.
-   Wide tiles anchor the screenshot from the top so the game UI shows,
-   instead of a 600px-tall phone clipped at both ends. */
-.game-tile--featured .game-tile-badge--live {
-  background: var(--card-accent);
-  color: #283146;
-}
-
-@media (min-width: 768px) {
-  .game-tile--featured,
-  .games-shelf > .game-tile:last-child:nth-child(even) {
-    grid-column: 1 / -1;
-    min-height: 360px;
-  }
-
-  .game-tile--featured .game-tile-body,
-  .games-shelf > .game-tile:last-child:nth-child(even) .game-tile-body {
-    max-width: 58%;
-  }
-
-  .game-tile--featured .game-tile-shot,
-  .games-shelf > .game-tile:last-child:nth-child(even) .game-tile-shot {
-    width: 230px;
-    top: 2.25rem;
-    bottom: auto;
-    right: 7%;
-  }
-
-  .game-tile--featured {
-    padding: 2.5rem;
-  }
-
-  .game-tile--featured .game-tile-logo {
-    max-height: 150px;
-  }
-
-  .game-tile--featured .game-tile-tagline {
-    font-size: 1.1rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .games-shelf {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* Back to a normal tile — the 3-up row has no orphan. */
-  .games-shelf > .game-tile:last-child:nth-child(even):not(.game-tile--featured) {
-    grid-column: auto;
-    min-height: 340px;
-  }
-
-  .games-shelf > .game-tile:last-child:nth-child(even):not(.game-tile--featured) .game-tile-body {
-    max-width: 60%;
-  }
-
-  .games-shelf > .game-tile:last-child:nth-child(even):not(.game-tile--featured) .game-tile-shot {
-    width: 44%;
-    top: auto;
-    bottom: -22%;
-    right: -7%;
-  }
-
-  .game-tile:not(.game-tile--featured) {
-    min-height: 340px;
-    padding: 1.5rem;
-  }
-
-  .game-tile:not(.game-tile--featured) .game-tile-logo {
-    max-height: 84px;
-  }
-
-  .game-tile--featured {
-    min-height: 400px;
-  }
-
-  .game-tile--featured .game-tile-shot {
-    width: 260px;
-    right: 9%;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero-shot {
     animation: none;
@@ -2374,3 +2289,74 @@ body.game-first-to-floor::before {
   border-radius: 16px;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
 }
+
+/* === Index: "play in your browser" shelf ===
+   Web games sit apart from the mobile shelf: different platform, and
+   (for Stacja) an adult pub-quiz audience next to 4+ kids' games. */
+.web-shelf {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.web-shelf-title {
+  margin-bottom: 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.game-tile[data-game="stacja"] {
+  --card-accent: #58CC02;
+  --card-glow: 88, 204, 2;
+  background:
+    radial-gradient(ellipse 80% 70% at 80% 10%, rgba(88, 204, 2, 0.16), transparent 65%),
+    radial-gradient(ellipse 50% 50% at 10% 100%, rgba(206, 130, 255, 0.12), transparent 70%),
+    #15121E;
+}
+
+@media (min-width: 768px) {
+  .game-tile--web {
+    min-height: 300px;
+  }
+
+  .game-tile--web .game-tile-body {
+    max-width: 58%;
+  }
+
+  .game-tile--web .game-tile-shot {
+    width: 210px;
+    top: 2.25rem;
+    bottom: auto;
+    right: 7%;
+  }
+
+  .game-tile--web .game-tile-logo {
+    max-height: 140px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .game-tile.game-tile--web {
+    min-height: 320px;
+    padding: 2.5rem;
+  }
+
+  .game-tile.game-tile--web .game-tile-logo {
+    max-height: 150px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
