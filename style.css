@@ -2385,16 +2385,6 @@ body.game-first-to-floor::before {
 }
 
 
-/* === Mosaic Reveal: icon-only branding (no wordmark logo yet) === */
-.game-tile-name,
-.hero-name {
-  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
-  letter-spacing: 0.04em;
-  line-height: 1.15;
-  margin: 0 0 0.5rem;
-}
-.game-tile-name { font-size: 1.5rem; color: var(--tile-ink, #fff); }
-.hero-name { font-size: clamp(2rem, 6vw, 3.4rem); }
-.hero-name small { display: block; font-size: 0.5em; opacity: 0.8; font-weight: 500; }
+/* === Mosaic Reveal: icon art in the hero and on the shelf tile === */
 .hero-icon-art { width: min(320px, 70vw); height: auto; border-radius: 22%; box-shadow: 0 20px 60px rgba(var(--color-glow), 0.35); }
 .game-tile--icon-art .game-tile-shot { border: 0; border-radius: 22%; box-shadow: 0 16px 40px rgba(var(--color-glow), 0.35); }
