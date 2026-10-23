@@ -18,6 +18,18 @@
   --color-glow-secondary: 0, 255, 0;
 }
 
+.game-mosaic-reveal {
+  --color-primary: #22D3EE;
+  --color-secondary: #C084FC;
+  --color-bg: #080B1A;
+  --bg-top: #080B1A;
+  --color-text: #FFFFFF;
+  --color-surface: #11152B;
+  --color-surface-hover: #181D38;
+  --color-glow: 192, 132, 252;
+  --color-glow-secondary: 34, 211, 238;
+}
+
 .game-memo-maze {
   --color-primary: #E8B04A;
   --color-secondary: #C44536;
@@ -378,7 +390,11 @@ a {
 .game-cosmic-path .hero-tagline,
 .game-cosmic-path .section-title,
 .game-cosmic-path .feature-card h3,
-.game-cosmic-path .hero-coming-soon {
+.game-cosmic-path .hero-coming-soon,
+.game-mosaic-reveal .hero-tagline,
+.game-mosaic-reveal .section-title,
+.game-mosaic-reveal .feature-card h3,
+.game-mosaic-reveal .hero-coming-soon {
   font-family: 'Orbitron', 'Space Grotesk', sans-serif;
   letter-spacing: 0.04em;
 }
@@ -1855,6 +1871,14 @@ a {
     #0E1220;
 }
 
+.game-tile[data-game="mosaic-reveal"] {
+  --card-accent: #C084FC;
+  --card-glow: 192, 132, 252;
+  background:
+    radial-gradient(ellipse 90% 70% at 75% 15%, rgba(192, 132, 252, 0.18), transparent 65%),
+    #0E1128;
+}
+
 .game-tile[data-game="memo-maze"] {
   --card-accent: #E8B04A;
   --card-glow: 232, 176, 74;
@@ -2360,3 +2384,17 @@ body.game-first-to-floor::before {
   border: 0;
 }
 
+
+/* === Mosaic Reveal: icon-only branding (no wordmark logo yet) === */
+.game-tile-name,
+.hero-name {
+  font-family: 'Orbitron', 'Space Grotesk', sans-serif;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+}
+.game-tile-name { font-size: 1.5rem; color: var(--tile-ink, #fff); }
+.hero-name { font-size: clamp(2rem, 6vw, 3.4rem); }
+.hero-name small { display: block; font-size: 0.5em; opacity: 0.8; font-weight: 500; }
+.hero-icon-art { width: min(320px, 70vw); height: auto; border-radius: 22%; box-shadow: 0 20px 60px rgba(var(--color-glow), 0.35); }
+.game-tile--icon-art .game-tile-shot { border: 0; border-radius: 22%; box-shadow: 0 16px 40px rgba(var(--color-glow), 0.35); }
