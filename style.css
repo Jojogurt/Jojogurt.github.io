@@ -2385,6 +2385,6 @@ body.game-first-to-floor::before {
 }
 
 
-/* === Mosaic Reveal: icon art in the hero and on the shelf tile === */
+/* === Mosaic Reveal: icon in the hero; store screenshots already carry their own device frame === */
 .hero-icon-art { width: min(320px, 70vw); height: auto; border-radius: 22%; box-shadow: 0 20px 60px rgba(var(--color-glow), 0.35); }
-.game-tile--icon-art .game-tile-shot { border: 0; border-radius: 22%; box-shadow: 0 16px 40px rgba(var(--color-glow), 0.35); }
+.store-shot { display: block; width: 100%; height: auto; border-radius: 1.4rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); }
