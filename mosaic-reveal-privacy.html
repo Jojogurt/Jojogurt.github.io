@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <script>document.documentElement.classList.add('js')</script>
   <title>Mosaic Reveal: Pixel Memory — Privacy Policy</title>
-  <meta name="description" content="Privacy policy for Mosaic Reveal: Pixel Memory. No ads, no tracking, no analytics - what the app stores and which platform services it uses.">
+  <meta name="description" content="Privacy policy for Mosaic Reveal: Pixel Memory. No ads, no tracking - what the app stores, crash reports and opt-in gameplay statistics.">
   <link rel="canonical" href="https://jojogurt.github.io/mosaic-reveal-privacy.html">
   <meta name="theme-color" content="#080B1A">
   <link rel="apple-touch-icon" href="images/mosaic-reveal/icon-180.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Jojogurt Games">
   <meta property="og:title" content="Mosaic Reveal: Pixel Memory — Privacy Policy">
-  <meta property="og:description" content="Privacy policy for Mosaic Reveal: Pixel Memory. No ads, no tracking, no analytics - what the app stores and which platform services it uses.">
+  <meta property="og:description" content="Privacy policy for Mosaic Reveal: Pixel Memory. No ads, no tracking - what the app stores, crash reports and opt-in gameplay statistics.">
   <meta property="og:url" content="https://jojogurt.github.io/mosaic-reveal-privacy.html">
   <meta property="og:image" content="https://jojogurt.github.io/images/mosaic-reveal/icon-512.png">
   <meta property="og:image:width" content="512">
@@ -45,16 +45,16 @@
     <article class="doc-container" id="en" lang="en">
       <div class="doc-eyebrow">Mosaic Reveal: Pixel Memory</div>
       <h1 class="doc-title">Privacy Policy</h1>
-      <p class="doc-meta">Effective 24 October 2026 · Last updated 24 October 2026</p>
+      <p class="doc-meta">Effective 24 October 2026 · Last updated 25 October 2026</p>
 
       <div class="doc-summary">
-        <strong>Short version:</strong> Mosaic Reveal has no ads, no ad SDKs, no tracking and no accounts, and we do not sell any data. We do not collect analytics or crash data. Your progress stays on your device, plus optional cloud save and leaderboards through your own Apple / Google account. The full detail is below.
+        <strong>Short version:</strong> Mosaic Reveal has no ads, no ad SDKs, no tracking and no accounts, and we do not sell any data. If the App crashes, an anonymous crash report is sent to Sentry so we can fix it. Anonymous gameplay statistics (GameAnalytics) are sent only if you say yes when the App asks, and you can switch them off in Settings at any time. Your progress stays on your device, plus optional cloud save and leaderboards through your own Apple / Google account. The full detail is below.
       </div>
 
       <p>This Privacy Policy explains what information <strong>Mosaic Reveal: Pixel Memory</strong> ("the App", "we", "our") handles when you play it on iOS or Android. The App is developed by Jojogurt Games (Karol Kędziora, "the Developer"). For questions, email <a href="mailto:jojogurt.games@gmail.com">jojogurt.games@gmail.com</a>.</p>
 
       <h2>1. What we collect</h2>
-      <p>We collect no personal data. The App does not ask for your name, email, phone number, location, photos, microphone, camera or contacts, and it does not create any user account on our servers. We do not run any servers that store player data.</p>
+      <p>The App does not ask for your name, email, phone number, location, photos, microphone, camera or contacts, and it does not create any user account. We do not run any servers that store player data. The only data that leaves your device for services we use are anonymous crash reports (§2.6) and, only with your consent, anonymous gameplay statistics (§2.7). Neither is linked to your identity or used for advertising.</p>
 
       <h2>1.1. Data stored on your device</h2>
       <p>The game saves your progress and preferences to a local file on your device:</p>
@@ -63,14 +63,15 @@
         <li>Daily mosaic state (last completed date, current streak)</li>
         <li>Which mosaics you have unlocked (ownership is confirmed by the store)</li>
         <li>Sound, music, haptics and language preferences</li>
+        <li>Your answer to the gameplay statistics question (§2.7)</li>
         <li>Whether you have seen the tutorial</li>
       </ul>
       <p>This data stays on your device unless you are signed in to Game Center / Google Play Games, in which case it is also synced as described in §2.2. Uninstalling the App deletes the local file.</p>
 
       <h2>2. Third-party and platform services</h2>
 
-      <h2>2.1. Advertising, tracking and analytics: none</h2>
-      <p>Mosaic Reveal contains <strong>no advertising and no advertising SDKs</strong>, does not use the advertising identifier (IDFA / GAID), and does not track you across apps or websites. The App's code includes optional GameAnalytics (analytics) and Sentry (crash reporting) integrations, but <strong>they are disabled in this version</strong>: analytics would only start after an explicit consent that the App never asks for, and crash reporting has no destination configured. <strong>No analytics or crash data is collected or sent anywhere.</strong> If this ever changes, this policy will be updated first and the App will ask for your consent.</p>
+      <h2>2.1. Advertising and tracking: none</h2>
+      <p>Mosaic Reveal contains <strong>no advertising and no advertising SDKs</strong>, does not use the advertising identifier (IDFA / GAID), and does not track you across apps or websites. Nothing the App sends is used for advertising, sold or shared with data brokers.</p>
 
       <h2>2.2. Game Center, Google Play Games and cloud save</h2>
       <p>Signing in to Game Center (iOS) or Google Play Games (Android) is optional. If you are signed in:</p>
@@ -89,19 +90,27 @@
       <h2>2.5. Daily mosaic date</h2>
       <p>To give everyone the same daily mosaic regardless of the device clock, the App requests today's date from a small Cloudflare Worker operated by us. <strong>The request contains no personal data, no identifiers and no body.</strong> Like any web request, the server sees your IP address; it does not store it.</p>
 
+      <h2>2.6. Crash reports (Sentry)</h2>
+      <p>If the App crashes or hits an unexpected error, it sends a crash report to <a href="https://sentry.io/privacy/">Sentry</a> (Functional Software, Inc.), hosted in Sentry's EU (Germany) region, so we can find and fix the bug. A report contains the error and stack trace, a snapshot of the game's screen structure (no screenshots), the last lines of the App's log, the App version, and basic device information (device model, OS version, language, free memory). <strong>It contains no name, email, account or progress data.</strong> Sentry assigns a random installation ID so repeated crashes can be grouped; it is not linked to you. Like any web request, Sentry sees your IP address when the report is delivered; we do not use it to identify you. Crash reports are not used for analytics or advertising.</p>
+
+      <h2>2.7. Gameplay statistics (GameAnalytics) - only with your consent</h2>
+      <p>The first time you open the menu, the App asks whether we may collect anonymous gameplay statistics. <strong>Nothing is sent unless you choose "Sure"</strong>, and you can change your answer at any time in Settings → Analytics. If you agree, the App sends anonymous events to <a href="https://gameanalytics.com/privacy">GameAnalytics</a> (GameAnalytics ApS, Denmark), for example: session start and length, which menu options are used, which screen you are on, and whether a purchase was started and completed (not what you paid or any payment details). GameAnalytics also records the App version, device model, OS version and the country derived from your IP address, and identifies your device with a random identifier it creates (on iOS the identifier for vendor, IDFV). It never uses the advertising identifier. We use these statistics only to balance the game and see where players get stuck. Switching Analytics off stops all further events.</p>
+
       <h2>3. Permissions the App requests</h2>
       <ul>
-        <li><strong>Internet / network state</strong> - for the daily mosaic date, leaderboards and cloud save.</li>
+        <li><strong>Internet / network state</strong> - for the daily mosaic date, leaderboards, cloud save, crash reports and (if you agreed) gameplay statistics.</li>
         <li><strong>Vibration / haptics</strong> (Android) - tactile feedback during play. You can turn it off in Settings.</li>
       </ul>
       <p>The App does <strong>not</strong> request location, camera, microphone, contacts, photo library, calendar, SMS or any other sensitive permission.</p>
 
       <h2>4. Children</h2>
-      <p>Mosaic Reveal is a calm, non-violent puzzle game suitable for all ages. It has no ads, no accounts and no social features beyond optional platform leaderboards, and it does not collect personal data from anyone, including children. Purchases are handled by the store and can be restricted with the platform's parental controls.</p>
+      <p>Mosaic Reveal is a calm, non-violent puzzle game suitable for all ages. It has no ads, no accounts and no social features beyond optional platform leaderboards. It does not knowingly collect personal data from children: crash reports are anonymous, and gameplay statistics are sent only after the consent question is answered with "Sure". Purchases are handled by the store and can be restricted with the platform's parental controls.</p>
 
       <h2>5. Your rights and choices</h2>
-      <p>Because we do not collect personal data, there is nothing on our side to access, correct or delete. You can:</p>
+      <p>We hold no account or profile about you. You can:</p>
       <ul>
+        <li><strong>Turn gameplay statistics on or off</strong> - Settings → Analytics in the App.</li>
+        <li><strong>Ask about or delete crash reports and statistics</strong> - email us; because they carry no name or account, tell us roughly when the crash happened and your device model so we can find them.</li>
         <li><strong>Reset your progress</strong> - delete the App from your device.</li>
         <li><strong>Delete cloud saves</strong> - iOS: Settings → Apple ID → iCloud → Manage Storage → Mosaic Reveal / Game Center. Android: Play Games → Settings → Delete Play Games account &amp; data.</li>
         <li><strong>Stop leaderboard sharing</strong> - sign out of Game Center / Google Play Games.</li>
@@ -111,14 +120,16 @@
       <ul>
         <li><strong>On your device:</strong> until you uninstall the App.</li>
         <li><strong>iCloud / Play Games saved games and leaderboards:</strong> per Apple's and Google's policies, until you delete them.</li>
+        <li><strong>Crash reports (Sentry):</strong> deleted automatically after at most 90 days.</li>
+        <li><strong>Gameplay statistics (GameAnalytics):</strong> kept in aggregated and anonymous form under GameAnalytics' retention policy.</li>
         <li><strong>Our servers:</strong> we retain nothing.</li>
       </ul>
 
       <h2>7. Security</h2>
-      <p>The local save file is signed to detect tampering. Cloud sync and leaderboards use Apple's and Google's own encrypted transports, and the date request uses HTTPS. No system is perfectly secure, but the only data of consequence here is your gameplay progress.</p>
+      <p>The local save file is signed to detect tampering. Cloud sync and leaderboards use Apple's and Google's own encrypted transports, and the date request, crash reports and gameplay statistics use HTTPS. No system is perfectly secure, but the only data of consequence here is your gameplay progress.</p>
 
       <h2>8. Notice for US state residents and international users</h2>
-      <p>We do not sell or share personal information, do not use it for targeted advertising or profiling, and do not collect sensitive personal information, so there is nothing to opt out of. The platform services in §2 may process data outside your country under their own legal frameworks. If you are in the EU/EEA, the limited processing described above (the date request) is based on our legitimate interest in operating the game; everything else is processed by Apple / Google under your agreement with them.</p>
+      <p>We do not sell or share personal information, do not use it for targeted advertising or profiling, and do not collect sensitive personal information, so there is nothing to opt out of. The platform services in §2 may process data outside your country under their own legal frameworks. If you are in the EU/EEA, the date request and crash reports are based on our legitimate interest in operating the game and fixing errors (Art. 6(1)(f) GDPR); gameplay statistics are based on your consent (Art. 6(1)(a) GDPR), which you can withdraw at any time in Settings; everything else is processed by Apple / Google under your agreement with them.</p>
 
       <h2>9. Changes to this policy</h2>
       <p>We may update this Privacy Policy from time to time. When we do, the "Last updated" date at the top changes. Material changes are also announced in the App's update notes.</p>
@@ -133,16 +144,16 @@
     <article class="doc-container" id="pl" lang="pl">
       <div class="doc-eyebrow">Mosaic Reveal: Pixel Memory</div>
       <h1 class="doc-title">Polityka Prywatności</h1>
-      <p class="doc-meta">Data wejścia w życie: 24 października 2026 · Ostatnia aktualizacja: 24 października 2026</p>
+      <p class="doc-meta">Data wejścia w życie: 24 października 2026 · Ostatnia aktualizacja: 25 października 2026</p>
 
       <div class="doc-summary">
-        <strong>Krótkie podsumowanie:</strong> Mosaic Reveal nie zawiera reklam, SDK reklamowych, śledzenia ani kont, a my nie sprzedajemy żadnych danych. Nie zbieramy analityki ani danych o awariach. Twój postęp zostaje na urządzeniu, a opcjonalnie jest synchronizowany w chmurze i w rankingach przez Twoje własne konto Apple / Google. Pełne szczegóły poniżej.
+        <strong>Krótkie podsumowanie:</strong> Mosaic Reveal nie zawiera reklam, SDK reklamowych, śledzenia ani kont, a my nie sprzedajemy żadnych danych. Gdy Aplikacja ulegnie awarii, anonimowy raport trafia do Sentry, abyśmy mogli naprawić błąd. Anonimowe statystyki rozgrywki (GameAnalytics) są wysyłane tylko wtedy, gdy zgodzisz się na to, kiedy Aplikacja zapyta, i w każdej chwili możesz je wyłączyć w Ustawieniach. Twój postęp zostaje na urządzeniu, a opcjonalnie jest synchronizowany w chmurze i w rankingach przez Twoje własne konto Apple / Google. Pełne szczegóły poniżej.
       </div>
 
       <p>Niniejsza Polityka prywatności wyjaśnia, jakie dane są przetwarzane podczas korzystania z gry <strong>Mosaic Reveal: Pixel Memory</strong> ("Aplikacja", "my", "nasza") na urządzeniach iOS i Android. Aplikację tworzy Jojogurt Games (Karol Kędziora, "Developer"). W razie pytań napisz na <a href="mailto:jojogurt.games@gmail.com">jojogurt.games@gmail.com</a>.</p>
 
       <h2>1. Jakie dane zbieramy</h2>
-      <p>Nie zbieramy danych osobowych. Aplikacja nie pyta o imię, e-mail, numer telefonu, lokalizację, zdjęcia, mikrofon, aparat ani kontakty i nie tworzy żadnego konta na naszych serwerach. Nie prowadzimy serwerów przechowujących dane graczy.</p>
+      <p>Aplikacja nie pyta o imię, e-mail, numer telefonu, lokalizację, zdjęcia, mikrofon, aparat ani kontakty i nie tworzy żadnego konta. Nie prowadzimy serwerów przechowujących dane graczy. Do usług, z których korzystamy, trafiają z urządzenia wyłącznie anonimowe raporty awarii (§2.6) oraz — tylko za Twoją zgodą — anonimowe statystyki rozgrywki (§2.7). Żadne z nich nie są powiązane z Twoją tożsamością ani wykorzystywane do reklam.</p>
 
       <h2>1.1. Dane przechowywane na Twoim urządzeniu</h2>
       <p>Gra zapisuje Twój postęp i ustawienia w lokalnym pliku na urządzeniu:</p>
@@ -151,14 +162,15 @@
         <li>Stan codziennej mozaiki (data ostatniego ukończenia, aktualna seria)</li>
         <li>Które mozaiki są odblokowane (posiadanie potwierdza sklep)</li>
         <li>Ustawienia dźwięku, muzyki, wibracji i języka</li>
+        <li>Twoją odpowiedź na pytanie o statystyki rozgrywki (§2.7)</li>
         <li>Informację, czy widziałeś samouczek</li>
       </ul>
       <p>Dane te zostają na urządzeniu, chyba że jesteś zalogowany w Game Center / Google Play Games — wtedy są też synchronizowane, jak opisano w §2.2. Odinstalowanie Aplikacji usuwa lokalny plik.</p>
 
       <h2>2. Usługi zewnętrzne i platformowe</h2>
 
-      <h2>2.1. Reklamy, śledzenie i analityka: brak</h2>
-      <p>Mosaic Reveal <strong>nie zawiera reklam ani SDK reklamowych</strong>, nie korzysta z identyfikatora reklamowego (IDFA / GAID) i nie śledzi Cię w innych aplikacjach ani witrynach. Kod Aplikacji zawiera opcjonalne integracje GameAnalytics (analityka) i Sentry (raporty awarii), ale <strong>w tej wersji są wyłączone</strong>: analityka uruchomiłaby się dopiero po wyraźnej zgodzie, o którą Aplikacja nigdy nie prosi, a raportowanie awarii nie ma skonfigurowanego adresu docelowego. <strong>Nie zbieramy ani nie wysyłamy nigdzie danych analitycznych ani o awariach.</strong> Jeśli to się zmieni, najpierw zaktualizujemy tę politykę, a Aplikacja poprosi o Twoją zgodę.</p>
+      <h2>2.1. Reklamy i śledzenie: brak</h2>
+      <p>Mosaic Reveal <strong>nie zawiera reklam ani SDK reklamowych</strong>, nie korzysta z identyfikatora reklamowego (IDFA / GAID) i nie śledzi Cię w innych aplikacjach ani witrynach. Nic, co wysyła Aplikacja, nie jest wykorzystywane do reklam, sprzedawane ani przekazywane brokerom danych.</p>
 
       <h2>2.2. Game Center, Google Play Games i zapis w chmurze</h2>
       <p>Logowanie do Game Center (iOS) lub Google Play Games (Android) jest opcjonalne. Jeśli jesteś zalogowany:</p>
@@ -177,19 +189,27 @@
       <h2>2.5. Data codziennej mozaiki</h2>
       <p>Aby każdy gracz dostawał tę samą codzienną mozaikę niezależnie od zegara urządzenia, Aplikacja pobiera dzisiejszą datę z niewielkiego Cloudflare Workera prowadzonego przez nas. <strong>Zapytanie nie zawiera danych osobowych, identyfikatorów ani treści.</strong> Jak każde zapytanie internetowe, serwer widzi Twój adres IP, ale go nie zapisuje.</p>
 
+      <h2>2.6. Raporty awarii (Sentry)</h2>
+      <p>Gdy Aplikacja ulegnie awarii lub napotka nieoczekiwany błąd, wysyła raport do <a href="https://sentry.io/privacy/">Sentry</a> (Functional Software, Inc.), przechowywany w regionie UE (Niemcy), abyśmy mogli znaleźć i naprawić błąd. Raport zawiera opis błędu i ślad stosu, migawkę struktury ekranu gry (bez zrzutów ekranu), ostatnie linie dziennika Aplikacji, wersję Aplikacji oraz podstawowe dane urządzenia (model, wersja systemu, język, wolna pamięć). <strong>Nie zawiera imienia, e-maila, konta ani danych o postępie.</strong> Sentry nadaje losowy identyfikator instalacji, aby grupować powtarzające się awarie; nie jest on powiązany z Tobą. Jak przy każdym zapytaniu internetowym, Sentry widzi Twój adres IP przy dostarczeniu raportu; nie używamy go do identyfikacji. Raporty awarii nie służą do analityki ani reklam.</p>
+
+      <h2>2.7. Statystyki rozgrywki (GameAnalytics) — tylko za Twoją zgodą</h2>
+      <p>Przy pierwszym wejściu do menu Aplikacja pyta, czy możemy zbierać anonimowe statystyki rozgrywki. <strong>Nic nie jest wysyłane, dopóki nie wybierzesz „Jasne”</strong>, a odpowiedź możesz w każdej chwili zmienić w Ustawieniach → Statystyki. Jeśli się zgodzisz, Aplikacja wysyła anonimowe zdarzenia do <a href="https://gameanalytics.com/privacy">GameAnalytics</a> (GameAnalytics ApS, Dania), na przykład: początek i długość sesji, używane opcje menu, bieżący ekran oraz to, czy zakup został rozpoczęty i zakończony (bez kwot i danych płatności). GameAnalytics zapisuje też wersję Aplikacji, model urządzenia, wersję systemu i kraj ustalony na podstawie adresu IP, a urządzenie rozpoznaje po utworzonym przez siebie losowym identyfikatorze (na iOS: identyfikator dostawcy, IDFV). Nigdy nie używa identyfikatora reklamowego. Statystyk używamy wyłącznie do balansowania gry i sprawdzania, gdzie gracze się zacinają. Wyłączenie Statystyk zatrzymuje wysyłanie kolejnych zdarzeń.</p>
+
       <h2>3. Uprawnienia, o które prosi Aplikacja</h2>
       <ul>
-        <li><strong>Internet / stan sieci</strong> — do daty codziennej mozaiki, rankingów i zapisu w chmurze.</li>
+        <li><strong>Internet / stan sieci</strong> — do daty codziennej mozaiki, rankingów, zapisu w chmurze, raportów awarii i (jeśli się zgodzisz) statystyk rozgrywki.</li>
         <li><strong>Wibracje / haptyka</strong> (Android) — odczucia dotykowe podczas gry. Można wyłączyć w Ustawieniach.</li>
       </ul>
       <p>Aplikacja <strong>nie</strong> prosi o lokalizację, aparat, mikrofon, kontakty, galerię zdjęć, kalendarz, SMS ani inne wrażliwe uprawnienia.</p>
 
       <h2>4. Dzieci</h2>
-      <p>Mosaic Reveal to spokojna gra logiczna bez przemocy, odpowiednia dla wszystkich grup wiekowych. Nie ma reklam, kont ani funkcji społecznościowych poza opcjonalnymi rankingami platform i nie zbiera danych osobowych od nikogo, także od dzieci. Zakupy obsługuje sklep i można je ograniczyć kontrolą rodzicielską platformy.</p>
+      <p>Mosaic Reveal to spokojna gra logiczna bez przemocy, odpowiednia dla wszystkich grup wiekowych. Nie ma reklam, kont ani funkcji społecznościowych poza opcjonalnymi rankingami platform. Nie zbiera świadomie danych osobowych dzieci: raporty awarii są anonimowe, a statystyki rozgrywki są wysyłane dopiero po odpowiedzi „Jasne” na pytanie o zgodę. Zakupy obsługuje sklep i można je ograniczyć kontrolą rodzicielską platformy.</p>
 
       <h2>5. Twoje prawa i wybory</h2>
-      <p>Ponieważ nie zbieramy danych osobowych, po naszej stronie nie ma czego udostępniać, korygować ani usuwać. Możesz:</p>
+      <p>Nie prowadzimy żadnego konta ani profilu na Twój temat. Możesz:</p>
       <ul>
+        <li><strong>Włączyć lub wyłączyć statystyki rozgrywki</strong> — Ustawienia → Statystyki w Aplikacji.</li>
+        <li><strong>Zapytać o raporty awarii i statystyki lub poprosić o ich usunięcie</strong> — napisz do nas; ponieważ nie zawierają imienia ani konta, podaj w przybliżeniu, kiedy wystąpiła awaria, i model urządzenia, abyśmy mogli je odnaleźć.</li>
         <li><strong>Zresetować postęp</strong> — odinstalować Aplikację.</li>
         <li><strong>Usunąć zapisy w chmurze</strong> — iOS: Ustawienia → Apple ID → iCloud → Zarządzaj pamięcią → Mosaic Reveal / Game Center. Android: Play Games → Ustawienia → Usuń konto Play Games i dane.</li>
         <li><strong>Przestać udostępniać wyniki w rankingach</strong> — wylogować się z Game Center / Google Play Games.</li>
@@ -199,14 +219,16 @@
       <ul>
         <li><strong>Na Twoim urządzeniu:</strong> do odinstalowania Aplikacji.</li>
         <li><strong>iCloud / zapisane gry Play Games i rankingi:</strong> zgodnie z politykami Apple i Google, do czasu ich usunięcia.</li>
+        <li><strong>Raporty awarii (Sentry):</strong> usuwane automatycznie najpóźniej po 90 dniach.</li>
+        <li><strong>Statystyki rozgrywki (GameAnalytics):</strong> przechowywane w formie zagregowanej i anonimowej zgodnie z zasadami retencji GameAnalytics.</li>
         <li><strong>Nasze serwery:</strong> nie przechowujemy niczego.</li>
       </ul>
 
       <h2>7. Bezpieczeństwo</h2>
-      <p>Lokalny plik zapisu jest podpisany, aby wykrywać manipulacje. Synchronizacja w chmurze i rankingi korzystają z zaszyfrowanych mechanizmów Apple i Google, a zapytanie o datę używa HTTPS. Żaden system nie jest w pełni bezpieczny, ale jedyne dane o istotnym znaczeniu to Twój postęp w grze.</p>
+      <p>Lokalny plik zapisu jest podpisany, aby wykrywać manipulacje. Synchronizacja w chmurze i rankingi korzystają z zaszyfrowanych mechanizmów Apple i Google, a zapytanie o datę, raporty awarii i statystyki rozgrywki używają HTTPS. Żaden system nie jest w pełni bezpieczny, ale jedyne dane o istotnym znaczeniu to Twój postęp w grze.</p>
 
       <h2>8. Informacja dla mieszkańców stanów USA i użytkowników międzynarodowych</h2>
-      <p>Nie sprzedajemy ani nie udostępniamy danych osobowych, nie wykorzystujemy ich do reklam ukierunkowanych ani profilowania i nie zbieramy wrażliwych danych osobowych, więc nie ma z czego rezygnować. Usługi platformowe z §2 mogą przetwarzać dane poza Twoim krajem w ramach własnych podstaw prawnych. W UE/EOG ograniczone przetwarzanie opisane powyżej (zapytanie o datę) opiera się na naszym uzasadnionym interesie w prowadzeniu gry; pozostałe dane przetwarzają Apple / Google na podstawie Twojej umowy z nimi.</p>
+      <p>Nie sprzedajemy ani nie udostępniamy danych osobowych, nie wykorzystujemy ich do reklam ukierunkowanych ani profilowania i nie zbieramy wrażliwych danych osobowych, więc nie ma z czego rezygnować. Usługi platformowe z §2 mogą przetwarzać dane poza Twoim krajem w ramach własnych podstaw prawnych. W UE/EOG zapytanie o datę i raporty awarii opierają się na naszym uzasadnionym interesie w prowadzeniu gry i naprawianiu błędów (art. 6 ust. 1 lit. f RODO); statystyki rozgrywki opierają się na Twojej zgodzie (art. 6 ust. 1 lit. a RODO), którą możesz w każdej chwili wycofać w Ustawieniach; pozostałe dane przetwarzają Apple / Google na podstawie Twojej umowy z nimi.</p>
 
       <h2>9. Zmiany w polityce</h2>
       <p>Co jakiś czas możemy aktualizować tę Politykę prywatności. Wówczas zmieni się data „Ostatniej aktualizacji" na górze. Istotne zmiany ogłosimy też w notatkach aktualizacji Aplikacji.</p>
