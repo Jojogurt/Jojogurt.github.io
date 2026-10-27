@@ -780,22 +780,24 @@ a {
 
 /* === Index page === */
 .index-body {
-  --color-primary: #E6E6FA;
+  /* Palette from the studio mascot icon: midnight violet, gold, strawberry. */
+  --color-primary: #F5B82E;
   --color-text: #FFFFFF;
-  --color-bg: #0B0B18;
-  --bg-top: #0B0B18;   /* nav tint on support.html */
-  --color-surface: #141428;
-  --color-surface-hover: #1C1C36;
-  --color-glow: 230, 230, 250;
-  --color-glow-secondary: 230, 230, 250;
-  /* Faint accent auras from each game's palette so the dark landing doesn't
-     read as a flat void. No background-attachment: fixed — it seams on iOS
-     Safari on scroll; the auras scroll with the page instead (dark base =
-     --color-bg, so the notch / status-bar strip stays seamless). */
+  --color-bg: #110C2A;
+  --bg-top: #110C2A;   /* nav tint on support.html */
+  --color-surface: #1B1540;
+  --color-surface-hover: #241C52;
+  --color-glow: 155, 107, 255;
+  --color-glow-secondary: 245, 184, 46;
+  /* Soft violet / gold / strawberry auras echo the icon's light streaks so
+     the dark landing doesn't read as a flat void. No background-attachment:
+     fixed — it seams on iOS Safari on scroll; the auras scroll with the page
+     instead (dark base = --color-bg, so the notch / status-bar strip stays
+     seamless). */
   background-image:
-    radial-gradient(ellipse 60% 40% at 12% 0%, rgba(34, 211, 238, 0.07), transparent 70%),
-    radial-gradient(ellipse 50% 35% at 88% 10%, rgba(245, 166, 35, 0.06), transparent 70%),
-    radial-gradient(ellipse 70% 30% at 50% 100%, rgba(232, 176, 74, 0.05), transparent 70%);
+    radial-gradient(ellipse 60% 40% at 12% 0%, rgba(155, 107, 255, 0.16), transparent 70%),
+    radial-gradient(ellipse 50% 35% at 88% 10%, rgba(245, 184, 46, 0.09), transparent 70%),
+    radial-gradient(ellipse 70% 30% at 50% 100%, rgba(224, 48, 58, 0.07), transparent 70%);
 }
 
 .index-hero {
@@ -812,7 +814,7 @@ a {
 }
 
 .index-title-accent {
-  background: linear-gradient(100deg, #22D3EE 0%, #E8B04A 45%, #F5A623 75%, #FFC23E 100%);
+  background: linear-gradient(100deg, #B48CFF 0%, #FF8FB1 40%, #F5B82E 75%, #FFD45E 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
