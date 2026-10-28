@@ -780,24 +780,24 @@ a {
 
 /* === Index page === */
 .index-body {
-  /* Palette from the studio mascot icon: midnight violet, gold, strawberry. */
+  /* Strawberry frozen yogurt after dark: espresso base, strawberry, gold, cream. */
   --color-primary: #F5B82E;
-  --color-text: #FFFFFF;
-  --color-bg: #110C2A;
-  --bg-top: #110C2A;   /* nav tint on support.html */
-  --color-surface: #1B1540;
-  --color-surface-hover: #241C52;
-  --color-glow: 155, 107, 255;
+  --color-text: #FFF8EE;
+  --color-bg: #15100D;
+  --bg-top: #15100D;   /* nav tint on support.html */
+  --color-surface: #211915;
+  --color-surface-hover: #2B211C;
+  --color-glow: 255, 94, 108;
   --color-glow-secondary: 245, 184, 46;
-  /* Soft violet / gold / strawberry auras echo the icon's light streaks so
+  /* Soft strawberry / gold auras so
      the dark landing doesn't read as a flat void. No background-attachment:
      fixed — it seams on iOS Safari on scroll; the auras scroll with the page
      instead (dark base = --color-bg, so the notch / status-bar strip stays
      seamless). */
   background-image:
-    radial-gradient(ellipse 60% 40% at 12% 0%, rgba(155, 107, 255, 0.16), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 12% 0%, rgba(255, 94, 108, 0.12), transparent 70%),
     radial-gradient(ellipse 50% 35% at 88% 10%, rgba(245, 184, 46, 0.09), transparent 70%),
-    radial-gradient(ellipse 70% 30% at 50% 100%, rgba(224, 48, 58, 0.07), transparent 70%);
+    radial-gradient(ellipse 70% 30% at 50% 100%, rgba(255, 94, 108, 0.06), transparent 70%);
 }
 
 .index-hero {
@@ -818,7 +818,7 @@ a {
   border-radius: 50%;
 }
 
-/* Studio mascot — floats gently over a violet/gold halo. */
+/* Studio mascot — floats gently over a strawberry/gold halo. */
 .index-mascot {
   display: block;
   width: 112px;
@@ -827,8 +827,8 @@ a {
   border-radius: 50%;
   box-shadow:
     0 0 0 3px rgba(245, 184, 46, 0.55),
-    0 0 36px 6px rgba(155, 107, 255, 0.45),
-    0 0 80px 20px rgba(155, 107, 255, 0.18);
+    0 0 36px 6px rgba(255, 94, 108, 0.35),
+    0 0 80px 20px rgba(245, 184, 46, 0.12);
   animation: mascotFloat 5s ease-in-out infinite;
 }
 
@@ -864,9 +864,9 @@ a {
   animation: sparkleTwinkle 3.2s ease-in-out infinite;
 }
 
-/* Every third sparkle is a violet "+" like the D-pad on the icon. */
+/* Every third sparkle is a strawberry "+" like the D-pad on the icon. */
 .index-sparkles span:nth-child(3n) {
-  background: #9B6BFF;
+  background: #FF5E6C;
   clip-path: polygon(35% 0, 65% 0, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%, 0 35%, 35% 35%);
 }
 
@@ -899,7 +899,7 @@ a {
 }
 
 .index-title-accent {
-  background: linear-gradient(100deg, #B48CFF 0%, #FF8FB1 40%, #F5B82E 75%, #FFD45E 100%);
+  background: linear-gradient(100deg, #FF5E6C 0%, #FF8A5C 40%, #F5B82E 75%, #FFD45E 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -2273,8 +2273,8 @@ body.game-first-to-floor::before {
 .trust-chips li {
   font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
-  background: rgba(155, 107, 255, 0.12);
-  border-color: rgba(155, 107, 255, 0.35);
+  background: rgba(255, 248, 238, 0.06);
+  border-color: rgba(255, 248, 238, 0.16);
 }
 
 /* Carousel: <figure> with the phone mockup + a visible caption. */
@@ -2475,3 +2475,295 @@ body.game-first-to-floor::before {
 /* === Mosaic Reveal, Cosmic Path: icon in the hero; store screenshots already carry their own device frame === */
 .hero-icon-art { width: min(320px, 70vw); height: auto; border-radius: 22%; box-shadow: 0 20px 60px rgba(var(--color-glow), 0.35); }
 .store-shot { display: block; width: 100%; height: auto; border-radius: 1.4rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); }
+
+
+/* === Index redesign: split hero, section shelves, kids' playroom === */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.index-hero {
+  padding: 3.5rem 1.25rem 1.5rem;
+}
+
+.index-hero-inner {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.index-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.btn-ghost:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(var(--color-glow-secondary), 0.6);
+}
+
+/* Mascot in the middle, game icons floating on a dashed orbit around it. */
+.hero-stage {
+  position: relative;
+  order: -1;
+  width: min(230px, 62vw);
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+
+.hero-stage::before {
+  content: "";
+  position: absolute;
+  inset: 11%;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(245, 184, 46, 0.28);
+}
+
+.hero-stage .index-mascot {
+  position: absolute;
+  top: 26%;
+  left: 26%;
+  width: 48%;
+  height: 48%;
+  margin: 0;
+}
+
+.stage-icon {
+  position: absolute;
+  width: 21%;
+  height: auto;
+  border-radius: 23%;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.12);
+  animation: mascotFloat 6s ease-in-out infinite;
+}
+
+.stage-icon--1 { top: 0;    left: 39.5%; animation-delay: -1s; }
+.stage-icon--2 { top: 24%;  right: 0;    animation-delay: -2.5s; }
+.stage-icon--3 { bottom: 4%; right: 13%; animation-delay: -4s; }
+.stage-icon--4 { bottom: 4%; left: 13%;  animation-delay: -0.5s; }
+.stage-icon--5 { top: 24%;  left: 0;     animation-delay: -3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .stage-icon { animation: none; }
+}
+
+@media (min-width: 900px) {
+  .index-hero { padding: 6.5rem 1.5rem 3rem; }
+  .index-hero-inner {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3rem;
+    text-align: left;
+  }
+  .hero-stage { order: 0; width: 400px; }
+  .index-hero .index-title { font-size: 4.25rem; }
+  .index-hero .index-subtitle { margin-left: 0; font-size: 1.15rem; }
+  .index-hero-cta,
+  .index-hero .trust-chips { justify-content: flex-start; }
+}
+
+/* Section shelves */
+.games-root {
+  max-width: 1100px;
+  margin-top: 1rem;
+}
+
+.shelf-section {
+  scroll-margin-top: 1.5rem;
+}
+
+.shelf-section + .shelf-section {
+  margin-top: 4.5rem;
+}
+
+.shelf-head {
+  margin-bottom: 1.5rem;
+}
+
+.shelf-kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.shelf-title {
+  margin-top: 0.3rem;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.shelf-lead {
+  max-width: 520px;
+  margin-top: 0.6rem;
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .shelf-title { font-size: 2.4rem; }
+}
+
+/* Kids' playroom — a warm, light band so it reads as a different room
+   from the dark puzzle shelf; the sky-blue kids' tiles pop against it. */
+.kids-zone {
+  position: relative;
+  overflow: hidden;
+  padding: 2.25rem 1.25rem 2rem;
+  border-radius: 2rem;
+  color: #283146;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.9) 0 2px, transparent 3px) 0 0 / 46px 46px,
+    linear-gradient(160deg, #FFF3D1 0%, #FFE6D6 55%, #FFD9DF 100%);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.kids-zone .shelf-head,
+.kids-zone .games-shelf {
+  position: relative;
+}
+
+.kids-zone .shelf-kicker { color: #E0303A; }
+.kids-zone .shelf-title { color: #283146; }
+.kids-zone .shelf-lead { color: rgba(40, 49, 70, 0.78); }
+
+.kids-promises {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.kids-promises li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #283146;
+  box-shadow: 0 4px 12px rgba(40, 49, 70, 0.1);
+}
+
+.kids-promises li::before {
+  content: "\2713";
+  color: #36B37E;
+  font-weight: 700;
+}
+
+.kids-clouds span {
+  position: absolute;
+  width: 160px;
+  height: 52px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.kids-clouds span::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: -28px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.kids-clouds span:nth-child(1) { top: 28px; right: -30px; }
+.kids-clouds span:nth-child(2) { top: 120px; right: 22%; transform: scale(0.6); opacity: 0.8; }
+.kids-clouds span:nth-child(3) { bottom: -20px; left: -40px; transform: scale(1.2); }
+
+.kids-zone .game-tile {
+  box-shadow: 0 14px 34px rgba(40, 49, 70, 0.18);
+}
+
+@media (min-width: 768px) {
+  .kids-zone { padding: 3rem 2.75rem 2.75rem; }
+}
+
+@media (max-width: 767px) {
+  .kids-clouds span:nth-child(2) { display: none; }
+}
+
+/* Browser shelf now shares the section heading; drop the old divider. */
+.web-shelf {
+  margin-top: 4.5rem;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* Studio strip */
+.studio-strip {
+  display: grid;
+  justify-items: center;
+  gap: 1.25rem;
+  margin-top: 4.5rem;
+  padding: 2rem 1.5rem;
+  border-radius: 1.75rem;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 60% 90% at 0% 50%, rgba(255, 94, 108, 0.14), transparent 70%),
+    var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.studio-mascot {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(245, 184, 46, 0.5), 0 0 30px rgba(255, 94, 108, 0.3);
+}
+
+.studio-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.studio-copy p {
+  max-width: 520px;
+  margin-top: 0.4rem;
+  color: rgba(255, 255, 255, 0.68);
+  line-height: 1.5;
+}
+
+.studio-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.studio-links .btn {
+  padding: 0.65rem 1.4rem;
+  font-size: 0.92rem;
+}
+
+@media (min-width: 768px) {
+  .studio-strip {
+    grid-template-columns: auto 1fr auto;
+    justify-items: start;
+    align-items: center;
+    gap: 1.75rem;
+    padding: 2rem 2.25rem;
+    text-align: left;
+  }
+}

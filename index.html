@@ -7,7 +7,7 @@
   <title>Jojogurt Games — Small puzzle games for iPhone</title>
   <meta name="description" content="Five small puzzle games — memory, mazes and physics — built solo in Godot by Jojogurt Games. No ads where kids play, no dark patterns anywhere.">
   <link rel="canonical" href="https://jojogurt.github.io/">
-  <meta name="theme-color" content="#110C2A">
+  <meta name="theme-color" content="#15100D">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="64x64" href="images/site-icon-64.png">
   <link rel="apple-touch-icon" href="images/site-icon-180.png">
@@ -107,94 +107,139 @@
 </head>
 <body class="index-body">
 
-  <section class="index-hero">
+  <header class="index-hero">
     <div class="index-sparkles" aria-hidden="true">
       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
-    <img class="index-mascot" src="images/site-mascot-256.webp" width="256" height="256" alt="Jojogurt Games mascot — a strawberry frozen-yogurt cup wearing a gaming headset" fetchpriority="high">
-    <p class="index-studio">Jojogurt Games</p>
-    <h1 class="index-title">Small games.<br><span class="index-title-accent">Big memories.</span></h1>
-    <p class="index-subtitle">Five mobile puzzles by Jojogurt Games — built solo in Godot, from Poland. No ads where kids play, no dark patterns anywhere.</p>
-    <ul class="trust-chips" aria-label="Studio principles">
-      <li>Made solo in Poland</li>
-      <li>Built in Godot</li>
-      <li>No ads where kids play</li>
-      <li>No dark patterns</li>
-    </ul>
-  </section>
+    <div class="index-hero-inner">
+      <div class="index-hero-copy">
+        <p class="index-studio">Jojogurt Games</p>
+        <h1 class="index-title">Small games.<br><span class="index-title-accent">Big memories.</span></h1>
+        <p class="index-subtitle">Memory and puzzle games for iPhone, built solo in Godot, from Poland. No ads where kids play, no dark patterns anywhere.</p>
+        <div class="index-hero-cta">
+          <a class="btn btn-primary" href="#games">Explore games</a>
+          <a class="btn btn-ghost" href="#kids">Games for kids</a>
+        </div>
+        <ul class="trust-chips" aria-label="Studio principles">
+          <li>Made solo in Poland</li>
+          <li>Built in Godot</li>
+          <li>No dark patterns</li>
+        </ul>
+      </div>
+      <!-- Mascot with the game icons floating around it — decorative; the
+           real links are the tiles below. -->
+      <div class="hero-stage" aria-hidden="true">
+        <img class="index-mascot" src="images/site-mascot-256.webp" width="256" height="256" alt="" fetchpriority="high">
+        <img class="stage-icon stage-icon--1" src="images/cosmic-path/icon-128.webp" width="128" height="128" alt="">
+        <img class="stage-icon stage-icon--2" src="images/mosaic-reveal/icon-128.webp" width="128" height="128" alt="">
+        <img class="stage-icon stage-icon--3" src="images/memo-mini/icon-128.webp" width="128" height="128" alt="">
+        <img class="stage-icon stage-icon--4" src="images/first-to-floor/icon-128.webp" width="128" height="128" alt="">
+        <img class="stage-icon stage-icon--5" src="images/memo-maze/icon-128.webp" width="128" height="128" alt="">
+      </div>
+    </div>
+  </header>
 
   <!-- Tiles are static HTML so cross-document View Transitions have a reliable DOM
        to snapshot. Each tile wears its game's own theme — a shelf of different
        boxes, not four rows in a list. Regenerated from games.json on changes. -->
   <main class="games-root">
-    <div class="games-shelf">
 
-      <a class="game-tile animate-on-scroll" data-game="cosmic-path" href="cosmic-path.html">
-        <div class="game-tile-body">
-          <img class="game-tile-logo" src="images/cosmic-path/logo.webp" alt="Cosmic Path">
-          <p class="game-tile-tagline">Watch the comet. Remember its path. Trace it back.</p>
-          <div class="game-tile-meta">
-            <img class="game-tile-icon vt-cosmic-path" src="images/cosmic-path/icon-128.webp" width="128" height="128" alt="" loading="eager">
-            <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
+    <section class="shelf-section" id="games" aria-labelledby="games-title">
+      <div class="shelf-head">
+        <p class="shelf-kicker">For all ages</p>
+        <h2 class="shelf-title" id="games-title">Puzzle games</h2>
+      </div>
+      <div class="games-shelf">
+
+        <a class="game-tile animate-on-scroll" data-game="cosmic-path" href="cosmic-path.html">
+          <div class="game-tile-body">
+            <img class="game-tile-logo" src="images/cosmic-path/logo.webp" alt="Cosmic Path">
+            <p class="game-tile-tagline">Watch the comet. Remember its path. Trace it back.</p>
+            <div class="game-tile-meta">
+              <img class="game-tile-icon vt-cosmic-path" src="images/cosmic-path/icon-128.webp" width="128" height="128" alt="" loading="eager">
+              <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
+            </div>
           </div>
-        </div>
-        <img class="game-tile-shot" src="images/cosmic-path/03_portal-400.webp" alt="" loading="lazy">
-      </a>
+          <img class="game-tile-shot" src="images/cosmic-path/03_portal-400.webp" alt="" loading="lazy">
+        </a>
 
-      <a class="game-tile animate-on-scroll" data-game="mosaic-reveal" href="mosaic-reveal.html">
-        <div class="game-tile-body">
-          <img class="game-tile-logo" src="images/mosaic-reveal/logo.webp" width="506" height="227" alt="Mosaic Reveal">
-          <p class="game-tile-tagline">Watch the tiles flash. Tap them back. Reveal a picture of space.</p>
-          <div class="game-tile-meta">
-            <img class="game-tile-icon vt-mosaic-reveal" src="images/mosaic-reveal/icon-128.webp" width="128" height="128" alt="" loading="eager">
-            <span class="game-tile-badge">Coming soon</span>
+        <a class="game-tile animate-on-scroll" data-game="mosaic-reveal" href="mosaic-reveal.html">
+          <div class="game-tile-body">
+            <img class="game-tile-logo" src="images/mosaic-reveal/logo.webp" width="506" height="227" alt="Mosaic Reveal">
+            <p class="game-tile-tagline">Watch the tiles flash. Tap them back. Reveal a picture of space.</p>
+            <div class="game-tile-meta">
+              <img class="game-tile-icon vt-mosaic-reveal" src="images/mosaic-reveal/icon-128.webp" width="128" height="128" alt="" loading="eager">
+              <span class="game-tile-badge">Coming soon</span>
+            </div>
           </div>
-        </div>
-        <img class="game-tile-shot" src="images/mosaic-reveal/01_flash-400.webp" alt="" loading="lazy">
-      </a>
+          <img class="game-tile-shot" src="images/mosaic-reveal/01_flash-400.webp" alt="" loading="lazy">
+        </a>
 
-      <a class="game-tile animate-on-scroll" data-game="memo-mini" href="memo-mini.html">
-        <div class="game-tile-body">
-          <img class="game-tile-logo" src="images/memo-mini/logo.webp" alt="Memo Mini">
-          <p class="game-tile-tagline">Match the pairs. Grow your collection. For kids 4+.</p>
-          <div class="game-tile-meta">
-            <img class="game-tile-icon vt-memo-mini" src="images/memo-mini/icon-128.webp" width="128" height="128" alt="" loading="eager">
-            <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
+        <a class="game-tile animate-on-scroll" data-game="memo-maze" href="memo-maze.html">
+          <div class="game-tile-body">
+            <img class="game-tile-logo" src="images/memo-maze/logo.webp" alt="Memo Maze">
+            <p class="game-tile-tagline">Memorize the maze. Swipe the path.</p>
+            <div class="game-tile-meta">
+              <img class="game-tile-icon vt-memo-maze" src="images/memo-maze/icon-128.webp" width="128" height="128" alt="" loading="eager">
+              <span class="game-tile-badge">In development</span>
+            </div>
           </div>
-        </div>
-        <img class="game-tile-shot" src="images/memo-mini/02_memorize-400.webp" alt="" loading="lazy">
-      </a>
+          <img class="game-tile-shot" src="images/memo-maze/04_gameplay_memorize-400.webp" alt="" loading="lazy">
+        </a>
 
-      <a class="game-tile animate-on-scroll" data-game="first-to-floor" href="first-to-floor.html">
-        <div class="game-tile-body">
-          <img class="game-tile-logo" src="images/first-to-floor/logo.webp" alt="First to Floor">
-          <p class="game-tile-tagline">Which item hits the floor first? For kids 4+.</p>
-          <div class="game-tile-meta">
-            <img class="game-tile-icon vt-first-to-floor" src="images/first-to-floor/icon-128.webp" width="128" height="128" alt="" loading="eager">
-            <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
+      </div>
+    </section>
+
+    <!-- Kids' games get their own bright "playroom" band, so parents can find
+         them at a glance and the 4+ promise sits right next to them. -->
+    <section class="shelf-section kids-zone" id="kids" aria-labelledby="kids-title">
+      <div class="kids-clouds" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="shelf-head">
+        <p class="shelf-kicker">Ages 4+</p>
+        <h2 class="shelf-title" id="kids-title">Games for little ones</h2>
+        <p class="shelf-lead">Bright, gentle games for kids aged 4 and up. Made to be safe for small hands.</p>
+        <ul class="kids-promises" aria-label="For parents">
+          <li>No ads</li>
+          <li>Kid-safe</li>
+          <li>For ages 4+</li>
+        </ul>
+      </div>
+      <div class="games-shelf">
+
+        <a class="game-tile animate-on-scroll" data-game="memo-mini" href="memo-mini.html">
+          <div class="game-tile-body">
+            <img class="game-tile-logo" src="images/memo-mini/logo.webp" alt="Memo Mini">
+            <p class="game-tile-tagline">Match the pairs. Grow your collection. Learn words in 7 languages.</p>
+            <div class="game-tile-meta">
+              <img class="game-tile-icon vt-memo-mini" src="images/memo-mini/icon-128.webp" width="128" height="128" alt="" loading="eager">
+              <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
+            </div>
           </div>
-        </div>
-        <img class="game-tile-shot" src="images/first-to-floor/03_throw-400.webp" alt="" loading="lazy">
-      </a>
+          <img class="game-tile-shot" src="images/memo-mini/02_memorize-400.webp" alt="" loading="lazy">
+        </a>
 
-      <a class="game-tile animate-on-scroll" data-game="memo-maze" href="memo-maze.html">
-        <div class="game-tile-body">
-          <img class="game-tile-logo" src="images/memo-maze/logo.webp" alt="Memo Maze">
-          <p class="game-tile-tagline">Memorize the maze. Swipe the path.</p>
-          <div class="game-tile-meta">
-            <img class="game-tile-icon vt-memo-maze" src="images/memo-maze/icon-128.webp" width="128" height="128" alt="" loading="eager">
-            <span class="game-tile-badge">In development</span>
+        <a class="game-tile animate-on-scroll" data-game="first-to-floor" href="first-to-floor.html">
+          <div class="game-tile-body">
+            <img class="game-tile-logo" src="images/first-to-floor/logo.webp" alt="First to Floor">
+            <p class="game-tile-tagline">Which item hits the floor first? A physics guessing game.</p>
+            <div class="game-tile-meta">
+              <img class="game-tile-icon vt-first-to-floor" src="images/first-to-floor/icon-128.webp" width="128" height="128" alt="" loading="eager">
+              <span class="game-tile-badge game-tile-badge--live">On the App Store</span>
+            </div>
           </div>
-        </div>
-        <img class="game-tile-shot" src="images/memo-maze/04_gameplay_memorize-400.webp" alt="" loading="lazy">
-      </a>
+          <img class="game-tile-shot" src="images/first-to-floor/03_throw-400.webp" alt="" loading="lazy">
+        </a>
 
-    </div>
+      </div>
+    </section>
 
     <!-- Browser games live in their own repos under jojogurt.github.io/<name>/
          and open in a new tab — they are full apps with their own state. -->
-    <section class="web-shelf" aria-labelledby="web-shelf-title">
-      <h2 class="web-shelf-title" id="web-shelf-title">Also: play in your browser</h2>
+    <section class="shelf-section web-shelf" aria-labelledby="web-shelf-title">
+      <div class="shelf-head">
+        <p class="shelf-kicker">No install needed</p>
+        <h2 class="shelf-title" id="web-shelf-title">Play in your browser</h2>
+      </div>
 
       <a class="game-tile game-tile--web animate-on-scroll" data-game="stacja" href="stacja/" target="_blank" rel="noopener">
         <div class="game-tile-body">
@@ -209,6 +254,18 @@
         <img class="game-tile-shot" src="images/stacja/menu-400.webp" srcset="images/stacja/menu-400.webp 400w, images/stacja/menu.webp 750w" sizes="(min-width: 768px) 230px, 50vw" alt="" loading="lazy">
         <span class="visually-hidden">(opens in a new tab)</span>
       </a>
+    </section>
+
+    <section class="studio-strip animate-on-scroll" aria-labelledby="studio-title">
+      <img class="studio-mascot" src="images/site-mascot-256.webp" width="256" height="256" alt="Jojogurt Games mascot — a strawberry frozen-yogurt cup wearing a gaming headset" loading="lazy">
+      <div class="studio-copy">
+        <h2 class="studio-title" id="studio-title">One person, one studio</h2>
+        <p>Jojogurt Games is a solo studio from Poland making small memory and puzzle games in Godot. Follow along for new releases.</p>
+      </div>
+      <div class="studio-links">
+        <a class="btn btn-ghost" href="https://www.tiktok.com/@jojogurtgames" rel="me noopener" target="_blank">TikTok</a>
+        <a class="btn btn-ghost" href="https://www.youtube.com/channel/UCl5d5hhF64kA3t3iY6LzO4A" rel="me noopener" target="_blank">YouTube</a>
+      </div>
     </section>
   </main>
 
