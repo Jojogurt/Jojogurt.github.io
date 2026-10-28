@@ -51,10 +51,10 @@
   "icon": "assets/icon.png",
   "logo": "assets/flat/logo/logo.png",
   "screenshots": [
-    "01_watch.webp",
-    "02_trace.webp",
-    "03_portals.webp",
-    "04_power_ups.webp",
+    "01_train.webp",
+    "02_path.webp",
+    "03_portal.webp",
+    "04_power.webp",
     "05_boss.webp"
   ],
   "status": "released",
@@ -63,7 +63,7 @@
     "app_store": "https://apps.apple.com/app/id1355832531",
     "play_store": null,
     "website": null,
-    "trailer": "images/cosmic-path/trailer.mp4"
+    "trailer": null
   },
   "monetization": "freemium"
 }

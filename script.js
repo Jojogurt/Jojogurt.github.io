@@ -205,7 +205,7 @@
   });
 })();
 
-// Hero trailer (Memo Mini, Cosmic Path): muted autoplay loop + a sound toggle. With
+// Hero trailer (Memo Mini): muted autoplay loop + a sound toggle. With
 // reduced motion the video stays on its poster until the visitor taps it.
 (function () {
   var video = document.querySelector('video.trailer');
