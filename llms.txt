@@ -10,6 +10,10 @@
 - [First to Floor](https://jojogurt.github.io/first-to-floor.html): Guess-the-order physics game for kids 4+. Watch a slow-motion preview and predict which items hit the floor first. No ads. Free on the App Store (https://apps.apple.com/app/id6765926150).
 - [Memo Maze](https://jojogurt.github.io/memo-maze.html): Memory maze puzzle. Study a tile maze, watch it vanish, then swipe through it from memory across 30 hand-crafted levels. In development.
 
+## Apps
+
+- [MedBinder](https://jojogurt.github.io/apps/medbinder/): Private medical records app for the whole family on iPhone and iPad. Keeps lab results, prescriptions, documents, doctor visit recordings, medications and vaccinations on the device - no account, no cloud, no tracking, on-device AI. 19 languages. Not a medical device. Coming soon to the App Store.
+
 ## Browser games
 
 - [Uszy & Mózg](https://jojogurt.github.io/stacja/): Music pub-quiz trainer (Polish only). Guess the song, artist and year — solo, as a daily challenge or live with friends. Plays in the browser, no install.
