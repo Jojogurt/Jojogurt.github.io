@@ -15,6 +15,11 @@
             "/": "/apps/hearth/join",
             "?": { "code": "?*" },
             "comment": "Hearth join link with invite code"
+          },
+          {
+            "/": "/apps/nextleg/duel",
+            "?": { "code": "?*" },
+            "comment": "Nextleg duel challenge link with code"
           }
         ]
       }
