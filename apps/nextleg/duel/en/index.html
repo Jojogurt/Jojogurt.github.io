@@ -22,6 +22,8 @@ li { margin: 0.3em 0; }
 a { color: var(--accent); text-underline-offset: 2px; }
 .code { font: 700 2.4rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.25em; text-align: center; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 12px; margin: 1.2em 0; }
 .code[hidden] { display: none; }
+.open { display: block; text-align: center; padding: 14px 20px; border-radius: 14px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; margin-bottom: 12px; }
+.open[hidden] { display: none; }
 .store { display: block; text-align: center; padding: 14px 20px; border-radius: 14px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; opacity: 0.55; pointer-events: none; }
 .note { color: var(--muted); font-size: 0.9rem; }
 </style>
@@ -38,6 +40,7 @@ a { color: var(--accent); text-underline-offset: 2px; }
   <li>Install Nextleg</li>
   <li>Open this link again or enter the code on the duel card. The group’s creator accepts the challenge</li>
 </ol>
+<a class="open" id="open" href="nextleg://duel" hidden>Open in Nextleg</a>
 <a class="store" href="#" aria-disabled="true">Coming soon to the App Store</a>
 <p class="note">Code not working? It works once and expires on Sunday at 9 pm — ask the rival group for a new one.</p>
 </main>
@@ -48,6 +51,9 @@ a { color: var(--accent); text-underline-offset: 2px; }
     var el = document.getElementById("code");
     el.textContent = code.toUpperCase();
     el.hidden = false;
+    var open = document.getElementById("open");
+    open.href = "nextleg://duel?code=" + encodeURIComponent(code.toUpperCase());
+    open.hidden = false;
   }
 })();
 </script>

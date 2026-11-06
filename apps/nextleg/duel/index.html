@@ -22,6 +22,8 @@ li { margin: 0.3em 0; }
 a { color: var(--accent); text-underline-offset: 2px; }
 .code { font: 700 2.4rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.25em; text-align: center; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 12px; margin: 1.2em 0; }
 .code[hidden] { display: none; }
+.open { display: block; text-align: center; padding: 14px 20px; border-radius: 14px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; margin-bottom: 12px; }
+.open[hidden] { display: none; }
 .store { display: block; text-align: center; padding: 14px 20px; border-radius: 14px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; opacity: 0.55; pointer-events: none; }
 .note { color: var(--muted); font-size: 0.9rem; }
 </style>
@@ -38,6 +40,7 @@ a { color: var(--accent); text-underline-offset: 2px; }
   <li>Zainstaluj Nextleg</li>
   <li>Otwórz ten link ponownie albo wpisz kod w karcie pojedynku. Wyzwanie przyjmuje osoba, która założyła grupę</li>
 </ol>
+<a class="open" id="open" href="nextleg://duel" hidden>Otwórz w Nextleg</a>
 <a class="store" href="#" aria-disabled="true">Wkrótce w App Store</a>
 <p class="note">Kod nie działa? Jest jednorazowy i ważny do niedzieli 21:00 — poproś grupę rywali o nowy.</p>
 </main>
@@ -48,6 +51,9 @@ a { color: var(--accent); text-underline-offset: 2px; }
     var el = document.getElementById("code");
     el.textContent = code.toUpperCase();
     el.hidden = false;
+    var open = document.getElementById("open");
+    open.href = "nextleg://duel?code=" + encodeURIComponent(code.toUpperCase());
+    open.hidden = false;
   }
 })();
 </script>

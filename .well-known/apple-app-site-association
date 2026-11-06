@@ -12,9 +12,9 @@
         "appIDs": ["57V928Q27F.com.kked.apps.hearth"],
         "components": [
           {
-            "/": "/apps/hearth/join",
+            "/": "/apps/nextleg/join",
             "?": { "code": "?*" },
-            "comment": "Hearth join link with invite code"
+            "comment": "Nextleg join link with invite code"
           },
           {
             "/": "/apps/nextleg/duel",
