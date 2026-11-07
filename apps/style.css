@@ -465,6 +465,7 @@ details p { margin: 0.5em 0 0.2em; }
     --brand: #E0F354; --brand-ink: #E0F354; --brand-soft: rgba(224, 243, 84, 0.14);
     --m-steps: #E0F354; --m-run: #8AD9F7; --m-ride: #FFB38A; --m-kcal: #FF7F45;
     --card-shadow: none; --hero-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    --tile-ink: #10211B;
   }
 }
 .theme-nextleg .brand span { font-family: var(--display); font-stretch: 125%; font-weight: 900; text-transform: uppercase; letter-spacing: 0.01em; }
@@ -523,13 +524,13 @@ details p { margin: 0.5em 0 0.2em; }
 .nl-step-art { height: 110px; display: flex; align-items: center; }
 .nl-step-no { font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: 15px; color: var(--brand); }
 .nl-ring { width: 96px; height: 96px; }
-.nl-tile { width: 56px; height: 56px; flex: none; border-radius: 16px; background: var(--tile, var(--brand)); color: #fff; display: grid; place-items: center; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 6px 16px color-mix(in srgb, var(--tile, var(--brand)) 35%, transparent); }
+.nl-tile { width: 56px; height: 56px; flex: none; border-radius: 16px; background: var(--tile, var(--brand)); color: var(--tile-ink, #fff); display: grid; place-items: center; }
 .nl-tile svg { width: 32px; height: 32px; display: block; }
 /* Fixed, mode-independent tile colours (white glyph reads on all of them, light and dark). */
-.nl-tile--steps { --tile: #0B7A5C; }
-.nl-tile--run { --tile: #1F78A6; }
-.nl-tile--ride { --tile: #A27A00; }
-.nl-tile--kcal { --tile: #E8480A; }
+.nl-tile--steps { --tile-ink: #fff; --tile: #0B7A5C; }
+.nl-tile--run { --tile-ink: #fff; --tile: #1F78A6; }
+.nl-tile--ride { --tile-ink: #fff; --tile: #A27A00; }
+.nl-tile--kcal { --tile-ink: #fff; --tile: #E8480A; }
 .nl-type { margin: 0; padding: 18px; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); box-shadow: var(--card-shadow); display: flex; align-items: center; gap: 16px; }
 .nl-type strong { display: block; font-size: 1.06rem; }
 .nl-type > span:not(.nl-tile) > span { display: block; font-size: 0.875rem; color: var(--muted); }
