@@ -2772,9 +2772,19 @@ html { scroll-behavior: smooth; }
 .index-hero > .index-topnav {
   position: absolute;
   top: 1.1rem;
-  right: 1.5rem;
+  left: 0;
+  right: 0;
   z-index: 2;
+  /* Same box as main.games-root (1100px, 1.5rem gutter), so the pill lines up with the content edge. */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
 }
+.index-hero > .index-topnav a { pointer-events: auto; }
 .index-topnav a {
   display: inline-block;
   padding: 0.45rem 1rem;
@@ -2787,3 +2797,5 @@ html { scroll-behavior: smooth; }
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .index-topnav a:hover { background: rgba(255, 255, 255, 0.12); }
+.index-topnav a span { display: inline-block; transition: transform 0.2s; }
+.index-topnav a:hover span { transform: translateX(2px); }
