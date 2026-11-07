@@ -1,4 +1,4 @@
-/* Shared styles for /apps/ pages. No external fonts, no trackers. */
+/* Shared styles for /apps/ pages. No external fonts (self-hosted only), no trackers. */
 :root {
   --bg: #F6F2EC;
   --bg-alt: #EFEAE2;
@@ -357,3 +357,146 @@ details p { margin: 0.5em 0 0.2em; }
 .langs { max-width: 760px; margin: 56px auto 0; text-align: center; color: var(--ink-soft); font-size: 0.95rem; }
 .langs strong { display: block; color: var(--ink); margin-bottom: 4px; }
 .contact { text-align: center; color: var(--muted); font-size: 0.95rem; margin: 4px 0 0; }
+
+/* ── NextLeg theme — tokens 1:1 with the app's Bold skin ("Sztafeta" canvas) ── */
+/* Archivo (SIL Open Font License 1.1), expanded 125%, weights 800–900: the web stand-in for SF Pro Expanded. */
+@font-face { font-family: "Archivo Expanded"; font-style: normal; font-weight: 800 900; font-stretch: 125%; font-display: swap; src: url(/apps/fonts/archivo-expanded-latin-ext.woff2) format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Archivo Expanded"; font-style: normal; font-weight: 800 900; font-stretch: 125%; font-display: swap; src: url(/apps/fonts/archivo-expanded-latin.woff2) format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+.theme-nextleg {
+  --bg: #F3EADB; --bg-alt: #EDE2CF; --surface: #FFF8EC;
+  --ink: #10211B; --ink-soft: #3F5049; --muted: #5A6A63;
+  --line: rgba(16, 33, 27, 0.10); --outline: rgba(16, 33, 27, 0.22);
+  --brand: #015D47; --brand-ink: #015D47; --brand-soft: rgba(1, 93, 71, 0.10);
+  --hero: #015D47; --hero-deep: #013C2E; --hero-inset: rgba(243, 234, 219, 0.13);
+  --on-hero: #F3EADB; --on-hero-2: #D3DDCF; --crest: #E0F354; --on-crest: #10211B;
+  --cta: #FD550A; --on-cta: #10211B;
+  --m-steps: #015D47; --m-run: #1F6F96; --m-ride: #8A6A00; --m-kcal: #E8480A;
+  --card-shadow: 0 1px 2px rgba(16, 33, 27, 0.06); --hero-shadow: 0 12px 32px rgba(1, 93, 71, 0.22);
+  --display: "Archivo Expanded", "SF Pro Display", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  .theme-nextleg {
+    --bg: #07130E; --bg-alt: #0D1C16; --surface: #10211A;
+    --ink: #EEF3E6; --ink-soft: #B9C7BE; --muted: #8FA198;
+    --line: rgba(238, 243, 230, 0.10); --outline: rgba(238, 243, 230, 0.24);
+    --brand: #E0F354; --brand-ink: #E0F354; --brand-soft: rgba(224, 243, 84, 0.14);
+    --m-steps: #E0F354; --m-run: #8AD9F7; --m-ride: #FFB38A; --m-kcal: #FF7F45;
+    --card-shadow: none; --hero-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  }
+}
+.theme-nextleg .brand span { font-family: var(--display); font-stretch: 125%; font-weight: 900; text-transform: uppercase; letter-spacing: 0.01em; }
+.theme-nextleg .brand img { border-radius: 9px; }
+.nl-display { font-family: var(--display); font-stretch: 125%; font-weight: 900; text-transform: uppercase; }
+.nl-meta { font-size: 0.8rem; line-height: 1.2; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+
+/* Hero */
+.nl-hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: 72px; align-items: center; padding: 72px 0 48px; }
+.nl-hero h1 { margin: 22px 0 22px; font-size: clamp(2.4rem, 5.4vw, 4.25rem); line-height: 0.98; }
+.nl-mark { background: var(--crest); color: var(--on-crest); padding: 0 0.13em; border-radius: 8px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.nl-hero .sub { margin: 0 0 28px; font-size: 1.25rem; line-height: 1.5; color: var(--ink-soft); max-width: 34em; }
+.nl-cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+.nl-cta { display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border-radius: 999px; background: var(--cta); color: var(--on-cta); font-weight: 700; font-size: 1.05rem; }
+.nl-note { color: var(--muted); font-size: 0.95rem; }
+.theme-nextleg.wide main, .theme-nextleg.wide .site-header, .theme-nextleg.wide .site-footer { max-width: 1200px; }
+
+/* Hero card: web recreation of the app's "Shared day" card (C_hero, settled success) */
+.nl-card { padding: 20px; border-radius: 32px; background: var(--hero); color: var(--on-hero); box-shadow: var(--hero-shadow); display: flex; flex-direction: column; gap: 14px; min-height: 300px; box-sizing: border-box; }
+.nl-card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.nl-card-top .nl-meta { color: var(--on-hero-2); font-size: 12px; }
+.nl-chip { display: inline-flex; align-items: center; gap: 4px; padding: 5px 10px; border-radius: 8px; background: var(--cta); color: var(--on-cta); font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: 12px; line-height: 16px; text-transform: uppercase; white-space: nowrap; }
+.nl-chip svg { width: 14px; height: 14px; }
+.nl-card-num { font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: 52px; line-height: 1; color: var(--crest); font-variant-numeric: tabular-nums; margin-top: 18px; }
+.nl-card-sub { font-size: 15px; font-weight: 600; color: var(--on-hero-2); font-variant-numeric: tabular-nums; }
+.nl-track { display: flex; gap: 2px; height: 22px; border-radius: 8px; overflow: hidden; background: var(--hero-inset); }
+.nl-track span { position: relative; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-stretch: 125%; font-weight: 800; font-size: 11px; color: var(--on-crest); }
+.nl-track span::before { content: ""; position: absolute; inset: 0; background: var(--crest); opacity: var(--o, 1); }
+.nl-track span b { position: relative; font-weight: inherit; }
+.nl-track .deep::before { background: var(--hero-deep); opacity: 1; }
+.nl-card-title { font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: 18px; line-height: 1.1; text-transform: uppercase; margin-top: auto; }
+.nl-card-detail { font-size: 13px; color: var(--on-hero-2); margin-top: -10px; }
+.nl-track.on-surface { background: rgba(16, 33, 27, 0.10); height: 28px; width: 100%; }
+.nl-track.on-surface span::before { background: var(--brand); }
+.nl-track.on-surface span { color: var(--on-hero); font-size: 12px; }
+@media (prefers-color-scheme: dark) {
+  .nl-track.on-surface { background: rgba(238, 243, 230, 0.12); }
+  .nl-track.on-surface span { color: var(--on-crest); }
+}
+
+/* Pills */
+.nl-pills { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.nl-pills li { margin: 0; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: var(--surface); font-size: 0.95rem; font-weight: 600; color: var(--ink-soft); }
+.nl-pills svg { width: 16px; height: 16px; color: var(--brand); }
+
+/* Sections */
+.nl-section { padding-top: 120px; }
+.nl-head { max-width: 720px; margin-bottom: 40px; }
+.nl-head h2 { margin: 12px 0 0; font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1; }
+.nl-head p { margin: 14px 0 0; font-size: 1.2rem; line-height: 1.5; color: var(--ink-soft); }
+.nl-grid3 { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.nl-grid4 { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.nl-card-s { margin: 0; padding: 28px; border-radius: 24px; background: var(--surface); box-shadow: var(--card-shadow); display: flex; flex-direction: column; gap: 14px; }
+.nl-card-s h3 { margin: 0; font-size: 1.375rem; line-height: 1.27; }
+.nl-card-s p { margin: 0; color: var(--ink-soft); font-size: 1rem; line-height: 1.5; }
+.nl-step-art { height: 110px; display: flex; align-items: center; }
+.nl-step-no { font-family: var(--display); font-stretch: 125%; font-weight: 900; font-size: 15px; color: var(--brand); }
+.nl-ring { width: 96px; height: 96px; }
+.nl-tile { width: 46px; height: 46px; flex: none; border-radius: 13px; background: var(--brand-soft); display: grid; place-items: center; color: var(--tint, var(--brand)); }
+.nl-tile svg { width: 23px; height: 23px; }
+.nl-type { margin: 0; padding: 20px; border-radius: 20px; border: 1px solid var(--line); display: flex; align-items: center; gap: 14px; }
+.nl-type strong { display: block; font-size: 1.06rem; }
+.nl-type span { display: block; font-size: 0.875rem; color: var(--muted); }
+
+/* Privacy block */
+.nl-privacy { margin-top: 120px; padding: 64px; border-radius: 32px; background: var(--hero); color: var(--on-hero); }
+.nl-privacy .nl-meta { color: var(--crest); }
+.nl-privacy .nl-head p { color: var(--on-hero-2); }
+.nl-pv { list-style: none; padding: 0; margin: 0 0 36px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+.nl-pv li { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.nl-pv .ic { width: 46px; height: 46px; border-radius: 13px; background: var(--hero-inset); display: grid; place-items: center; color: var(--crest); }
+.nl-pv svg { width: 24px; height: 24px; }
+.nl-pv strong { font-size: 1.125rem; }
+.nl-pv span { color: var(--on-hero-2); font-size: 0.95rem; line-height: 1.45; }
+.nl-privacy a.more { color: var(--crest); font-weight: 700; text-decoration: none; }
+.nl-privacy a.more:hover { text-decoration: underline; }
+
+/* FAQ */
+.nl-faq { padding-top: 120px; display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 64px; align-items: start; }
+.nl-faq h2 { margin: 0; font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1; }
+.nl-faq details { margin: 0 0 10px; padding: 20px 24px; border: 0; border-radius: 20px; background: var(--surface); }
+.nl-faq summary { list-style: none; display: flex; justify-content: space-between; gap: 16px; font-size: 1.125rem; }
+.nl-faq summary::-webkit-details-marker { display: none; }
+.nl-faq summary::after { content: "+"; font-weight: 400; font-size: 1.5rem; line-height: 1; color: var(--muted); }
+.nl-faq details[open] summary::after { content: "\2212"; }
+.nl-faq details p { color: var(--ink-soft); line-height: 1.5; margin: 10px 0 0; }
+
+.nl-foot { margin-top: 120px; padding-top: 32px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; }
+.nl-foot p { margin: 0 0 10px; }
+.nl-foot strong { color: var(--ink); }
+
+/* Apps gallery card */
+.a-card.nextleg .art { background: #015D47; }
+
+@media (max-width: 900px) {
+  .nl-hero { grid-template-columns: 1fr; gap: 40px; padding-top: 40px; }
+  .nl-grid3 { grid-template-columns: 1fr; }
+  .nl-grid4, .nl-pv { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nl-faq { grid-template-columns: 1fr; gap: 24px; }
+  .nl-section, .nl-faq { padding-top: 80px; }
+  .nl-privacy { margin-top: 80px; padding: 40px 24px; border-radius: 24px; }
+}
+@media (max-width: 520px) {
+  .nl-grid4, .nl-pv { grid-template-columns: 1fr; }
+  .nl-card-num { font-size: 44px; }
+}
+
+/* Legal tables (NextLeg privacy) */
+.table-wrap { overflow-x: auto; margin: 0.8em 0; }
+table { border-collapse: collapse; width: 100%; font-size: 0.93rem; }
+th, td { text-align: left; vertical-align: top; padding: 0.55em 0.7em; border-bottom: 1px solid var(--line); }
+th { background: var(--bg-alt); font-weight: 600; }
+
+/* NextLeg link pages (join / duel) */
+.link-code { font: 700 2.4rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.25em; text-align: center; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px 12px; margin: 1.2em 0; }
+.link-btn { display: block; text-align: center; padding: 14px 20px; border-radius: 14px; background: var(--brand); color: var(--bg); font-weight: 600; text-decoration: none; margin-bottom: 12px; }
+.link-btn.soon-btn { opacity: 0.55; pointer-events: none; }
+.link-code[hidden], .link-btn[hidden] { display: none; }

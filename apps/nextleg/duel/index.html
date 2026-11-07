@@ -4,45 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Nextleg</title>
-<style>
-:root { --bg: #FBF7F4; --ink: #2B2522; --muted: #6B615B; --accent: #F2685C; --line: #E8DFDA; --card: #F4ECE7; }
-@media (prefers-color-scheme: dark) { :root { --bg: #1C1917; --ink: #F3EEEA; --muted: #A99F98; --line: #3A332F; --card: #26211E; } }
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 17px; line-height: 1.65; }
-main, header.site { max-width: 680px; margin: 0 auto; padding: 0 20px; }
-header.site { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; padding-bottom: 8px; font-size: 15px; }
-header.site .brand { font-weight: 700; color: var(--ink); }
-main { padding-top: 12px; padding-bottom: 48px; }
-h1 { font-size: 2rem; line-height: 1.2; margin: 0.6em 0 0.2em; }
-p, ol { margin: 0.8em 0; }
-ol { padding-left: 1.3em; }
-li { margin: 0.3em 0; }
-a { color: var(--accent); text-underline-offset: 2px; }
-.code { font: 700 2.4rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.25em; text-align: center; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 12px; margin: 1.2em 0; }
-.code[hidden] { display: none; }
-.open { display: block; text-align: center; padding: 14px 20px; border-radius: 14px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; margin-bottom: 12px; }
-.open[hidden] { display: none; }
-.store { display: block; text-align: center; padding: 14px 20px; border-radius: 14px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; opacity: 0.55; pointer-events: none; }
-.note { color: var(--muted); font-size: 0.9rem; }
-</style>
+<title>NextLeg</title>
+<link rel="icon" type="image/png" href="/images/nextleg/icon-64.png">
+<link rel="apple-touch-icon" href="/images/nextleg/icon-180.png">
+<link rel="stylesheet" href="/apps/style.css">
 </head>
-<body>
-<header class="site">
-  <span class="brand">Nextleg</span>
-  <nav><a href="en/index.html" hreflang="en" lang="en">English</a></nav>
+<body class="theme-nextleg">
+<header class="site-header">
+  <a class="brand" href="/apps/nextleg/#pl"><img src="/images/nextleg/icon-64.png" alt="" width="32" height="32">NextLeg</a>
+  <nav><a href="en/" hreflang="en" lang="en">English</a></nav>
 </header>
 <main>
-<h1>Twoja grupa dostała wyzwanie na pojedynek w Nextleg</h1>
-<div class="code" id="code" hidden></div>
+<h1>Twoja grupa dostała wyzwanie na pojedynek w NextLeg</h1>
+<div class="link-code" id="code" hidden></div>
 <ol>
-  <li>Zainstaluj Nextleg</li>
+  <li>Zainstaluj NextLeg</li>
   <li>Otwórz ten link ponownie albo wpisz kod w karcie pojedynku. Wyzwanie przyjmuje osoba, która założyła grupę</li>
 </ol>
-<a class="open" id="open" href="nextleg://duel" hidden>Otwórz w Nextleg</a>
-<a class="store" href="#" aria-disabled="true">Wkrótce w App Store</a>
-<p class="note">Kod nie działa? Jest jednorazowy i ważny do niedzieli 21:00 — poproś grupę rywali o nowy.</p>
+<a class="link-btn" id="open" href="nextleg://duel" hidden>Otwórz w NextLeg</a>
+<a class="link-btn soon-btn" href="#" aria-disabled="true">Wkrótce w App Store</a>
+<p class="muted">Kod nie działa? Jest jednorazowy i ważny do niedzieli 21:00 — poproś grupę rywali o nowy.</p>
 </main>
 <script>
 (function () {

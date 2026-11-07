@@ -13,6 +13,7 @@
 ## Apps
 
 - [MedBinder](https://jojogurt.github.io/apps/medbinder/): Private medical records app for the whole family on iPhone and iPad. Keeps lab results, prescriptions, documents, doctor visit recordings, medications and vaccinations on the device - no account, no cloud, no tracking, on-device AI. 19 languages. Not a medical device. Coming soon to the App Store.
+- [NextLeg](https://jojogurt.github.io/apps/nextleg/): Group activity app for iPhone. Everyone has a personal daily goal (steps, running km, cycling km or active calories from Apple Health); together the group closes a shared goal, keeps a streak, takes on weekly challenges, duels other groups and climbs city/country/world rankings. Reads Apple Health only and sends daily totals, never raw samples; manual entries ignored. English and Polish. Not a medical device. Coming soon to the App Store.
 
 ## Browser games
 
@@ -26,4 +27,5 @@
 - [Cosmic Path privacy policy](https://jojogurt.github.io/cosmic-path-privacy.html)
 - [Mosaic Reveal privacy policy](https://jojogurt.github.io/mosaic-reveal-privacy.html)
 - [Memo Mini privacy policy](https://jojogurt.github.io/memo-mini-privacy.html)
+- [NextLeg privacy policy](https://jojogurt.github.io/apps/nextleg/privacy/)
 - [First to Floor privacy policy](https://jojogurt.github.io/first-to-floor-privacy.html)

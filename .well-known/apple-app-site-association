@@ -9,17 +9,17 @@
         ]
       },
       {
-        "appIDs": ["57V928Q27F.com.kked.apps.hearth"],
+        "appIDs": ["57V928Q27F.com.kked.apps.nextleg"],
         "components": [
           {
             "/": "/apps/nextleg/join",
             "?": { "code": "?*" },
-            "comment": "Nextleg join link with invite code"
+            "comment": "NextLeg join link with invite code"
           },
           {
             "/": "/apps/nextleg/duel",
             "?": { "code": "?*" },
-            "comment": "Nextleg duel challenge link with code"
+            "comment": "NextLeg duel challenge link with code"
           }
         ]
       }
