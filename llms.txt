@@ -5,7 +5,7 @@
 ## Games
 
 - [Cosmic Path](https://jojogurt.github.io/cosmic-path.html): Visual memory and brain-training game in deep space. Watch a comet trace a path across the grid, then draw it back from memory — portals, boss levels, a daily challenge and a Relax mode. Free on the App Store (https://apps.apple.com/app/id1355832531); an optional one-time purchase removes ads.
-- [Mosaic Reveal](https://jojogurt.github.io/mosaic-reveal.html): Cozy visual-memory puzzle. Watch a sector of a space picture flash, then tap the tiles back from memory — 23 hand-made space mosaics, a daily mosaic with a streak, no ads, no subscriptions. Coming soon to iOS.
+- [Mosaic Reveal](https://jojogurt.github.io/mosaic-reveal.html): Cozy visual-memory puzzle. Watch a sector of a space picture flash, then tap the tiles back from memory — 23 hand-made space mosaics, a daily mosaic with a streak, no ads, no subscriptions. Free on the App Store (https://apps.apple.com/app/id6825974418).
 - [Memo Mini](https://jojogurt.github.io/memo-mini.html): Relaxing memory pairs (matching) game for kids 4+. 14 colorful worlds, 175 pictures, learn words in 7 languages — no ads, no timers. Free on the App Store (https://apps.apple.com/app/id6766694453) with optional one-time purchases.
 - [First to Floor](https://jojogurt.github.io/first-to-floor.html): Guess-the-order physics game for kids 4+. Watch a slow-motion preview and predict which items hit the floor first. No ads. Free on the App Store (https://apps.apple.com/app/id6765926150).
 - [Memo Maze](https://jojogurt.github.io/memo-maze.html): Memory maze puzzle. Study a tile maze, watch it vanish, then swipe through it from memory across 30 hand-crafted levels. In development.
