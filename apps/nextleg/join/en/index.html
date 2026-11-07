@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Nextleg</title>
+<link rel="stylesheet" href="../../../../nextleg/style.css">
+<style>
+.code { font: 700 2.4rem/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.25em; text-align: center; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 12px; margin: 1.2em 0; }
+.code[hidden] { display: none; }
+.open { display: block; text-align: center; padding: 14px 20px; border-radius: 14px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; margin-bottom: 12px; }
+.open[hidden] { display: none; }
+.store { display: block; text-align: center; padding: 14px 20px; border-radius: 14px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; opacity: 0.55; pointer-events: none; }
+.note { color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="../../../../nextleg/en/index.html">Nextleg</a>
+  <nav><a href="../index.html" hreflang="pl" lang="pl">Polski</a></nav>
+</header>
+<main>
+<h1>You have an invitation to a group on Nextleg</h1>
+<div class="code" id="code" hidden></div>
+<ol>
+  <li>Install Nextleg</li>
+  <li>Open this link again or enter the code</li>
+</ol>
+<a class="open" id="open" href="nextleg://join" hidden>Open in Nextleg</a>
+<a class="store" href="#" aria-disabled="true">Coming soon to the App Store</a>
+<p class="note">Code not working? Ask someone in the group for a new invitation.</p>
+</main>
+<script>
+(function () {
+  var code = new URLSearchParams(location.search).get("code");
+  if (code && /^[A-Za-z0-9]{4,12}$/.test(code)) {
+    var el = document.getElementById("code");
+    el.textContent = code.toUpperCase();
+    el.hidden = false;
+    var open = document.getElementById("open");
+    open.href = "nextleg://join?code=" + encodeURIComponent(code.toUpperCase());
+    open.hidden = false;
+  }
+})();
+</script>
+</body>
+</html>
